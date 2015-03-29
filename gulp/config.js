@@ -7,7 +7,8 @@ var config = {
 
   // Stylus processing
   styles: {
-    src: './app/public/stylus/**/*.styl',
+    src: './app/public/stylus/main.styl',
+    dir: './app/public/stylus/**/*.styl',
     dest: './app/assets/css/'
   },
 

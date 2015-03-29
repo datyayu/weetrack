@@ -5,7 +5,7 @@ var connect = require('gulp-connect')
 // Start a node server with livereload. 
 gulp.task('server', function () {
   connect.server({
-    root: './app/',
+    root:'./app/assets/',
     port: 9000,
     livereload: true
   })

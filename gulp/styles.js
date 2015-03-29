@@ -35,7 +35,7 @@ gulp.task('layouts', function () {
 
 // Watch for changes on .styl files.
 gulp.task('watch::styles', ['styles'], function () {
-  gulp.watch(config.layouts.src, ['styles']);
+  gulp.watch(config.styles.dir, ['styles']);
 });
 
 // Watch for changes on .html files.
