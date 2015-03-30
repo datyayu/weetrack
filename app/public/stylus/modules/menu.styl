@@ -55,37 +55,39 @@
 
 
 /* Desktop View*/
-  @media screen and (min-width: $query_large)
-    .Menu
+@media screen and (min-width: $query_large)
+  .Menu
+    background $background_color
+    border-right none
+    display block
+    height auto
+    padding 0 5%
+    top 5em
+    left 0
+    width 100%
+    z-index 2
+  
+  .Menu-item 
+    border-bottom none
+    border-top 6px solid transparent
+    display inline-flex
+    height 1em
+    padding-top 0em
+    transition all 200ms ease-in-out
+    &:first-child
+      display none
+    &:hover, 
+    &.is-active
       background none
-      border-right none
-      display block
-      height auto
-      padding 0 5%
-      position static
-      width 100%
-    
-    .Menu-item 
-      border-bottom none
-      border-top 6px solid transparent
-      display inline-flex
-      height 1em
-      padding-top 0em
-      transition all 200ms ease-in-out
-      &:first-child
-        display none
-      &:hover, 
-      &.is-active
-        background none
-        .Menu-link
-          color $dark_text
-      &.is-active
-        background none
-        border-top 6px solid $secondary_color
-        
+      .Menu-link
+        color $dark_text
+    &.is-active
+      background none
+      border-top 6px solid $secondary_color
       
-    .Menu-link
-      color $light_text
-      font-size .7em
-      padding 0 1em
-          
+    
+  .Menu-link
+    color $light_text
+    font-size .7em
+    padding 0 1em
+        

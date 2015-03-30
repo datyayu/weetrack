@@ -7,12 +7,15 @@
 /* Footer */
 // SOON TM
 
+
 /* Wrappers */
 // Mobile-first View
   .Content
     display flex
     flex-direction column
     height 100%
+    padding .5em
+    padding-top 4em
   
   .Wrapper
     height 100%
@@ -40,7 +43,6 @@
     width 100%
     z-index 1
   
-  
 // Desktop view
   @media screen and (min-width: $query_large)
     .Content
@@ -50,6 +52,7 @@
       width 90vw
       margin 0 auto
       margin-top 0em
+      padding-top 7em
       
     .Wrapper
       &.Move-right
@@ -58,3 +61,4 @@
     .Move-right
       .Content-blocker
         display none
+

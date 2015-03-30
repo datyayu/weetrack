@@ -1,0 +1,191 @@
+/* Mobile-first view */
+  .Series-content-episodes-item
+    margin-left 1em 
+    margin-top 1em
+
+  .Series-content-episodes-link
+    display block
+    margin 0 1em
+
+  .Series-content-episodes-time
+    color $light_text
+    font-size .7em
+    font-weight normal
+
+  .Series-content-episodes-title
+    font-weight bold
+    margin .5em 0
+    text-align center
+
+  .Series-content-text
+    color $dark_text
+    padding 0 1em
+    text-align justify
+
+  .Series-content-title
+    background $secondary_color
+    color white
+    margin .5em 0
+    padding .2em
+    text-align center
+
+  .Series-content-list
+    margin 0 auto
+    max-width 100%
+    position relative
+
+  .Series-content-video
+    height 0
+    margin .5em 1em
+    width 100%
+    max-width 100%
+    overflow hidden
+    padding-bottom 56.25%
+    position relative
+    & iframe, 
+    & object, 
+    & embed
+      height 100%
+      left 0
+      position absolute; 
+      top 0 
+      width 100%
+
+  .Series-info-button
+    background $primary_color
+    border 2px solid $primary_color
+    color white
+    display block
+    font-size 1.5em
+    margin .5em auto
+    margin-bottom 1em
+    padding .5em
+    width 10em
+    &:active
+      background $tertiary_color
+      border 2px solid $primary_color
+    &:focus
+      outline 0px 
+    &:hover
+      border 2px solid $tertiary_color
+
+  .Series-info-figure
+    height auto
+    margin 0 auto
+    padding-top 1em
+    width 10em
+
+  .Series-info-image
+    height 100%
+    width 100%
+
+  .Series-info-text
+    color $light_text
+    text-align center
+ 
+  .Series-info-text--title
+    color $dark_text
+    font-size 2em
+    text-align center
+
+
+
+/* Tablet view */
+@media screen and (min-width: $query_medium)
+  .Series-content-episodes-downloads
+    .Series-content-episodes-text
+      margin-left .6em
+      &:first-child
+        margin-left 0  
+
+  .Series-content-episodes-link
+    display inline-block
+
+  .Series-content-episodes-time
+    font-size 1em
+
+  .Series-content-episodes-title
+    font-size 1.5em
+
+  .Series-content-list
+    margin 0 1em 
+
+  .Series-content-text
+    font-size 1.5em
+
+  .Series-content-title
+    font-size 2em
+
+  .Series-content-text
+    font-size 1.2em
+
+  .Series-content-video
+    display inline-block
+    margin 0
+    padding 14%
+    width 49%
+
+  .Series-info-figure
+    width 15em
+
+  .Series-info-text--title
+    font-size 2.5em
+
+
+
+/* Desktop View*/
+@media screen and (min-width: $query_large)
+  .Series-content
+    margin-left 25%
+    width 75%
+
+  .Series-content-episodes-list
+    margin 0 2em
+
+  .Series-content-episodes-item
+    border-bottom 1px solid $tertiary_color
+    margin 0
+    padding-bottom .3em
+
+  .Series-content-episodes-time
+    font-size .8em
+
+  .Series-content-episodes-title
+    font-size 1em    
+    text-align left
+
+  .Series-content-episodes-text
+    font-size .9em
+
+  .Series-content-text
+    font-size 1em
+    text-align left
+
+  .Series-content-title
+    background none
+    border-bottom 1px solid $tertiary_color
+    color $dark_text
+    font-size 1.2em
+    margin-top .5em
+
+  .Series-content-video
+      padding 6.5%
+      width 24%
+
+  .Series-info
+    position fixed
+    width 20%
+    .Series-content-title
+      display none
+
+  .Series-info-button
+    margin-bottom .5em
+    padding .3em
+    width 80%
+
+  .Series-info-figure
+    width 10em
+
+  .Series-info-text--title
+    font-size 2em
+
