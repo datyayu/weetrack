@@ -1,5 +1,6 @@
 var gulp       = require('gulp');
 var gutil      = require('gulp-util');
+var connect    = require('gulp-connect');
 var coffee     = require('gulp-coffee');
 var concat     = require('gulp-concat');
 var uglify     = require('gulp-uglify');
@@ -17,11 +18,12 @@ var config = require('./config')
 gulp.task('scripts-dev', function () {
   gulp.src(config.scripts.src)
     .pipe(sourcemaps.init())
+    .pipe(coffee()).on('error', gutil.log)
     .pipe(concat('app.js'))
-    .pipe(coffee({bare: true})).on('error', gutil.log)
     .pipe(ngAnnotate())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.scripts.dest));
+    .pipe(gulp.dest(config.scripts.dest))
+    .pipe(connect.reload());
 });
 
 

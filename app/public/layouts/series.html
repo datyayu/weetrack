@@ -1,0 +1,143 @@
+<div class="Series-info">
+<!-- Anime cover image -->
+  <figure class="Series-info-figure">
+    <img class="Series-info-image" 
+         ng-src="{{ series.info.img }}">
+  </figure>
+<!-- Anime title -->
+  <p class="Series-info-text 
+            Series-info-text--title"
+     ng-bind="series.info.title">
+  </p>
+<!-- Add to following -->
+  <button class="Series-info-button">
+    + Track
+  </button>
+<!-- Section title -->
+  <h2 class="Series-content-title"
+      ng-click="hideInformation = !hideInformation"> 
+    Information
+  </h2>
+<!-- Series information -->
+  <div class="series-information-data"
+      ng-show="!hideInformation">
+  <!-- Status -->
+    <p class="Series-info-text"
+       ng-bind="series.info.status">
+    </p>
+  <!-- Episodes -->
+    <p class="Series-info-text" 
+       ng-bind="series.info.episodes + ' episodes'">
+    </p>
+  <!-- Season -->
+    <p class="Series-info-text"
+       ng-bind="series.info.season">
+    </p>
+  <!-- Links -->
+    <p class="Series-info-text">
+      <a class="Series-info-link" 
+         ng-href="{{ series.info.links.official }}" 
+         target="_blank">
+        Official Site 
+      </a>
+      ~
+      <a class="Series-info-link" 
+         ng-href="{{ series.info.links.twitter }}" 
+         target="_blank">
+        Twitter 
+      </a>
+      ~
+      <a class="Series-info-link" 
+         ng-href="{{ series.info.links.mal }}" 
+         target="_blank">
+        MAL
+      </a>
+    </p>
+  </div> <!-- /.Series-info-data -->
+</div> <!-- /.Series-info -->
+
+<div class="Series-content">
+
+<!-- Sypnosis -->
+  <div class="Series-content-sinopsis">
+  <!-- Section title -->
+    <h2 class="Series-content-title"
+        ng-click="hideSynopsis = !hideSynopsis"> 
+      Synopsis
+    </h2>
+  <!-- Synopsis text -->
+    <p class="Series-content-text"
+       ng-show="!hideSynopsis"
+       ng-bind="series.content.description">
+    </p>
+  </div> <!-- /.Series-content-info -->
+<!-- PVs -->
+  <div class="Series-content-pvs">
+  <!-- Section title -->
+    <h2 class="Series-content-title"
+        ng-click="hidePVs = !hidePVs"> 
+      PVs
+    </h2>
+  <!-- PV list -->
+    <ul class="Series-content-list"
+        ng-show="!hidePVs">
+      <li class="Series-content-video" 
+          ng-repeat="video in series.content.pvs">
+        <iframe width="560" 
+                height="315" 
+                target='_top'
+                ng-src="{{ video.replace('watch?v=','embed/') + '?autoplay=0&showinfo=0&controls=2'}}" 
+                frameborder="0" 
+                allowfullscreen></iframe>
+      </li>
+    </ul>
+  </div> <!-- /.Series-content-pvs -->
+<!-- Episodes -->
+  <div class="Series-content-episodes">
+  <!-- Section title -->
+    <h2 class="Series-content-title"
+        ng-click="hideEpisodes = !hideEpisodes"> 
+      Episodes
+    </h2>
+  <!-- Episode list -->
+    <ul class="Series-content-episodes-list"
+        ng-show="!hideEpisodes">
+      <li class="Series-content-episodes-item"
+          ng-repeat="episode in series.episodes">
+        <p class="Series-content-episodes-title">
+          Episode {{ $index + 1}}
+          <span class="Series-content-episodes-time"
+                ng-bind="'(' + episode.time + 'ago)'">
+          </span>
+        </p> 
+        <div class="Series-content-episodes-downloads">
+          <p class="Series-content-episodes-text">
+            1080p
+            <a class="Series-content-episodes-link" 
+               ng-repeat="fansub in episode.releases.fullhd"
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
+            </a>
+          </p>
+          <p class="Series-content-episodes-text">
+            720p 
+            <a class="Series-content-episodes-link"
+               ng-repeat="fansub in episode.releases.hd "
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
+            </a>
+          </p>
+          <p class="Series-content-episodes-text">
+              480p
+            <a class="Series-content-episodes-link"
+               ng-repeat="fansub in episode.releases.lq"
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
+            </a>
+          </p>
+        </div> <!-- /.Series-content-episodes-downloads -->
+      </li>
+    </ul>
+  </div> <!-- /.Series-content-episodes -->
+
+</div> <!-- /.Series-content -->
