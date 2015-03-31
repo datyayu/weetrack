@@ -2,11 +2,17 @@
 @app = angular.module "weetrack.controllers.series", []
 
 # Series Controller
-@app.controller "SeriesCtrl", ($scope, SeriesService) ->
-  vm = $scope
-  vm.series = {}
+@app.controller "SeriesCtrl", (SeriesService) ->
+  @info = {}
 
-# Get series info from db
+  # Get series info from db
   SeriesService
     .getSeriesInfo()
-    .then( (data) -> vm.series = data)
+    .then( 
+      ( (data) -> @info = data ).bind @
+    )
+
+  @track = (id) ->
+    # TODO: track series
+
+  @

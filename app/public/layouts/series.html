@@ -2,15 +2,16 @@
 <!-- Anime cover image -->
   <figure class="Series-info-figure">
     <img class="Series-info-image" 
-         ng-src="{{ series.info.img }}">
+         ng-src="{{ series.info.content.img }}">
   </figure>
 <!-- Anime title -->
   <p class="Series-info-text 
             Series-info-text--title"
-     ng-bind="series.info.title">
+     ng-bind="series.info.content.title">
   </p>
 <!-- Add to following -->
-  <button class="Series-info-button">
+  <button class="Series-info-button"
+          ng-click="track(series.info.content.id)">
     + Track
   </button>
 <!-- Section title -->
@@ -23,32 +24,32 @@
       ng-show="!hideInformation">
   <!-- Status -->
     <p class="Series-info-text"
-       ng-bind="series.info.status">
+       ng-bind="series.info.content.status">
     </p>
   <!-- Episodes -->
     <p class="Series-info-text" 
-       ng-bind="series.info.episodes + ' episodes'">
+       ng-bind="series.info.content.episodes + ' episodes'">
     </p>
   <!-- Season -->
     <p class="Series-info-text"
-       ng-bind="series.info.season">
+       ng-bind="series.info.content.season">
     </p>
   <!-- Links -->
     <p class="Series-info-text">
       <a class="Series-info-link" 
-         ng-href="{{ series.info.links.official }}" 
+         ng-href="{{ series.info.content.links.official }}" 
          target="_blank">
         Official Site 
       </a>
       ~
       <a class="Series-info-link" 
-         ng-href="{{ series.info.links.twitter }}" 
+         ng-href="{{ series.info.content.links.twitter }}" 
          target="_blank">
         Twitter 
       </a>
       ~
       <a class="Series-info-link" 
-         ng-href="{{ series.info.links.mal }}" 
+         ng-href="{{ series.info.content.links.mal }}" 
          target="_blank">
         MAL
       </a>
@@ -68,7 +69,7 @@
   <!-- Synopsis text -->
     <p class="Series-content-text"
        ng-show="!hideSynopsis"
-       ng-bind="series.content.description">
+       ng-bind="series.info.content.description">
     </p>
   </div> <!-- /.Series-content-info -->
 <!-- PVs -->
@@ -82,7 +83,7 @@
     <ul class="Series-content-list"
         ng-show="!hidePVs">
       <li class="Series-content-video" 
-          ng-repeat="video in series.content.pvs">
+          ng-repeat="video in series.info.content.pvs">
         <iframe width="560" 
                 height="315" 
                 target='_top'
@@ -103,7 +104,7 @@
     <ul class="Series-content-episodes-list"
         ng-show="!hideEpisodes">
       <li class="Series-content-episodes-item"
-          ng-repeat="episode in series.episodes">
+          ng-repeat="episode in series.info.episodes">
         <p class="Series-content-episodes-title">
           Episode {{ $index + 1}}
           <span class="Series-content-episodes-time"

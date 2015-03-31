@@ -1,0 +1,62 @@
+<div class="Season">
+<!-- banner -->
+  <figure class="Season-banner">
+    <img class="Season-banner-image" 
+         ng-src="{{ season.banner }}">
+  </figure>
+<!-- Filter buttons -->
+  <div class="Season-filters">
+    Sort by: 
+    <button class="Season-filters-button" 
+            ng-class="{'is-active': season.sortOption == 'title'}"
+            ng-click="season.sortOption = 'title'">
+      Title
+    </button>
+    <button class="Season-filters-button"
+            ng-class="{'is-active': season.sortOption == 'release'}"
+            ng-click="season.sortOption = 'release'">
+      Release date
+    </button>
+  </div> <!-- /.Season-filters -->
+<!-- Series list -->
+  <ul class="Season-series-list">
+    <li class="Season-series-item"
+        ng-repeat="series in season.series | orderBy: season.sortOption">
+    <!-- Season-series-left -->
+      <div class="Season-series-left">
+      <!-- Cover Image -->
+        <figure class="Season-series-figure">
+          <a class="Season-series-link"
+             href= "{{ series.url }}">
+            <img class="Season-series-image" 
+               ng-src="{{ series.img }}">
+          </a>
+        </figure>
+      <!-- Track button -->
+        <button class="Season-series-button"
+                ng-click="series.track(series.id)">
+          + Track
+        </button>
+      </div> <!-- /.Season-series-left -->
+    <!-- Season-series-right -->
+      <div class="Season-series-right">
+      <!-- Title -->
+        <a class="Season-series-title" 
+           href="{{ series.url }}"
+           ng-bind="series.title">
+        </a>
+      <!-- Status -->
+        <p class="Season-series-time"
+           ng-bind="series.time ? 
+                      '(Last updated '+series.time+' ago)' : 
+                      series.status">
+        </p>
+      <!-- Description -->
+        <p class="Season-series-text"
+           ng-bind="series.description">
+        </p>
+      </div> <!-- /.Season-series-right -->
+      <!-- Info -->
+    </li>
+  </ul>
+</div> <!-- /.Season -->
