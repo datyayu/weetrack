@@ -15,13 +15,20 @@
     ]
 
   $routeProvider
-    .when "/series",
-      controller: "SeriesCtrl"
-      controllerAs: "series"
-      templateUrl: "../html/series.html" 
+    .when "/feed",
+      controller: "FeedCtrl"
+      controllerAs: "feed"
+      templateUrl: "../html/feed.html"
+
     .when "/season",
       controller: "SeasonCtrl"
       controllerAs: "season"
       templateUrl: "../html/season.html"
+    
+    .when "/series",
+      controller: "SeriesCtrl"
+      controllerAs: "series"
+      templateUrl: "../html/series.html" 
+    
     .otherwise
       redirectTo: "/season"

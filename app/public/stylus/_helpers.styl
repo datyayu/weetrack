@@ -3,3 +3,10 @@
 
 .show
   display block
+
+.non-mobile
+  display none
+
+@media screen and (min-width: $query_large)
+  .non-mobile
+    display block
