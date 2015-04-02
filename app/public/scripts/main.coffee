@@ -11,12 +11,14 @@
 ]
 
 # Module config.
-@app.config ($routeProvider, $sceDelegateProvider) ->
+@app.config ($locationProvider, $routeProvider, $sceDelegateProvider) ->
   # Provide access to youtube videos.
   $sceDelegateProvider.resourceUrlWhitelist [
       "self" 
       "*://www.youtube.com/**"
     ]
+
+  $locationProvider.html5Mode(true)
 
   $routeProvider
     # Daily Feed
@@ -40,3 +42,4 @@
     # Redirect to home
     .otherwise
       redirectTo: "/feed"
+

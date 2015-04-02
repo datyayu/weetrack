@@ -1,29 +1,25 @@
-# Dependencies
+# Dependencies.
 path    = require "path" 
 express = require "express"
-app     = express.Router()
+api     = require "./api"
 
-
-# Custom routes
-# series = require "api/series"
-
-
-# Static files
+# Module variables
+router = express.Router()
 assets = path.join __dirname, "assets"
 libs   = path.join __dirname, "..", "bower_components"
 
-app.use "/assets", express.static(assets)
-app.use "/libs", express.static(libs)
 
+# Static files.
+router.use "/assets", express.static(assets)
+router.use "/libs", express.static(libs)
 
-# API Routes
-# app.use "/series", series
+# API Routes.
+router.use "/api", api
 
-
-# Send app
-app.use "/", (req, res) ->
+# Send index.html.
+router.use "/", (req, res) ->
   res.sendFile path.join(__dirname, "assets", "html", "index.html")
   
 
-
-module.exports = app
+# Export router.
+module.exports = router

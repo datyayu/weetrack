@@ -1,17 +1,15 @@
-# Dependencies
+# Dependencies.
 express    = require "express"
 bodyParser = require "body-parser"
+routes     = require "./routes"
 
-# Routes modules
-routes = require "./routes"
-
-# Local variables */
+# Local variables.
 app = express()
 
-# Middleware
+# Middleware.
 app.use bodyParser.json()
 
-# Routes
+# Routes.
 app.use routes
 
 

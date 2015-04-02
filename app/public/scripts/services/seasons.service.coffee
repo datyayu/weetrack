@@ -6,8 +6,7 @@
   getSeasonInfo: ->
     deferred = $q.defer()
 
-    # TODO: Replace static json file for API.
-    $http.get "../season.json"
+    $http.get "/api/seasons"
       .success( (seriesInfo) -> deferred.resolve seriesInfo)
       .error( (err) -> deferred.reject err)
 

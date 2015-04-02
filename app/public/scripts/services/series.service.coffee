@@ -6,8 +6,7 @@
   getSeriesInfo: ->
     deferred = $q.defer()
 
-    # TODO: Replace static json file for API.
-    $http.get "../series.json"
+    $http.get "/api/series"
       .success( (seriesInfo) -> deferred.resolve seriesInfo)
       .error( (err) -> deferred.reject err)
 
