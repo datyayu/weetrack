@@ -1,34 +1,42 @@
-# Module setup
+# Module setup.
 @app = angular.module "weetrack", [
-  "ngRoute",
-  "weetrack.services.series",
-  "weetrack.services.season",
-  "weetrack.controllers.season",
+  "ngRoute"
+  "weetrack.services.feed"
+  "weetrack.services.series"
+  "weetrack.services.season"
+  "weetrack.controllers.feed"
+  "weetrack.controllers.main"
+  "weetrack.controllers.season"
   "weetrack.controllers.series"
 ]
 
+# Module config.
 @app.config ($routeProvider, $sceDelegateProvider) ->
-  $sceDelegateProvider
-    .resourceUrlWhitelist [
-      "self", 
+  # Provide access to youtube videos.
+  $sceDelegateProvider.resourceUrlWhitelist [
+      "self" 
       "*://www.youtube.com/**"
     ]
 
   $routeProvider
+    # Daily Feed
     .when "/feed",
       controller: "FeedCtrl"
       controllerAs: "feed"
-      templateUrl: "../html/feed.html"
+      templateUrl: "/assets/html/feed.html"
 
-    .when "/season",
+    # Current season lineup.
+    .when "/currentSeason",
       controller: "SeasonCtrl"
       controllerAs: "season"
-      templateUrl: "../html/season.html"
+      templateUrl: "/assets/html/season.html"
     
+    # Specific series info.
     .when "/series",
       controller: "SeriesCtrl"
       controllerAs: "series"
-      templateUrl: "../html/series.html" 
+      templateUrl: "/assets/html/series.html" 
     
+    # Redirect to home
     .otherwise
-      redirectTo: "/season"
+      redirectTo: "/feed"

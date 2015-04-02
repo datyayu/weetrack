@@ -1,43 +1,47 @@
-<div class="Latest">
- <h3 class="Feed-title non-mobile">
+<div class="Latest non-mobile">
+  <h3 class="Feed-title">
     Lastest updated
   </h3>
    <ul class="Feed-list">
-    <li class="Feed-item">
-      <div class="Feed-item-left">
+    <li class="Feed-item Side-item"
+        ng-repeat="episode in feed.latestEpisodes">
+      <div class="Feed-item-left Side-item-left">
       <!-- Cover Image -->
         <figure class="Feed-item-figure">
-          <img class="Feed-item-image" src="../img/series/absoluteduo_min.jpg">
+          <img class="Feed-item-image" 
+               ng-src="{{ episode.img }}">
         </figure>
       </div>
     <!-- Item info -->
       <div class="Feed-item-right">
       <!-- Series Title -->    
-        <p class="Side-item-title">
-          Saenai Heroine no Sodatekata
+        <p class="Side-item-title"
+           ng-bind="episode.series">
         </p>
       <!-- Episode -->
-        <p class="Side-item-episode-title">
-          Episode 1
-          <span class="Side-item-episode-time">
-            (2 days ago)
+        <p class="Side-item-episode-title"
+           ng-bind="'Episode ' + episode.number">
+          <span class="Side-item-episode-time"
+                ng-bind="'(' + episode.time + ' ago)'">
           </span>
         </p> 
       </div>
     </li>
   </ul>
-</div>
+</div> <!-- /.Lates -->
 
 <div class="Feed">
   <h3 class="Feed-title non-mobile">
     Series you're following
   </h3>
   <ul class="Feed-list">
-    <li class="Feed-item">
+    <li class="Feed-item"
+        ng-repeat="episode in feed.followingEpisodes">
       <div class="Feed-item-left">
       <!-- Cover Image -->
         <figure class="Feed-item-figure">
-          <img class="Feed-item-image" src="../img/series/absoluteduo_min.jpg">
+          <img class="Feed-item-image" 
+               ng-src="{{ episode.img }}">
         </figure>
         <div class="Feed-item-actions">    
           <button class="Feed-item-button" id="drop">
@@ -50,14 +54,14 @@
     <!-- Item info -->
       <div class="Feed-item-right">
       <!-- Series Title -->    
-        <p class="Feed-item-title">
-          Saenai Heroine no Sodatekata
+        <p class="Feed-item-title"
+           ng-bind="episode.series">
         </p>
       <!-- Episode -->
-        <p class="Feed-item-episode-title">
-          Episode 1
-          <span class="Feed-item-episode-time">
-            (2 days ago)
+        <p class="Feed-item-episode-title"
+           ng-bind="'Episode ' + episode.number">
+          <span class="Feed-item-episode-time"
+                ng-bind="'(' + episode.time + ' ago)'">
           </span>
         </p> 
       <!-- Button -->
@@ -69,80 +73,30 @@
           <p class="Feed-item-episode-text">
             <span class="Feed-item-episode-resolution">
               1080p
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] 
+            <a class="Feed-item-episode-link"
+               ng-repeat="fansub in episode.releases.fullhd"
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
             </a>
           </p>
           <p class="Feed-item-episode-text">
             720p 
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] [Hatsuyuki]
+            <a class="Feed-item-episode-link"
+               ng-repeat="fansub in episode.releases.hd"
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
             </a>
           </p>
           <p class="Feed-item-episode-text">
             480p
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] [Hatsuyuki]
+            <a class="Feed-item-episode-link"
+               ng-repeat="fansub in episode.releases.fullhd"
+               ng-href="{{ fansub.url }}"
+               ng-bind="'['+ fansub.group + ']'">
             </a>
           </p>
         </div><!-- /.Feed-item-episode-downloads -->
       </div>
-    </li>    <li class="Feed-item">
-      <div class="Feed-item-left">
-      <!-- Cover Image -->
-        <figure class="Feed-item-figure">
-          <img class="Feed-item-image" src="../img/series/absoluteduo_min.jpg">
-        </figure>
-        <div class="Feed-item-actions">    
-          <button class="Feed-item-button" id="drop">
-            × drop
-          </button><button class="Feed-item-button" id="add">
-            + add all
-          </button>
-        </div>
-      </div>
-    <!-- Item info -->
-      <div class="Feed-item-right">
-      <!-- Series Title -->    
-        <p class="Feed-item-title">
-          Saenai Heroine no Sodatekata
-        </p>
-      <!-- Episode -->
-        <p class="Feed-item-episode-title">
-          Episode 1
-          <span class="Feed-item-episode-time">
-            (2 days ago)
-          </span>
-        </p> 
-      <!-- Button -->
-        <button class="Feed-item-episode-button">
-          add to watched
-        </button>
-      <!-- links -->
-        <div class="Feed-item-episode-downloads">
-          <p class="Feed-item-episode-text">
-            <span class="Feed-item-episode-resolution">
-              1080p
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] 
-            </a>
-          </p>
-          <p class="Feed-item-episode-text">
-            720p 
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] [Hatsuyuki]
-            </a>
-          </p>
-          <p class="Feed-item-episode-text">
-            480p
-            <a class="Feed-item-episode-link">
-              [HorribleSubs] [Hatsuyuki]
-            </a>
-          </p>
-        </div><!-- /.Feed-item-episode-downloads -->
-      </div>
-    </li>
-
-
+    </li> 
   </ul>
-</div>
+</div> <!-- -->

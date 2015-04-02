@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="weetrack">
+<html lang="en" 
+      ng-app="weetrack"
+      ng-controller="MainCtrl as main">
 <head>
 <!-- Meta-stuff ================================-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title> Weetrack </title>
+  <title ng-bind="main.pageTitle"> Weetrack </title>
 <!-- Styleshets =================================-->
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-<div class="Wrapper">
+<div class="Wrapper"
+     ng-class="{'Move-right': main.showMenu}">
 <!-- Header ====================================-->
   <header class="Header">
   <!-- Logo / Title ==========================-->
@@ -20,14 +23,15 @@
       </a>
     </h1>
   <!-- Menu mobile button ====================-->
-    <div class="Header-button">
+    <div class="Header-button"
+         ng-click="main.showMenu = !main.showMenu">
       <span class="Header-button-line"></span>
       <span class="Header-button-line"></span>
       <span class="Header-button-line"></span>
     </div>
   <!-- Page title on mobile ==================-->
-    <div class="Header-mobile-title">
-      Weetrack
+    <div class="Header-mobile-title"
+         ng-bind="main.pageTitle">
     </div>
   <!-- User info =============================-->
     <div class="Header-user">
@@ -38,30 +42,39 @@
       <span class="Header-user-button"></span>
     <!-- User avatar =========================-->
       <figure class="Header-user-figure">
-        <img class="Header-user-image" src="../img/user.jpg">
+        <img class="Header-user-image" src="/assets/img/user.jpg">
       </figure>
     </div> <!-- /.Header-user -->
-  </header>
   
-<!-- Nav menu ==================================-->
-  <nav class="Menu">
-    <ul class="Menu-list">
-      <li class="Menu-item">
-        <a class="Menu-link" href="#/">Wee</a>
-      </li><li class="Menu-item">
-        <a class="Menu-link" href="#/feed">Daily feed</a>
-      </li><li class="Menu-item">
-        <a class="Menu-link" href="#/seasons">Spring 2015</a>
-      </li><li class="Menu-item is-active">
-        <a class="Menu-link" href="#/series">Seasons</a>
-      </li><li class="Menu-item">
-        <a class="Menu-link">Calendar</a>
-      </li>
-    </ul>
-  </nav>
+  <!-- Nav menu ==================================-->
+    <nav class="Menu">
+      <ul class="Menu-list">
+        <li class="Menu-item"
+            ng-class="{'is-active': main.activeItem == ''}">
+          <a class="Menu-link" 
+             href="#/">
+              Wee<span class="Menu-site-title">track</span>
+            </a>
+        </li><li class="Menu-item"
+                 ng-class="{'is-active': main.activeItem == 'feed'}">
+          <a class="Menu-link" 
+              href="#/feed">
+              Daily feed
+          </a>
+        </li><li class="Menu-item"
+                 ng-class="{'is-active': main.activeItem == 'currentSeason'}">  
+          <a class="Menu-link" 
+             href="#/currentSeason">
+              Spring 2015
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
 <!-- Fade-In block ============================-->
-  <div class="Content-blocker">
+  <div class="Content-blocker"
+       ng-click="main.showMenu = false">
   </div>
 
 <!-- Content ==================================-->
@@ -72,8 +85,8 @@
 
 
 <!-- Scripts ===================================-->
-  <script type="text/javascript" src="../../../bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="../../../bower_components/angular-route/angular-route.min.js"></script>
-  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="/libs/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/libs/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/assets/js/app.js"></script>
 </body>
 </html>

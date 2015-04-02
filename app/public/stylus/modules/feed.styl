@@ -67,10 +67,17 @@
     margin .5em
     padding-bottom .2em
     border-bottom 1px solid $dark_text
+    
+  .Side-item
+    margin .2em 0
+    padding .3em .3em 0 .3em
 
   .Side-item-title
     color $dark_text
     font-weight bold
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
 
   .Side-item-episode-time
     color $light_text
@@ -85,6 +92,7 @@
 
 /* Tablet view */
 @media screen and (min-width: $query_medium)
+ 
   .Feed-item
     width 49%
 
@@ -94,18 +102,21 @@
     justify-content space-between
     
 
-@media screen and (min-width: $query_medium)
+@media screen and (min-width: $query_large)
   .Feed 
     width 75%
     margin 0 1em
+  
+  .Feed-list
+    flex-flow column wrap
     
   .Latest
     width 25%
     
-
   .Feed-item
     width 100%
     max-height 8em
+
   .Feed-item-left
     max-width 5em
     
@@ -125,3 +136,7 @@
     
   .Feed-item-actions
     margin-top -.4em
+      
+  .Side-item-left
+    min-width 4em
+    max-width 4em

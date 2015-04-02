@@ -13,27 +13,30 @@
     border-bottom 1px solid white
     cursor pointer
     height 3em
-    padding-top 1em
     text-align center
     
   .Menu-item:hover, 
   .Menu-item.is-active
     background $primary_color
     &:first-child
-      .Menu-link:after
+      .Menu-site-title
         color $tertiary_color 
     
   .Menu-item:first-child
     font-size 1.8em
     height 1.7em
-    padding-top .2em
-    .Menu-link:after
+    .Menu-link
+      padding 0    
+    .Menu-site-title
       color $primary_color
-      content "track"
 
   .Menu-link
+    display block
     color white
     user-select none
+    padding-top 1em
+    width 100%
+    height 100%
     
   .Move-right
     .Menu
@@ -46,11 +49,13 @@
   .Menu-item
     font-size 1.8em
     height 2em
-    padding-top .3em
     &:first-child
       font-size 2.5em
       height 1.6em
       padding-top .1em
+  
+  .Menu-link
+    padding-top .3em
 
 
 
