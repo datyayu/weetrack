@@ -8,33 +8,33 @@
   <div class="Season-filters">
     Sort by: 
     <button class="Season-filters-button" 
-            ng-class="{'is-active': season.sortOption == 'title'}"
-            ng-click="season.sortOption = 'title'">
+            ng-class="{'is-active': season.sortOption == 'content.title'}"
+            ng-click="season.toggleSortOption('content.title')">
       Title
     </button>
     <button class="Season-filters-button"
-            ng-class="{'is-active': season.sortOption == 'release'}"
-            ng-click="season.sortOption = 'release'">
+            ng-class="{'is-active': season.sortOption == 'updatedAt'}"
+            ng-click="season.toggleSortOption('updatedAt')">
       Release date
     </button>
   </div> <!-- /.Season-filters -->
 <!-- Series list -->
   <ul class="Season-series-list">
     <li class="Season-series-item"
-        ng-repeat="series in season.series | orderBy: season.sortOption">
+        ng-repeat="series in season.series | orderBy: season.sortOption : season.sortReverse">
     <!-- Season-series-left -->
       <div class="Season-series-left">
       <!-- Cover Image -->
         <figure class="Season-series-figure">
           <a class="Season-series-link"
-             href= "{{ series.url }}">
+             href= "/series/{{ series._id }}">
             <img class="Season-series-image" 
-               ng-src="{{ series.img }}">
+               ng-src="{{ series.content.img }}">
           </a>
         </figure>
       <!-- Track button -->
         <button class="Season-series-button"
-                ng-click="series.track(series.id)">
+                ng-click="season.track(series._id)">
           + Track
         </button>
       </div> <!-- /.Season-series-left -->
@@ -42,18 +42,16 @@
       <div class="Season-series-right">
       <!-- Title -->
         <a class="Season-series-title" 
-           href="{{ series.url }}"
-           ng-bind="series.title">
+           href="/series/{{ series._id }}"
+           ng-bind="series.content.title">
         </a>
       <!-- Status -->
         <p class="Season-series-time"
-           ng-bind="series.time ? 
-                      '(Last updated '+series.time+' ago)' : 
-                      series.status">
+           ng-bind="series.content.status">
         </p>
       <!-- Description -->
         <p class="Season-series-text"
-           ng-bind="series.description">
+           ng-bind="series.content.description">
         </p>
       </div> <!-- /.Season-series-right -->
       <!-- Info -->

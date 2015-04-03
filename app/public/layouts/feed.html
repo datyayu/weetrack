@@ -9,14 +9,14 @@
       <!-- Cover Image -->
         <figure class="Feed-item-figure">
           <img class="Feed-item-image" 
-               ng-src="{{ episode.img }}">
+               ng-src="{{ episode.series.content.min }}">
         </figure>
       </div>
     <!-- Item info -->
       <div class="Feed-item-right">
       <!-- Series Title -->    
         <p class="Side-item-title"
-           ng-bind="episode.series">
+           ng-bind="episode.series.content.title">
         </p>
       <!-- Episode -->
         <p class="Side-item-episode-title"
@@ -41,7 +41,7 @@
       <!-- Cover Image -->
         <figure class="Feed-item-figure">
           <img class="Feed-item-image" 
-               ng-src="{{ episode.img }}">
+               ng-src="{{ episode.series.content.min }}">
         </figure>
         <div class="Feed-item-actions">    
           <button class="Feed-item-button" id="drop">
@@ -55,7 +55,7 @@
       <div class="Feed-item-right">
       <!-- Series Title -->    
         <p class="Feed-item-title"
-           ng-bind="episode.series">
+           ng-bind="episode.series.content.title">
         </p>
       <!-- Episode -->
         <p class="Feed-item-episode-title"

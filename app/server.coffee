@@ -1,6 +1,7 @@
 # Dependencies.
 express    = require "express"
 bodyParser = require "body-parser"
+mongoose   = require "mongoose"
 routes     = require "./routes"
 
 # Local variables.
@@ -8,6 +9,9 @@ app = express()
 
 # Middleware.
 app.use bodyParser.json()
+
+# Initiate database
+mongoose.connect "mongodb://localhost/test"
 
 # Routes.
 app.use routes

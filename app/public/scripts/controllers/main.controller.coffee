@@ -1,11 +1,13 @@
-# Module setup
+# Module setup.
 @app = angular.module "weetrack.controllers.main", []
 
-# Series Controller
+# Series Controller.
 @app.controller "MainCtrl", ($rootScope, $location)->
+  # Scope variables.
   @activeItem = $location.path().split('/')[1]
   @pageTitle  = ""
   @showMenu   = no
+
 
   # Update menu item on route change. 
   $rootScope.$on "$routeChangeStart", =>
@@ -17,5 +19,5 @@
   $rootScope.$on "changeTitle", (_, title) =>
     @pageTitle = title
 
-  return this
 
+  return this

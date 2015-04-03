@@ -1,20 +1,28 @@
-# Module setup
+# Module setup.
 @app = angular.module "weetrack.controllers.series", []
 
-# Series Controller
-@app.controller "SeriesCtrl", ($scope, SeriesService) ->
+# Series Controller.
+@app.controller "SeriesCtrl", ($scope, $routeParams, SeriesService) ->
+  # Scope variables.
   @info = {}
 
+  # Local variables.
+  seriesId = $routeParams.seriesId
 
-  # Get series info from db
+
+  # Get series info from db.
   SeriesService
-    .getSeriesInfo()
+    .getSeriesInfo(seriesId)
     .then (data) => 
       @info = data 
+
       # Update page title to the series title.
       $scope.$emit "changeTitle", data.content.title
 
+  # Scope functions.
+  # TODO: track series.
   @track = (id) ->
-    # TODO: track series
+    console.log "A kitty died because of you pressing that button"
+
 
   return this

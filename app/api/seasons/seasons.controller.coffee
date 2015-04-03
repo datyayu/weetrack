@@ -6,9 +6,15 @@
  # PUT     /api/seasons/:id          ->  update
  # DELETE  /api/seasons/:id          ->  destroy
 ###
+Series = require "./../series/series.model"
 
-Seasons = require "./seasons.model"
+exports.show = (req, res) ->
+  season = req.params.id.replace "-", " " 
+  seasonRegexp = new RegExp season, "i"
 
+  Series
+    .find {"content.season": seasonRegexp}, (err, seriesList) ->
+      return res.send err if err
+      return res.send "No series found" if seriesList.length is 0
 
-exports.index = (req, res) ->
-  res.send Seasons
+      res.send seriesList 

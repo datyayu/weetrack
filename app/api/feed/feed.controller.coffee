@@ -3,111 +3,30 @@
  # GET     /api/feed              ->  index
 ###
 
+Episode = require "./../episodes/episodes.model"
+
 exports.index = (req, res) ->
-  res.send feed
+  Episode
+    .find {}
+    .sort "-createdAt"
+    .limit 10
+    .populate "series", "_id content.title content.min"
+    .select "-__v"
+    .exec (err, episodes) ->
+      return res.send err if err
 
+      res.send episodes
 
-feed = {
-  "lastestEpisodes": [
-    {
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Saenai Heroine no sodatekata",
-      "number": 12,
-      "time": "two weeks"
-    },{
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Absolute duo",
-      "number": 12,
-      "time": "two weeks"
-    },{
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Absolute duo",
-      "number": 12,
-      "time": "two weeks"
-    },{
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Absolute duo",
-      "number": 12,
-      "time": "two weeks"
-    }
-  ],
+exports.show  = (req, res) ->
+  page = req.params.page
+  Episode
+    .find {}
+    .sort "-createdAt"
+    .skip  10 * page
+    .limit 10
+    .select "-__v"
+    .populate "series", "_id content.title content.min"
+    .exec (err, episodes) ->
+      return res.send err if err
 
-  "followingEpisodes": [
-    {
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Saenai Heroine no sodatekata",
-      "number": 12,
-      "time": "two weeks",
-      "releases": {  
-        "fullhd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645739"
-           }
-        ],
-        "hd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645738"
-           }
-        ],
-        "lq":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645737"
-           }
-        ]
-      }
-    },{
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Saenai Heroine no sodatekata",
-      "number": 12,
-      "time": "two weeks",
-      "releases": {  
-        "fullhd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645739"
-           }
-        ],
-        "hd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645738"
-           }
-        ],
-        "lq":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645737"
-           }
-        ]
-      }
-    },{
-      "img": "/assets/img/series/absoluteduo_min.jpg",
-      "series": "Saenai Heroine no sodatekata",
-      "number": 12,
-      "time": "two weeks",
-      "releases": {  
-        "fullhd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645739"
-           }
-        ],
-        "hd":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645738"
-           }
-        ],
-        "lq":[  
-           {  
-              "group":"HorribleSubs",
-              "url":"http://www.nyaa.se/?page=download&tid=645737"
-           }
-        ]
-      }
-    }
-  ]
-}
+      res.send episodes
