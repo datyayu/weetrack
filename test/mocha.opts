@@ -1,5 +1,0 @@
---ui bdd
---compilers coffee:coffee-script/register
---reporter spec
---watch
--r test/helpers/setup

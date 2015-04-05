@@ -13,3 +13,6 @@ bower_components
 
 # Generated files
 app/assets/*
+app/regex.txt
+app/errorFile.txt
+

@@ -12,7 +12,7 @@
 
   # Local variables.
   # I really think "fall-2015" shouldn't be hardcoded but meh.
-  season = $routeParams.season || "fall-2015"
+  season = $routeParams.season || "spring-2015"
 
 
   # Update page title.

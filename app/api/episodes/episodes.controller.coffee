@@ -42,9 +42,12 @@ exports.create = (req, res) ->
       # Save episode to Episode document.
       episode.save (err, episode) ->
         return res.send err if err
+
         # Add episode to series.
         Series.find {_id: episode.series}, (err, result) ->
+          return res.send err if err
           return res.send "Episode's series does not exists" if result.length is 0
+
           series = result[0]
           series.episodes.push episode
           series.save (err, series) ->

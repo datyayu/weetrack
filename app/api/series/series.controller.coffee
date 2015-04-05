@@ -7,7 +7,13 @@
  # DELETE  /api/releases/:id          ->  destroy
 ###
 
+# Dependencies
+fs     = require "fs"
+path   = require "path"
+_      = require "lodash"
 Series = require "./series.model"
+
+regexFile = path.join(__dirname, "..", "..", "regex.txt")
 
 # Get a list with all the series.
 exports.index = (req, res) ->
@@ -42,6 +48,10 @@ exports.create = (req, res) ->
 
       series = new Series newSeries
       series.createdAt = series.updatedAt = Date.now()
+      
+      # Save patterns for torrent indexing.
+      for pattern in series.regex
+        fs.appendFile(regexFile, "\n" + pattern)
 
       series.save (err, series) ->
         return res.send err if err
@@ -75,10 +85,39 @@ exports.update = (req, res) ->
     # Update info
     series = seriesList[0]
     series.updatedAt = Date.now()
-    if updatedSeries.content?
-      series.content = updatedSeries.content
-    if updatedSeries.episodes?
-      series.episodes = updatedSeries.episodes
+
+    # Replace value in db if specified.
+    series.content = updatedSeries.content if updatedSeries.content?
+    series.episodes = updatedSeries.episodes if updatedSeries.episodes?
+    
+    if updatedSeries.regex? and !_.isEqual(updatedSeries.regex, series.regex)
+      addedFilters   = _.difference updatedSeries.regex, series.regex
+      removedFilters = _.difference series.regex, updatedSeries.Regex
+      series.regex = updatedSeries.regex
+      
+      # Remove deleted filters
+      if removedFilters.length > 0
+        fs.readFile regexFile, "utf8", (err, data) ->
+          return console.log err if err
+          
+          patchedData = data
+          for filter in removedFilters
+            # Remove filters from data.
+            patchedData = patchedData.replace(new RegExp("\n"+ filter), "")
+
+        # Write clean data to the file.
+          fs.writeFile regexFile, patchedData, "utf8", (err) ->
+            return console.log err if err
+
+
+      # Add new filters.
+      if addedFilters.length > 0
+        for filter in addedFilters
+          fs.appendFile(regexFile, "\n" + filter)
+
+
+
+
 
     series.save (err, series) ->
       return res.send err if err
