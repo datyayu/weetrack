@@ -1,6 +1,7 @@
 fs        = require "fs"
 async     = require "async"
 _         = require "lodash"
+moment    = require "moment"
 Episode   = require "../api/episodes/episodes.model"
 Series    = require "../api/series/series.model"
 
@@ -16,6 +17,7 @@ exports.save = (episode, matchedPattern, next) ->
           parsedEpisode = parseRelease episode
           # Verify it was parsed without errors.
           if parsedEpisode is null
+            fs.appendFile errorFile, "\n" + episode.title
             callback("Error at parsing. Release not saved")
           else
             callback(null, parsedEpisode)
@@ -55,15 +57,17 @@ exports.save = (episode, matchedPattern, next) ->
               # If the episode doesn't exist, make a new one.
               else
                 episode = new Episode ({})
-                episode.createdAt = Date.now()
+                episode.createdAt = moment()
                 episode.series = parsedEpisode.series
                 episode.number = parsedEpisode.number
 
                 # Added the id to series.
                 series.episodes.push episode._id
+                series.updatedAt = moment()
+                series.content.episodes = series.episodes.length
               
               # Add new release to the episode
-              episode.updatedAt = Date.now()
+              episode.updatedAt = moment()
               episode.releases[parsedEpisode.quality].push 
                 url: parsedEpisode.url
                 group: parsedEpisode.group
@@ -72,8 +76,6 @@ exports.save = (episode, matchedPattern, next) ->
       ,
         # Save the episode.
         (result, callback) ->
-          console.log ("on task 3")
-
           result.episode.save (err, episode) ->
             return callback err if err
 
@@ -81,8 +83,6 @@ exports.save = (episode, matchedPattern, next) ->
       ,
         # Save the reference on the series.
         (series, callback) ->
-          console.log ("on task 4")
-
           series.save (err, series) ->
             return callback err if err
             callback null, "Saved successfully"

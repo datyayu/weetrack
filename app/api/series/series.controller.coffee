@@ -10,6 +10,7 @@
 # Dependencies
 fs     = require "fs"
 path   = require "path"
+moment = require "moment"
 _      = require "lodash"
 Series = require "./series.model"
 
@@ -36,7 +37,7 @@ exports.index = (req, res) ->
 
 # Create a new series.
 exports.create = (req, res) ->
-  newSeries = req.body
+  newSeries   = req.body
   titleRegexp = new RegExp "^"+newSeries.content.title+"$", "i"
 
   Series.find
@@ -47,7 +48,9 @@ exports.create = (req, res) ->
       return res.send "Series already exists" if result.length > 0
 
       series = new Series newSeries
-      series.createdAt = series.updatedAt = Date.now()
+      series.createdAt = moment().toString()
+      series.updatedAt = moment().toString()
+
       
       # Save patterns for torrent indexing.
       for pattern in series.regex
@@ -84,16 +87,16 @@ exports.update = (req, res) ->
     
     # Update info
     series = seriesList[0]
-    series.updatedAt = Date.now()
+    series.updatedAt = moment().toString()
 
     # Replace value in db if specified.
-    series.content = updatedSeries.content if updatedSeries.content?
+    series.content  = updatedSeries.content if updatedSeries.content?
     series.episodes = updatedSeries.episodes if updatedSeries.episodes?
     
     if updatedSeries.regex? and !_.isEqual(updatedSeries.regex, series.regex)
       addedFilters   = _.difference updatedSeries.regex, series.regex
       removedFilters = _.difference series.regex, updatedSeries.Regex
-      series.regex = updatedSeries.regex
+      series.regex   = updatedSeries.regex
       
       # Remove deleted filters
       if removedFilters.length > 0
@@ -114,10 +117,6 @@ exports.update = (req, res) ->
       if addedFilters.length > 0
         for filter in addedFilters
           fs.appendFile(regexFile, "\n" + filter)
-
-
-
-
 
     series.save (err, series) ->
       return res.send err if err

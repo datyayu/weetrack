@@ -46,11 +46,13 @@ checkRelease = (release,  callback) ->
       if release.title.match new RegExp(pattern, "i")
         console.log "\nNew release founded matching regex \"%s\" :", pattern
         console.log release.title
-        parser      .save(release, pattern, callback)
+        
+        parser.save(release, pattern, callback)
         calledCallback = yes
         break
 
-  # Call callback if passed and it wasn't called at pattern matching.
+  # Call callback if passed and it didn't found a match at 
+  # pattern matching.
   if callback? and !calledCallback
     callback()
 

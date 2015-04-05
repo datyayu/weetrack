@@ -11,6 +11,7 @@ seriesSchema = new Schema
     img: String
     min: String
     status: String
+    releaseDate: String
     episodes: Number
     season: String
     description: String
@@ -31,10 +32,9 @@ seriesSchema = new Schema
   
   # Date/Time info
   createdAt:
-    type: Date
-    default: Date.now
+    type: String
   updatedAt:
-    type: Date
+    type: String
 
 
 # Export model

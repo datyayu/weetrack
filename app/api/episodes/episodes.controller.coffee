@@ -7,6 +7,7 @@
  # DELETE  /api/releases/:id          ->  destroy
 ###
 
+moment  = require "moment"
 Episode = require "./episodes.model"
 Series  = require "./../series/series.model"
 
@@ -34,22 +35,24 @@ exports.create = (req, res) ->
   ,
     (err, result) ->
       return res.send err if err
-      return res.send "Release already exists" if result.length > 0
+      return res.send "Episode already exists" if result.length > 0
       
       episode = new Episode newEpisode
-      episode.createdAt = Date.now()
+      episode.createdAt = moment().toString()
+      episode.updatedAt = moment().toString()
 
-      # Save episode to Episode document.
-      episode.save (err, episode) ->
+      # Add episode to series.
+      Series.find {_id: episode.series}, (err, result) ->
         return res.send err if err
+        return res.send "Episode's series does not exists" if result.length is 0
 
-        # Add episode to series.
-        Series.find {_id: episode.series}, (err, result) ->
+        # Save episode to Episode document.
+        episode.save (err, episode) ->
           return res.send err if err
-          return res.send "Episode's series does not exists" if result.length is 0
 
           series = result[0]
           series.episodes.push episode
+          series.updatedAt = moment().toString()
           series.save (err, series) ->
             return res.send err if err
 
@@ -82,9 +85,10 @@ exports.update = (req, res) ->
     return res.send "Episode not found" if episodes.length is 0
     
     # Update info
-    episode = episodes[0]
-    episode.number = updatedEpisode.number
-    episode.releases = updatedEpisode.releases
+    episode           = episodes[0]
+    episode.number    = updatedEpisode.number
+    episode.releases  = updatedEpisode.releases
+    episode.updatedAt = moment().toString()
 
     episode.save (err, episode) ->
       return res.send err if err
