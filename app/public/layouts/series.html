@@ -91,6 +91,10 @@
                 frameborder="0" 
                 allowfullscreen></iframe>
       </li>
+    <p class="Series-content-text"
+      ng-if="series.info.content.pvs.length === 0">
+      No PVs added
+    </p>
     </ul>
   </div> <!-- /.Series-content-pvs -->
 <!-- Episodes -->
@@ -106,9 +110,9 @@
       <li class="Series-content-episodes-item"
           ng-repeat="episode in series.info.episodes">
         <p class="Series-content-episodes-title">
-          Episode {{ $index + 1}}
+          Episode {{ episode.number }}
           <span class="Series-content-episodes-time"
-                ng-bind="'(' + episode.time + 'ago)'">
+                ng-bind="series.getTimeDiff(episode.createdAt)">
           </span>
         </p> 
         <div class="Series-content-episodes-downloads">
@@ -138,6 +142,10 @@
           </p>
         </div> <!-- /.Series-content-episodes-downloads -->
       </li>
+      <p class="Series-content-text"
+        ng-if="series.info.episodes.length === 0">
+        No episodes added
+      </p>
     </ul>
   </div> <!-- /.Series-content-episodes -->
 

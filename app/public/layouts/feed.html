@@ -60,10 +60,12 @@
       <!-- Episode -->
         <p class="Feed-item-episode-title"
            ng-bind="'Episode ' + episode.number">
-          <span class="Feed-item-episode-time"
-                ng-bind="'(' + episode.time + ' ago)'">
-          </span>
         </p> 
+      <!-- Time since added -->
+        <span class="Feed-item-episode-time"
+              ng-bind="feed.getTimeDiff(episode.createdAt)">
+              asdads
+        </span>
       <!-- Button -->
         <button class="Feed-item-episode-button">
           add to watched

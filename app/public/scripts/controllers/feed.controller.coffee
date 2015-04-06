@@ -20,5 +20,9 @@
     .then (data) => 
         @followingEpisodes = data
 
+  # Scope functions.
+  # Get the time difference between added time and now
+  @getTimeDiff = (date) ->
+    moment(date).fromNow()
 
   return this

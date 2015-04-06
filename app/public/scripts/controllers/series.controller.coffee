@@ -15,7 +15,6 @@
     .getSeriesInfo(seriesId)
     .then (data) => 
       @info = data 
-
       # Update page title to the series title.
       $scope.$emit "changeTitle", data.content.title
 
@@ -24,5 +23,7 @@
   @track = (id) ->
     console.log "A kitty died because of you pressing that button"
 
+  @getTimeDiff = (date) ->
+    moment(date).fromNow()
 
   return this
