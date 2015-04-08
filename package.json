@@ -4,6 +4,8 @@
   "description": "An anime tracker & auto-scheduler",
   "main": "app/server.coffee",
   "scripts": {
+    "start": "node boot.js",
+    "postinstall": "gulp",
     "test": "make test"
   },
   "keywords": [

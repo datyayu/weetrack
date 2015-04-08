@@ -12,7 +12,8 @@ app = express()
 app.use bodyParser.json()
 
 # Initiate database
-mongoose.connect "mongodb://localhost/test"
+url = process.env.MONGOLAB_URI || "mongodb://localhost/test"
+mongoose.connect url
 
 
 # Routes.
