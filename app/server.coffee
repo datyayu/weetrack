@@ -24,13 +24,13 @@ watcher()
 
 
 # Expose or import app.
-if !module.parent
-  port = process.env.PORT or 9000
+#if !module.parent
+port = process.env.PORT or 9000
 
-  app.listen port, ->
-    console.log "\n\t\tWeeTrack"
-    console.log "Nyaa-based Anime ReleaseTracker by @datyayu"
-    console.log "\tListening on port ", port, "\n"
+app.listen port, ->
+  console.log "\n\t\tWeeTrack"
+  console.log "Nyaa-based Anime ReleaseTracker by @datyayu"
+  console.log "\tListening on port ", port, "\n"
     
-else
-  module.exports = app
+#else
+#  module.exports = app
