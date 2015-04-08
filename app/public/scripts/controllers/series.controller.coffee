@@ -23,6 +23,7 @@
   @track = (id) ->
     console.log "A kitty died because of you pressing that button"
 
+  # Get the time difference between added time and now
   @getTimeDiff = (date) ->
     moment(date).fromNow()
 

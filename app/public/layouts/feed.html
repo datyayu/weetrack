@@ -1,35 +1,3 @@
-<div class="Latest non-mobile">
-  <h3 class="Feed-title">
-    Lastest updated
-  </h3>
-   <ul class="Feed-list">
-    <li class="Feed-item Side-item"
-        ng-repeat="episode in feed.latestEpisodes">
-      <div class="Feed-item-left Side-item-left">
-      <!-- Cover Image -->
-        <figure class="Feed-item-figure">
-          <img class="Feed-item-image" 
-               ng-src="{{ episode.series.content.min }}">
-        </figure>
-      </div>
-    <!-- Item info -->
-      <div class="Feed-item-right">
-      <!-- Series Title -->    
-        <p class="Side-item-title"
-           ng-bind="episode.series.content.title">
-        </p>
-      <!-- Episode -->
-        <p class="Side-item-episode-title"
-           ng-bind="'Episode ' + episode.number">
-          <span class="Side-item-episode-time"
-                ng-bind="'(' + episode.time + ' ago)'">
-          </span>
-        </p> 
-      </div>
-    </li>
-  </ul>
-</div> <!-- /.Lates -->
-
 <div class="Feed">
   <h3 class="Feed-title non-mobile">
     Series you're following

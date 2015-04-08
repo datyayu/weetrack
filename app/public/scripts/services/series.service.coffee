@@ -13,4 +13,14 @@
 
     deferred.promise
 
+  @getAllSeries = () ->
+    deferred = $q.defer()
+
+    $http.get "/api/series/"
+      .success( (seriesList) -> deferred.resolve seriesList)
+      .error( (err) -> deferred.reject err)
+
+    deferred.promise
+
+
   return this
