@@ -1,9 +1,10 @@
 # Dependencies
-fs           = require "fs"
-_            = require "lodash"
-async        = require "async"
-Watcher      = require "rss-watcher"
-parser       = require "./episodeParser"
+fs      = require "fs"
+_       = require "lodash"
+async   = require "async"
+Watcher = require "rss-watcher"
+Series  = require "../api/series/series.model"
+parser  = require "./episodeParser"
 
 # Torrent feed
 feed = "http://www.nyaa.se/?page=rss"
@@ -11,7 +12,7 @@ feed = "http://www.nyaa.se/?page=rss"
 regexFile = "./app/regex.txt"
 
 setupFileAndStart = () ->
-  checkForFile(regexFile, start)
+  populateRegexFile(regexFile, start)
 
 start = () ->
   # Create a new watcher
@@ -30,7 +31,6 @@ start = () ->
   # Check initial feed.
   watcher.run (err, releases) ->
     console.log err if err
-    console.log __dirname
 
     
     # Check every release on initial feed
@@ -62,14 +62,16 @@ checkRelease = (release,  callback) ->
   if callback? and !calledCallback
     callback()
 
-checkForFile = (fileName, callback) ->
-  sampleMessage = "THIS_LINE_FIXES_PROBLEMS_DONT_YOU_DARE_TO_TOUCH_THIS"
-  fs.exists fileName, (exists) ->
-    if exists
+populateRegexFile = (file, callback) ->
+  sampleMessage = "THIS_LINE_FIXES_PROBLEMS"
+  fs.writeFile file, sampleMessage, (err, data) ->
+    Series.find {}, (err, seriesList) ->
+      return console.log err if err
+
+      for series in seriesList
+        fs.appendFileSync(regexFile, "\n" + series.regex)
+
       callback()
-    else 
-      fs.writeFile fileName, sampleMessage,{flag: 'wx'}, (err, data) ->
-            callback()
 
 
 module.exports = setupFileAndStart;
