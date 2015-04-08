@@ -20,6 +20,7 @@
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "async": "^0.9.0",
     "body-parser": "^1.12.2",
     "coffee-script": "^1.9.1",
     "express": "^4.12.3",
@@ -39,10 +40,8 @@
     "rss-watcher": "^1.3.0"
   },
   "devDependencies": {},
-  "repository" :
-  {
-    "type" : "git", 
-    "url" : "http://github.com/datyayu/weetrack.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/datyayu/weetrack.git"
   }
-
 }
