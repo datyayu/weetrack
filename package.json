@@ -2,7 +2,7 @@
   "name": "WeeTrack",
   "version": "0.1.0",
   "description": "An anime tracker & auto-scheduler",
-  "main": "app/server.js",
+  "main": "app/server.coffee",
   "scripts": {
     "test": "make test"
   },
