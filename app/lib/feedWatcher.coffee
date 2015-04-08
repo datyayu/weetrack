@@ -10,6 +10,8 @@ feed = "http://www.nyaa.se/?page=rss"
 # Regex to torrent filtering.
 regexFile = "./app/regex.txt"
 
+setupFileAndStart = () ->
+  checkForFile(regexFile, start)
 
 start = () ->
   # Create a new watcher
@@ -56,6 +58,14 @@ checkRelease = (release,  callback) ->
   if callback? and !calledCallback
     callback()
 
+checkForFile = (fileName, callback) ->
+  sampleMessage = "THIS_LINE_FIXES_PROBLEMS_DONT_YOU_DARE_TO_TOUCH_THIS"
+  fs.exists fileName, (exists) ->
+    if exists
+      callback()
+    else 
+      fs.writeFile fileName, sampleMessage,{flag: 'wx'}, (err, data) ->
+            callback()
 
 
-module.exports = start
+module.exports = setupFileAndStart;

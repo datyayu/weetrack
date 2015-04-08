@@ -5,19 +5,16 @@ moment    = require "moment"
 Episode   = require "../api/episodes/episodes.model"
 Series    = require "../api/series/series.model"
 
-# File to append failed-to-parse releases
-errorFile = "./app/errorFile.txt"
-
 
 # Main export function 
 exports.save = (episode, matchedPattern, next) ->
   async.waterfall [
         # Parse episode
         (callback) ->
+          errorFile = "./app/errorFile.txt"
           parsedEpisode = parseRelease episode
           # Verify it was parsed without errors.
           if parsedEpisode is null
-            fs.appendFile errorFile, "\n" + episode.title
             callback("Error at parsing. Release not saved")
           else
             callback(null, parsedEpisode)
