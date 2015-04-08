@@ -18,7 +18,7 @@ gulp.task('dev', [
 ]);
 
 // Production task
-gulp.task('default', [
+gulp.task('build', [
   'layouts',
   'styles', 
   'scripts'
