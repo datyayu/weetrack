@@ -55,6 +55,7 @@ exports.create = (req, res) ->
       # Save patterns for torrent indexing.
       for pattern in series.regex
         fs.appendFile(regexFile, "\n" + pattern)
+        console.log __dirname
 
       series.save (err, series) ->
         return res.send err if err

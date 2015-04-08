@@ -11,7 +11,6 @@ exports.save = (episode, matchedPattern, next) ->
   async.waterfall [
         # Parse episode
         (callback) ->
-          errorFile = "./app/errorFile.txt"
           parsedEpisode = parseRelease episode
           # Verify it was parsed without errors.
           if parsedEpisode is null

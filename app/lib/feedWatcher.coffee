@@ -30,11 +30,8 @@ start = () ->
   # Check initial feed.
   watcher.run (err, releases) ->
     console.log err if err
-    
-    console.log "Titles found on startup"    
-    for release in releases
-      if release.categories[0] is "English-translated Anime"
-        console.log release.title
+    console.log __dirname
+
     
     # Check every release on initial feed
     async.eachSeries releases, checkRelease, (err) ->
