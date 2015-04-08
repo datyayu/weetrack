@@ -19,7 +19,7 @@ start = () ->
   watcher = new Watcher feed
   watcher.set
     feed: feed
-    interval: 60
+    interval: 10
 
 
   # Update on new episode.
