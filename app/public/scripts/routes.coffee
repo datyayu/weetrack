@@ -41,17 +41,6 @@
       controllerAs: "series"
       templateUrl: "/assets/html/series.html" 
     
-    # Admin Panel.
-    .when "/admin",
-      templateUrl: "/assets/html/admin.html"
-
-    .when "/admin/edit-series",
-      controller: "SeriesListCtrl"
-      templateUrl: "/assets/html/admin-series-list.html"
-
-    .when "/admin/edit-series/:id",
-      controller: "EditSeriesCtrl"
-      templateUrl: "/assets/html/admin-series-edit.html"
 
 
     # Redirect to home otherwise.
