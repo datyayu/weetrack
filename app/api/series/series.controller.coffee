@@ -37,11 +37,10 @@ exports.index = (req, res) ->
 
 # Create a new series.
 exports.create = (req, res) ->
-  newSeries   = req.body
-  titleRegexp = new RegExp "^"+newSeries.content.title+"$", "i"
+  newSeries = req.body
 
   Series.find
-    "content.title": titleRegexp
+    "content.title": newSeries.content.title
   ,
     (err, result) ->
       return res.send err if err
@@ -51,11 +50,9 @@ exports.create = (req, res) ->
       series.createdAt = moment().toString()
       series.updatedAt = moment().toString()
 
-      
       # Save patterns for torrent indexing.
-      for pattern in series.regex
+      for pattern in newSeries.regex
         fs.appendFile(regexFile, "\n" + pattern)
-        console.log __dirname
 
       series.save (err, series) ->
         return res.send err if err
