@@ -28,7 +28,7 @@
     </p>
   <!-- Episodes -->
     <p class="Series-info-text" 
-       ng-bind="series.info.content.episodes + ' episodes'">
+       ng-bind="(series.info.content.episodes || 0 ) + ' episodes'">
     </p>
   <!-- Season -->
     <p class="Series-info-text"

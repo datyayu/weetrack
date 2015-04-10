@@ -53,7 +53,7 @@ exports.save = (episode, matchedPattern, next) ->
               # If the episode doesn't exist, make a new one.
               else
                 episode = new Episode ({})
-                episode.createdAt = moment()
+                episode.createdAt = moment().unix()
                 episode.series = parsedEpisode.series
                 episode.number = parsedEpisode.number
 
