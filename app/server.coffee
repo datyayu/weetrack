@@ -21,7 +21,7 @@ mongoose.connect url
 app.use routes
 
 # Inititate feed watcher
-watcher()
+watcher.start()
 
 
 # Expose or import app.

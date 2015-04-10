@@ -8,11 +8,12 @@
 ###
 
 # Dependencies
-fs     = require "fs"
-path   = require "path"
-moment = require "moment"
-_      = require "lodash"
-Series = require "./series.model"
+fs      = require "fs"
+path    = require "path"
+moment  = require "moment"
+_       = require "lodash"
+Series  = require "./series.model"
+watcher = require "../../lib/feedWatcher"
 
 regexFile = path.join(__dirname, "..", "..", "regex.txt")
 
@@ -56,6 +57,7 @@ exports.create = (req, res) ->
 
       series.save (err, series) ->
         return res.send err if err
+        watcher.checkOldReleases()
 
         res.send series 
 

@@ -8,19 +8,33 @@ parser  = require "./episodeParser"
 
 # Torrent feed
 feed = "http://www.nyaa.se/?page=rss"
+
 # Regex to torrent filtering.
 regexFile = "./app/regex.txt"
 
-setupFileAndStart = () ->
-  populateRegexFile(regexFile, start)
+# Create a new watcher
+watcher = new Watcher feed
+watcher.set
+  feed: feed
+  interval: 10
 
+
+
+# Setup regex file
+populateRegexFile = (file, callback) ->
+  sampleMessage = "THIS_LINE_FIXES_PROBLEMS"
+  fs.writeFile file, sampleMessage, (err, data) ->
+    Series.find {}, (err, seriesList) ->
+      return console.log err if err
+
+      for series in seriesList
+        fs.appendFileSync(regexFile, "\n" + series.regex)
+
+      callback()
+
+# Setup watchers.
 start = () ->
-  # Create a new watcher
-  watcher = new Watcher feed
-  watcher.set
-    feed: feed
-    interval: 10
-
+  checkOldReleases()
 
   # Update on new episode.
   watcher.on "new article", (release) ->
@@ -29,6 +43,8 @@ start = () ->
 
 
   # Check initial feed.
+
+checkOldReleases = () ->
   watcher.run (err, releases) ->
     console.log err if err
 
@@ -38,11 +54,9 @@ start = () ->
       console.log err if err
 
 
-
-
 # Check a release to find matching series. 
 # If a match is founded, try to store it to db.
-checkRelease = (release,  callback) ->
+ checkRelease = (release,  callback) ->
   calledCallback = no
   # Get filter patterns from pattern file.
   patterns = fs.readFileSync(regexFile, "utf8").split("\n")
@@ -62,16 +76,11 @@ checkRelease = (release,  callback) ->
   if callback? and !calledCallback
     callback()
 
-populateRegexFile = (file, callback) ->
-  sampleMessage = "THIS_LINE_FIXES_PROBLEMS"
-  fs.writeFile file, sampleMessage, (err, data) ->
-    Series.find {}, (err, seriesList) ->
-      return console.log err if err
-
-      for series in seriesList
-        fs.appendFileSync(regexFile, "\n" + series.regex)
-
-      callback()
 
 
-module.exports = setupFileAndStart;
+module.exports =
+  start: () ->
+    populateRegexFile(regexFile, start)
+  checkOldReleases: () ->
+    checkOldReleases()
+  
