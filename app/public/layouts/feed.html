@@ -9,9 +9,12 @@
       <div class="Feed-item-left">
       <!-- Cover Image -->
         <figure class="Feed-item-figure">
+          <a ng-href="/series/{{episode.series._id}}">
           <img class="Feed-item-image" 
                ng-src="{{ episode.series.content.min }}">
+          </a>
         </figure>
+
 <!--         <div class="Feed-item-actions">    
           <button class="Feed-item-button" id="drop">
             × drop
@@ -22,10 +25,11 @@
       </div>
     <!-- Item info -->
       <div class="Feed-item-right">
-      <!-- Series Title -->    
-        <p class="Feed-item-title"
+      <!-- Series Title -->  
+        <a class="Feed-item-title"
+           ng-href="/series/{{episode.series._id}}"
            ng-bind="episode.series.content.title">
-        </p>
+        </a>
       <!-- Episode -->
         <p class="Feed-item-episode-title"
            ng-bind="'Episode ' + episode.number">
@@ -33,7 +37,6 @@
       <!-- Time since added -->
         <span class="Feed-item-episode-time"
               ng-bind="feed.getTimeDiff(episode.createdAt)">
-              asdads
         </span>
       <!-- Button -->
         <!-- <button class="Feed-item-episode-button">
