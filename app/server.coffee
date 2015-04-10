@@ -1,5 +1,6 @@
+require "newrelic"
+
 # Dependencies.
-http       = require "http"
 express    = require "express"
 bodyParser = require "body-parser"
 mongoose   = require "mongoose"
@@ -15,11 +16,6 @@ app.use bodyParser.json()
 # Initiate database
 url = process.env.MONGOLAB_URI || "mongodb://localhost/test"
 mongoose.connect url
-
-# Prevent heroku dyno from sleeping, pinging every 5min.
-setInterval  () -> 
-  http.get "http://weetrack.herokuapp.com" 
-, 300000 
 
 # Routes.
 app.use routes
