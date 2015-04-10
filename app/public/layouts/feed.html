@@ -4,7 +4,7 @@
   </h3>
   <ul class="Feed-list">
     <li class="Feed-item"
-        ng-repeat="episode in feed.followingEpisodes">
+        ng-repeat="episode in feed.followingEpisodes | orderBy:'-createdAt'">
       <div class="Feed-item-left">
       <!-- Cover Image -->
         <figure class="Feed-item-figure">

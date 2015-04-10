@@ -29,7 +29,7 @@ port = process.env.PORT or 9000
 
 app.listen port, ->
   console.log "\n\t\tWeeTrack"
-  console.log "Nyaa-based Anime ReleaseTracker by @datyayu"
+  console.log "Nyaa-based Anime Release Tracker by @datyayu"
   console.log "\tListening on port ", port, "\n"
     
 #else
