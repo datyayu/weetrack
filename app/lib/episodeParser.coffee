@@ -63,7 +63,7 @@ exports.save = (episode, matchedPattern, next) ->
                 series.content.episodes = series.episodes.length
               
               # Add new release to the episode
-              episode.updatedAt = moment()
+              episode.updatedAt = moment().unix()
               episode.releases[parsedEpisode.quality].push 
                 url: parsedEpisode.url
                 group: parsedEpisode.group
