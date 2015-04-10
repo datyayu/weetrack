@@ -5,7 +5,7 @@
 @app.controller "SeasonCtrl", ($scope, $routeParams, SeasonService) ->
   # Scope variables
   # TODO: Replace 'updateAt' for a release date.
-  @sortOption = "updatedAt"
+  @sortOption = "content.title"
   @sortReverse = no
   @series = {}
   @banner = ""
