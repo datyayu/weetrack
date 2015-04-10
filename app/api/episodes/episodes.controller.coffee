@@ -38,8 +38,8 @@ exports.create = (req, res) ->
       return res.send "Episode already exists" if result.length > 0
       
       episode = new Episode newEpisode
-      episode.createdAt = moment().toString()
-      episode.updatedAt = moment().toString()
+      episode.createdAt = moment().unix()
+      episode.updatedAt = moment().unix()
 
       # Add episode to series.
       Series.find {_id: episode.series}, (err, result) ->
@@ -52,7 +52,7 @@ exports.create = (req, res) ->
 
           series = result[0]
           series.episodes.push episode
-          series.updatedAt = moment().toString()
+          series.updatedAt = moment().unix()
           series.save (err, series) ->
             return res.send err if err
 
@@ -86,9 +86,10 @@ exports.update = (req, res) ->
     
     # Update info
     episode           = episodes[0]
-    episode.number    = updatedEpisode.number
-    episode.releases  = updatedEpisode.releases
-    episode.updatedAt = moment().toString()
+    episode.number    = updatedEpisode.number if updatedEpisode.number?
+    episode.releases  = updatedEpisode.releases if updatedEpisode.releases?
+    episode.createdAt = updatedEpisode.createdAt if updatedEpisode.createdAt?
+    episode.updatedAt = moment().unix()
 
     episode.save (err, episode) ->
       return res.send err if err

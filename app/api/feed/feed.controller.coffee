@@ -22,7 +22,7 @@ exports.show  = (req, res) ->
   Episode
     .find {}
     .sort "-createdAt"
-    .skip  10 * page
+    .skip 10 * page
     .limit 10
     .select "-__v"
     .populate "series", "_id content.title content.min"

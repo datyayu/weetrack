@@ -25,8 +25,8 @@ episodeSchema = new Schema
       url: String
     ]
 
-  createdAt: String
-  updatedAt: String
+  createdAt: Number
+  updatedAt: Number
 
 
 

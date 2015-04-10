@@ -23,6 +23,8 @@
   # Scope functions.
   # Get the time difference between added time and now
   @getTimeDiff = (date) ->
-    moment(date).fromNow()
+    dateStr = moment(date, 'X').toString()
+    moment(dateStr).fromNow()
+
 
   return this
