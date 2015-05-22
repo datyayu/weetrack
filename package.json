@@ -1,6 +1,6 @@
 {
   "name": "WeeTrack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An anime tracker & auto-scheduler",
   "main": "app/server.coffee",
   "scripts": {
@@ -38,9 +38,7 @@
     "moment": "^2.9.0",
     "mongoose": "^4.0.1",
     "newrelic": "^1.18.2",
-    "nib": "^1.1.0",
-    "rss-feed-watcher": "git+ssh://git@github.com:datyayu/rss-feed-watcher.git#0.1.0",
-    "rss-watcher": "^1.3.0"
+    "nib": "^1.1.0"
   },
   "devDependencies": {},
   "repository": {
