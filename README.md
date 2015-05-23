@@ -1,2 +1,2 @@
-# WeeTrack
-An anime tracker with real-time updates on episodes releases.
+# Weetrack
+An anime tracker with really fast updates on episodes releases.
