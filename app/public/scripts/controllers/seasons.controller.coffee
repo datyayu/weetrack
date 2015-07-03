@@ -11,24 +11,24 @@
   @banner = ""
 
   # Local variables.
-  # I really think "fall-2015" shouldn't be hardcoded but meh.
-  season = $routeParams.season || "spring-2015"
+  # I really think "summer-2015" shouldn't be hardcoded but meh.
+  season = $routeParams.season || "summer-2015"
 
 
   # Update page title.
-  $scope.$emit "changeTitle", "Spring 2015 Anime Lineup"
+  $scope.$emit "changeTitle", "Summer 2015 Anime Lineup"
 
   # Get seasonal info from db
   SeasonService
     .getSeasonInfo(season)
-    .then (data) => 
+    .then (data) =>
       @series = data
 
   # Scope functions.
   # TODO: track series.
   @track = (id) ->
     console.log "A kitty died because of you pressing that button"
-  
+
   # Switch between sorting options and reverse/non-reverse(?).
   @toggleSortOption = (option) ->
     if @sortOption isnt option
@@ -38,4 +38,3 @@
       @sortReverse = !@sortReverse
 
   return this
-  
