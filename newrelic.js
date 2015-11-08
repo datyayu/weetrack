@@ -4,7 +4,7 @@
  * See lib/config.defaults.js in the agent distribution for a more complete
  * description of configuration variables and their potential values.
  */
-exports.config = {
+export default {
   /**
    * Array of application names.
    */
@@ -19,6 +19,6 @@ exports.config = {
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level: 'info'
-  }
-}
+    level: 'info',
+  },
+};
