@@ -16,3 +16,7 @@ app/assets/*
 app/regex.txt
 app/errorFile.txt
 
+# System stuff
+.DS_Store
+._DS_Store
+Thumbs.db

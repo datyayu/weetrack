@@ -1,1 +1,1 @@
-web: coffee app/server.coffee
+web: node run_server.js
