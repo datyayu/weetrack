@@ -1,1 +1,1 @@
-web: node run_server.js
+web: babel-node run_server.js
