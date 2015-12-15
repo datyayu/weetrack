@@ -1,3 +1,9 @@
-document.body.innerText = `Hello world ${'Hey'}`;
+import React from 'react';
+import { render } from 'react-dom';
+import App from './containers/app';
 
-console.log('ok');
+
+render(
+  <App />,
+  document.getElementById('app')
+);

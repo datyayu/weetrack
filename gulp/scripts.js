@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const gutil = require('gulp-util');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
@@ -12,7 +11,9 @@ const watchify = require('watchify');
 const babel = require('babelify');
 
 // Paths
-const config = require('./config').scripts;
+const configFile = require('./config');
+const config = configFile.scripts;
+const onError = configFile.onError;
 
 
 /* Bundle functions */
@@ -22,7 +23,7 @@ function developmentBundle(bundler) {
   console.log('-> bundling...');
 
   return bundler.bundle()
-    .on('error', gutil.log)
+    .on('error', onError)
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
@@ -36,7 +37,7 @@ function productionBundle(bundler) {
   console.log('-> bundling...');
 
   return bundler.bundle()
-    .on('error', gutil.log)
+    .on('error', onError)
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify())

@@ -1,4 +1,5 @@
 const path = require('path');
+const gutil = require('gulp-util');
 
 const SCRIPTS_DIR = path.resolve(__dirname, '..', 'client', 'scripts');
 const STYLES_DIR = path.resolve(__dirname, '..', 'client', 'styles');
@@ -15,9 +16,16 @@ const STYLES_ENTRY = path.resolve(STYLES_DIR, 'entry.styl');
 const STYLES_DEST = path.resolve(ASSETS_DIR, 'css');
 const STYLES_SRC = path.resolve(STYLES_DIR, '**', '*.styl');
 
+function onError(error) {
+  gutil.log(gutil.colors.red(error));
+  this.emit('end');
+}
+
 
 module.exports = {
+  // Static files
   server: ASSETS_DIR,
+
   // ES6/7 -> ES5
   scripts: {
     entry: SCRIPTS_ENTRY,
@@ -31,4 +39,7 @@ module.exports = {
     src: STYLES_SRC,
     dest: STYLES_DEST,
   },
+
+  // Error handler
+  onError: onError,
 };
