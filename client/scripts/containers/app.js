@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Header from '../components/Header/Header';
 
+const mockState = {
+  application: {
+    currentUrl: '/feed',
+  },
+};
 
-class App extends Component {
-  render() {
-    return <p> Hello world! </p>;
-  }
-}
+const App = () =>
+  <div>
+    <Header {...mockState.application} />
+  </div>
+;
 
 
 export default App;

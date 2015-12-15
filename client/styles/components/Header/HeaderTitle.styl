@@ -1,0 +1,36 @@
+.HeaderTitle
+  margin 0
+  font-size 1.5em
+  padding .3em 0
+  border-bottom 1px solid WHITE
+  text-align center
+  font-weight lighter
+
+  &--wee
+    color WHITE_TEXT
+  &--site
+    color PRIMARY_COLOR
+    font-family consolas
+
+
+@media screen and (min-width: TABLET_QUERY)
+  .HeaderTitle
+    font-size 3em
+
+    &--wee
+      color DARK_TEXT
+
+
+@media screen and (min-width: DESKTOP_QUERY)
+  .HeaderTitle
+    &--wee::after
+      content 'ee'
+    &--site::after
+      content 'rack'
+
+@media screen and (min-width: DESKTOP_HD_QUERY)
+  .HeaderTitle
+    &--wee::after
+      content 'ee'
+    &--site::after
+      content 'rack'

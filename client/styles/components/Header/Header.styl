@@ -1,0 +1,23 @@
+.Header
+  background SECONDARY_COLOR
+  box-shadow 0px 2px 5px 0px rgba(black, .75)
+  height 100vh
+  max-width 65vw
+
+@media screen and (min-width: TABLET_QUERY)
+  .Header
+    // Reset
+    background none
+    box-shadow none
+    max-width none
+    height auto
+
+    display flex
+    justify-content space-around
+    padding 0 5%
+    width 100%
+    border-bottom 1px solid BLACK
+
+@media screen and (min-width: TABLET_QUERY)
+  .Header
+    padding .5em 0
