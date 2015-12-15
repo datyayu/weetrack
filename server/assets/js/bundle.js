@@ -28,6 +28,10 @@ var Header = function Header(props) {
   );
 };
 
+Header.propTypes = {
+  currentUrl: _react.PropTypes.string.isRequired
+};
+
 exports.default = Header;
 
 },{"./HeaderTitle":2,"./Navigation":3,"react":164}],2:[function(require,module,exports){
@@ -94,6 +98,10 @@ var Navigation = function Navigation(_ref) {
   );
 };
 
+Navigation.propTypes = {
+  currentUrl: _react.PropTypes.string.isRequired
+};
+
 exports.default = Navigation;
 
 },{"./NavigationLink":4,"react":164}],4:[function(require,module,exports){
@@ -112,7 +120,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var NavigationLink = function NavigationLink(_ref) {
   var text = _ref.text;
   var url = _ref.url;
-  var isActive = _ref.isActive;
+  var _ref$isActive = _ref.isActive;
+  var isActive = _ref$isActive === undefined ? false : _ref$isActive;
   return _react2.default.createElement(
     'li',
     { className: 'NavigationLink' },
@@ -123,6 +132,12 @@ var NavigationLink = function NavigationLink(_ref) {
       text
     )
   );
+};
+
+NavigationLink.propTypes = {
+  text: _react.PropTypes.string.isRequired,
+  url: _react.PropTypes.string.isRequired,
+  isActive: _react.PropTypes.bool
 };
 
 exports.default = NavigationLink;

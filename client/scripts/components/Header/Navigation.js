@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import NavigationLink from './NavigationLink';
 
 const items = [
@@ -17,6 +17,10 @@ const Navigation = ({ currentUrl }) =>
     }
   </ul>
 ;
+
+Navigation.propTypes = {
+  currentUrl: PropTypes.string.isRequired,
+};
 
 
 export default Navigation;

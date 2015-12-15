@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 
-const NavigationLink = ({ text, url, isActive }) =>
+const NavigationLink = ({ text, url, isActive = false }) =>
   <li className="NavigationLink">
     <a className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}
        href={`#${url}`}>
@@ -9,6 +9,12 @@ const NavigationLink = ({ text, url, isActive }) =>
     </a>
   </li>
 ;
+
+NavigationLink.propTypes = {
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  isActive: PropTypes.bool,
+};
 
 
 export default NavigationLink;
