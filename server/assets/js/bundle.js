@@ -13,7 +13,7 @@ var _HeaderTitle = require('./HeaderTitle');
 
 var _HeaderTitle2 = _interopRequireDefault(_HeaderTitle);
 
-var _Navigation = require('./Navigation');
+var _Navigation = require('../Navigation/Navigation');
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
@@ -34,7 +34,7 @@ Header.propTypes = {
 
 exports.default = Header;
 
-},{"./HeaderTitle":2,"./Navigation":3,"react":164}],2:[function(require,module,exports){
+},{"../Navigation/Navigation":3,"./HeaderTitle":2,"react":164}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
