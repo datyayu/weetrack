@@ -1,25 +1,24 @@
-var gulp = require('gulp');
-var fs   = require('fs');
+const gulp = require('gulp');
+const fs = require('fs');
+const path = require('path');
+
+const GULP_PATH = path.resolve(__dirname, 'gulp');
 
 
 // Export task from the gulp folder.
-fs.readdirSync(__dirname + '/gulp/').forEach(function (task) {
-  require('./gulp/' + task)
-});
-
+fs.readdirSync(GULP_PATH)
+  .forEach(task => require('./gulp/' + task));
 
 
 // Development task
 gulp.task('dev', [
-  'watch::layouts', 
-  'watch::styles', 
-  'watch::scripts', 
-  'server'
+  'watch::styles',
+  'watch::scripts',
+  'server',
 ]);
 
 // Production task
 gulp.task('build', [
-  'layouts',
-  'styles', 
-  'scripts'
+  'styles',
+  'scripts',
 ]);

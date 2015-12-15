@@ -1,23 +1,34 @@
-var config = {
-  // HTML
-  layouts: {
-    src: './app/public/layouts/**/*.html',
-    dest: './app/assets/html/'
-  },
+const path = require('path');
 
-  // Stylus processing
-  styles: {
-    src: './app/public/stylus/main.styl',
-    dir: './app/public/stylus/**/*.styl',
-    dest: './app/assets/css/'
-  },
+const SCRIPTS_DIR = path.resolve(__dirname, '..', 'client', 'scripts');
+const STYLES_DIR = path.resolve(__dirname, '..', 'client', 'styles');
+const ASSETS_DIR = path.resolve(__dirname, '..', 'server', 'assets');
 
-  // Coffee -> js
+const SCRIPTS_ENTRY = path.resolve(SCRIPTS_DIR, 'entry.js');
+const SCRIPTS_DEST = path.resolve(ASSETS_DIR, 'js');
+const SCRIPTS_SRC = [
+  path.resolve(SCRIPTS_DIR, '**', '*.js'),
+  path.resolve(SCRIPTS_DIR, '**', '*.jsx'),
+];
+
+const STYLES_ENTRY = path.resolve(STYLES_DIR, 'entry.styl');
+const STYLES_DEST = path.resolve(ASSETS_DIR, 'css');
+const STYLES_SRC = path.resolve(STYLES_DIR, '**', '*.styl');
+
+
+module.exports = {
+  server: ASSETS_DIR,
+  // ES6/7 -> ES5
   scripts: {
-    src: './app/public/scripts/**/*.coffee',
-    dest: './app/assets/js/'
-  }
+    entry: SCRIPTS_ENTRY,
+    src: SCRIPTS_SRC,
+    dest: SCRIPTS_DEST,
+  },
+
+  // Stylus -> CSS
+  styles: {
+    entry: STYLES_ENTRY,
+    src: STYLES_SRC,
+    dest: STYLES_DEST,
+  },
 };
-
-
-module.exports = config;

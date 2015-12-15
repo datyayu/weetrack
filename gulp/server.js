@@ -1,12 +1,12 @@
-var gulp  = require('gulp');
-var connect = require('gulp-connect')
+const gulp = require('gulp');
+const connect = require('gulp-connect');
+
+const BASE_DIR = require('./config').server;
 
 
-// Start a node server with livereload. 
-gulp.task('server', function () {
-  connect.server({
-    root:'./..',
-    port: 9000,
-    livereload: true
-  })
-})
+// Start a node static server with livereload.
+gulp.task('server', () => connect.server({
+  root: BASE_DIR,
+  port: process.env.PORT || 3000,
+  livereload: true,
+}));
