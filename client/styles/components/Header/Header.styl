@@ -2,11 +2,21 @@
   background SECONDARY_COLOR
   box-shadow 0px 2px 5px 0px rgba(black, .75)
   height 100vh
-  max-width 65vw
+
+  // Off-canvas positioning.
+  position absolute
+  top 0
+  left -65vw
+  width 65vw
+
+  // Display menu.
+  &.is-showing
+    left 0
 
 @media screen and (min-width: TABLET_QUERY)
   .Header
     // Reset
+    position static
     background none
     box-shadow none
     max-width none
@@ -17,6 +27,7 @@
     padding 0 5%
     width 100%
     border-bottom 1px solid BLACK
+
 
 @media screen and (min-width: TABLET_QUERY)
   .Header
