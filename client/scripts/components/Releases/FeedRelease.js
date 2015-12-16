@@ -6,7 +6,7 @@ import ReleaseLinks from './ReleaseLinks';
 const FeedRelease = ({ number, createdAt, series, releases }) =>
   <li className="FeedRelease">
     <div className="FeedRelease__leftSide">
-      <img src={series.content.min} alt={series.content.title} />
+      <img className="FeedRelease__image" src={series.content.min} alt={series.content.title} />
     </div>
 
     <div className="FeedRelease__rightSide">
@@ -16,9 +16,18 @@ const FeedRelease = ({ number, createdAt, series, releases }) =>
                    createdAt={createdAt} />
 
       <div className="FeedRelease_links">
-        <ReleaseLinks quality="1080p" releases={releases.fullhd} />
-        <ReleaseLinks quality="720p" releases={releases.hd} />
-        <ReleaseLinks quality="480p" releases={releases.lq} />
+        {
+          releases.fullhd.length > 0 ?
+            <ReleaseLinks quality="1080p" releases={releases.fullhd} /> : null
+        }
+        {
+          releases.hd.length > 0 ?
+            <ReleaseLinks quality="720p" releases={releases.hd} /> : null
+        }
+        {
+          releases.lq.length > 0 ?
+            <ReleaseLinks quality="480p" releases={releases.lq} /> : null
+        }
       </div>
     </div>
   </li>

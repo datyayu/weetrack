@@ -4,7 +4,7 @@ import FeedReleases from '../Releases/FeedReleases';
 
 const Feed = (props) =>
   <div className="Feed">
-    <ContentTitle text="Daily Feed" />
+    <ContentTitle text="Latest Releases" />
     <FeedReleases {...props} />
   </div>
 ;

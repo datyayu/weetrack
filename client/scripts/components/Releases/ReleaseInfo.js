@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import moment from 'moment';
+import {unix} from 'moment';
 
 
 const ReleaseInfo = ({ episode, seriesTitle, seriesId, createdAt, showTitle = true }) =>
@@ -14,7 +14,7 @@ const ReleaseInfo = ({ episode, seriesTitle, seriesId, createdAt, showTitle = tr
         : null
     }
     <span className="ReleaseInfo__episode"> Episode {episode} </span>
-    <span className="ReleaseInfo__time"> ({moment(createdAt).fromNow()})</span>
+    <span className="ReleaseInfo__time"> ({unix(createdAt).fromNow()})</span>
   </div>
 ;
 

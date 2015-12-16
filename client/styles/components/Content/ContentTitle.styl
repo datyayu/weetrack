@@ -1,20 +1,31 @@
 .ContentTitle
   background PRIMARY_COLOR
   text-align center
+  box-shadow 0px 3px 6px 0px black
+  text-shadow 0px 2px 4px black
+  position fixed
+  top 0
+  left 0
+  width 100vw
 
 .ContentTitle__text
   color white
+  font-weight normal
   font-size 1.8em
   padding .3em 1em
   margin 0
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+.ContentTitle + ul, .ContentTitle + div
+  margin-top 4em
 
 
 @media screen and (min-width TABLET_QUERY)
   .ContentTitle
     background none
+
   .ContentTitle__text
     color DARK_TEXT
     padding .5em 0

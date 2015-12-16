@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 
 const ReleaseLink = ({ group, url }) =>
   <li className="ReleaseLink">
-    <a className="ReleaseLink__link" href={url}> {group} </a>
+    <a className="ReleaseLink__link" href={url}> [{group}] </a>
   </li>
 ;
 

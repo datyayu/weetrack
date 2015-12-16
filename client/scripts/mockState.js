@@ -7,7 +7,7 @@ export const releases = [
     series: {
       _id: '5597feeb6b9f76030010417d',
       content: {
-        title: 'Dragon Ball Super',
+        title: 'Wakaba*Girl',
         min: 'http://cdn.myanimelist.net/images/anime/7/74606.jpg',
       },
     },
@@ -21,36 +21,36 @@ export const releases = [
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'HorribleSubs',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce41',
         },
       ],
       'hd': [
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'DeadFish',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce42',
         },
       ],
       'fullhd': [
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'DeadFish',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce43',
         },
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'HorribleSubs',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce44',
         },
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'BakedFish',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce45',
         },
         {
           'url': 'http://www.nyaa.se/?page=download&tid=766193',
           'group': 'Asobi',
-          '_id': '567018d9cf8c871b0095ce40',
+          '_id': '567018d9cf8c871b0095ce46',
         },
       ],
     },

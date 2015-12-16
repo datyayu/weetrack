@@ -6,7 +6,7 @@ const ReleaseLinks = ({ quality, releases = [] }) =>
   <div className="ReleaseLinks">
     <h4 className="ReleaseLinks__title"> {quality} </h4>
     <ul className="ReleaseLinks__links">
-      {releases.map(release => <ReleaseLink {...release} />)}
+      {releases.map(release => <ReleaseLink key={release._id} {...release} />)}
     </ul>
   </div>
 ;
@@ -17,6 +17,7 @@ ReleaseLinks.propTypes = {
 
   releases: PropTypes.arrayOf(
     PropTypes.shape({
+      _id: PropTypes.string.isRequired,
       group: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
     })
