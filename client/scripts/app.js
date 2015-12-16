@@ -6,7 +6,7 @@ import {releases} from './mockState';
 const mockState = {
   application: {
     currentUrl: '/feed',
-    mobileMenuShowing: false,
+    mobileMenuShowing: true,
   },
 
   feed: {
@@ -18,8 +18,9 @@ const mockState = {
 const App = () =>
   <div>
     <Header {...mockState.application} />
-
-    <Feed {...mockState} />
+    <div className="Content">
+      <Feed {...mockState} />
+    </div>
   </div>
 ;
 

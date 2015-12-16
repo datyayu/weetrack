@@ -1,12 +1,15 @@
 .Header
   background SECONDARY_COLOR
   box-shadow 2px 0px 4px 0px black
-  height 100vh
+  // This keeps the blocker on full screen when
+  // scrolling on mobile
+  height 120vh
+  overflow hidden
 
   // Off-canvas positioning.
   position fixed
   top 0
-  left -65vw
+  left -70vw // Should be 65, but this way it keeps the shadow hide as well.
   width 65vw
   z-index 2
 
@@ -18,11 +21,11 @@
   .Header
     // Reset
     position static
-    background none
     box-shadow none
     max-width none
     height auto
 
+    background WHITE
     display flex
     justify-content space-around
     padding 0 5%

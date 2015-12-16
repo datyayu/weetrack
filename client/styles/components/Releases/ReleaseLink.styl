@@ -2,8 +2,13 @@
   margin .2em 0
 
 .ReleaseLink__link
-  color TERTIARY_COLOR
+  color SECONDARY_COLOR
   text-decoration none
 
   &:hover, &:active
-    color SECONDARY_COLOR
+    color PRIMARY_COLOR
+
+@media screen and (min-width TABLET_QUERY)
+  .ReleaseLink
+    margin-left .5em
+    text-overflow ellipsis

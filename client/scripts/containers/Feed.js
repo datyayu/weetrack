@@ -5,7 +5,7 @@ import ContentBlocker from '../components/Content/ContentBlocker';
 
 
 const Feed = ({ feed, application }) =>
-  <div className="Feed">
+  <div className="Content">
     <ContentTitle text="Latest Releases" isMenuShowing={application.mobileMenuShowing} />
     <FeedReleases {...feed} />
     <ContentBlocker isActive={application.mobileMenuShowing} />

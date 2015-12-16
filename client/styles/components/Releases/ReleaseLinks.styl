@@ -4,16 +4,25 @@
   margin .5em 0
 
 .ReleaseLinks__title
-  font-weight normal
-  color WHITE_TEXT
   margin 0
-  text-align right
-  flex 1
+  font-weight normal
+  color GRAY_TEXT
+  text-align left
+  max-width 2em
 
 .ReleaseLinks__links
   display flex
-  flex 3
   flex-direction column
   list-style none
   margin 0
   padding-left 1em
+
+@media screen and (min-width TABLET_QUERY)
+  .ReleaseLinks
+    align-items center
+    justify-content flex-start
+
+  .ReleaseLinks__links
+    flex-direction row
+    justify-content flex-start
+    overflow hidden

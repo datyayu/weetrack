@@ -12,6 +12,11 @@
     color PRIMARY_COLOR
     font-family consolas
 
+  &--wee::after
+    content 'ee'
+  &--site::after
+    content 'rack'
+
 
 @media screen and (min-width: TABLET_QUERY)
   .HeaderTitle
@@ -19,6 +24,11 @@
 
     &--wee
       color DARK_TEXT
+
+    &--wee::after
+      content ''
+    &--site::after
+      content ''
 
 
 @media screen and (min-width: DESKTOP_QUERY)

@@ -1,14 +1,27 @@
 *
   box-sizing border-box
 
-html, body
+html
+  min-height 100%
+
+body
   padding 0
   margin 0
   font-family helvetica, arial, sans-serif
+  height 100%
+
+#app
+  width 100%
+  height 100%
+  background BACKGROUND_COLOR
+
+.Content
+  padding-top .5em
 
 
 @media screen and (min-width: DESKTOP_QUERY)
-  #app
-    width 90%
-    max-width 1024px
+  .Content
+    width 100%
+    height 100%
     margin 0 auto
+    max-width 1024px

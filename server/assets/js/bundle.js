@@ -24,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mockState = {
   application: {
     currentUrl: '/feed',
-    mobileMenuShowing: false
+    mobileMenuShowing: true
   },
 
   feed: {
@@ -37,7 +37,11 @@ var App = function App() {
     'div',
     null,
     _react2.default.createElement(_Header2.default, mockState.application),
-    _react2.default.createElement(_Feed2.default, mockState)
+    _react2.default.createElement(
+      'div',
+      { className: 'Content' },
+      _react2.default.createElement(_Feed2.default, mockState)
+    )
   );
 };
 
@@ -578,7 +582,7 @@ var Feed = function Feed(_ref) {
   var application = _ref.application;
   return _react2.default.createElement(
     'div',
-    { className: 'Feed' },
+    { className: 'Content' },
     _react2.default.createElement(_ContentTitle2.default, { text: 'Latest Releases', isMenuShowing: application.mobileMenuShowing }),
     _react2.default.createElement(_FeedReleases2.default, feed),
     _react2.default.createElement(_ContentBlocker2.default, { isActive: application.mobileMenuShowing })
@@ -687,12 +691,12 @@ var releases = exports.releases = [{
     fullhd: []
   }
 }, {
-  _id: '5666ba6a6a22671b00dfee5a',
+  _id: '5666ba6a6a226713434b00dfee5a',
   updatedAt: 1449572970,
   createdAt: 1449572970,
   number: 10,
   series: {
-    _id: '5610d297a34804030099c97a',
+    _id: '5610d297a34804030023499c97a',
     content: {
       title: 'Owarimonogatari',
       min: 'https://raji-images.s3.amazonaws.com/1443943306848-76436.jpg'
@@ -703,7 +707,70 @@ var releases = exports.releases = [{
     hd: [{
       url: 'http://www.nyaa.se/?page=download&tid=764150',
       group: 'DeadFish',
-      _id: '5666ba6a6a22671b00dfee5b'
+      _id: '5666ba6a6a22671b00d23fee5b'
+    }],
+    fullhd: []
+  }
+}, {
+  _id: '5666ba6a6a22671b2202340dfee5a',
+  updatedAt: 1449572970,
+  createdAt: 1449572970,
+  number: 10,
+  series: {
+    _id: '5610d297a2234804030099c97a',
+    content: {
+      title: 'Owarimonogatari',
+      min: 'https://raji-images.s3.amazonaws.com/1443943306848-76436.jpg'
+    }
+  },
+  releases: {
+    lq: [],
+    hd: [{
+      url: 'http://www.nyaa.se/?page=download&tid=764150',
+      group: 'DeadFish',
+      _id: '5666ba6a622a2267q231b00dfee5b'
+    }],
+    fullhd: []
+  }
+}, {
+  _id: '5666ba6a6a2262271b02340dfee5a',
+  updatedAt: 1449572970,
+  createdAt: 1449572970,
+  number: 10,
+  series: {
+    _id: '5610d297a3482204030099c97a',
+    content: {
+      title: 'Owarimonogatari',
+      min: 'https://raji-images.s3.amazonaws.com/1443943306848-76436.jpg'
+    }
+  },
+  releases: {
+    lq: [],
+    hd: [{
+      url: 'http://www.nyaa.se/?page=download&tid=764150',
+      group: 'DeadFish',
+      _id: '5666ba6a6222a2267q231b00dfee5b'
+    }],
+    fullhd: []
+  }
+}, {
+  _id: '5666ba6a6a22671b0233340dfee5a',
+  updatedAt: 1449572970,
+  createdAt: 1449572970,
+  number: 10,
+  series: {
+    _id: '5610d297a34804030033399c97a',
+    content: {
+      title: 'Owarimonogatari',
+      min: 'https://raji-images.s3.amazonaws.com/1443943306848-76436.jpg'
+    }
+  },
+  releases: {
+    lq: [],
+    hd: [{
+      url: 'http://www.nyaa.se/?page=download&tid=764150',
+      group: 'DeadFish',
+      _id: '5666ba6a6a222267q231b00dfee5b'
     }],
     fullhd: []
   }
