@@ -1,16 +1,17 @@
 .Header
   background SECONDARY_COLOR
-  box-shadow 0px 2px 5px 0px rgba(black, .75)
+  box-shadow 2px 0px 4px 0px black
   height 100vh
 
   // Off-canvas positioning.
-  position absolute
+  position fixed
   top 0
   left -65vw
   width 65vw
+  z-index 2
 
   // Display menu.
-  &.is-showing
+  &.is-active
     left 0
 
 @media screen and (min-width: TABLET_QUERY)

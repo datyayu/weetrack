@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from '../components/Header/Header';
-import Feed from '../components/Feed/Feed';
-import {releases} from '../mockState';
+import Feed from './containers/Feed';
+import Header from './components/Header/Header';
+import {releases} from './mockState';
 
 const mockState = {
   application: {
     currentUrl: '/feed',
+    mobileMenuShowing: false,
   },
 
   feed: {
@@ -13,11 +14,12 @@ const mockState = {
   },
 };
 
+
 const App = () =>
   <div>
     <Header {...mockState.application} />
 
-    <Feed {...mockState.feed} />
+    <Feed {...mockState} />
   </div>
 ;
 
