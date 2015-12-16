@@ -1,0 +1,27 @@
+.SeriesCard
+  background SECONDARY_COLOR
+  width 208px
+  height 335px
+  position relative
+  overflow hidden
+  perspective 800px
+  &:hover > .SeriesCard__card,
+  .SeriesCard__card.is-flipped
+    transform: rotateY(180deg)
+
+
+.SeriesCard__card
+  width 100%
+  height 100%
+  position absolute
+  transform-style preserve-3d
+  transition transform .2s
+
+
+.SeriesCard__side
+  margin 0
+  display block
+  position absolute
+  width 100%
+  height 100%
+  backface-visibility hidden

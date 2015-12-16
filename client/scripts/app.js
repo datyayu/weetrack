@@ -1,26 +1,32 @@
 import React from 'react';
-import Feed from './containers/Feed';
+// import Feed from './containers/Feed';
+import Season from './containers/Season';
 import Header from './components/Header/Header';
-import {releases} from './mockState';
+import ContentBlocker from './components/Content/ContentBlocker';
+import {releases, series} from './mockState';
 
 const mockState = {
   application: {
-    currentUrl: '/feed',
-    mobileMenuShowing: true,
+    currentUrl: '/currentSeason',
+    mobileMenuShowing: false,
   },
 
   feed: {
     releases: releases,
   },
+
+  season: {
+    name: 'Winter 2015',
+    series: series,
+  },
 };
 
 
 const App = () =>
-  <div>
+  <div className="App">
     <Header {...mockState.application} />
-    <div className="Content">
-      <Feed {...mockState} />
-    </div>
+    <Season {...mockState} />
+    <ContentBlocker isActive={mockState.application.mobileMenuShowing} />
   </div>
 ;
 

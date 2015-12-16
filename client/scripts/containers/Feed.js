@@ -1,14 +1,12 @@
 import React, { PropTypes } from 'react';
 import ContentTitle from '../components/Content/ContentTitle';
 import FeedReleases from '../components/Releases/FeedReleases';
-import ContentBlocker from '../components/Content/ContentBlocker';
 
 
 const Feed = ({ feed, application }) =>
   <div className="Content">
     <ContentTitle text="Latest Releases" isMenuShowing={application.mobileMenuShowing} />
     <FeedReleases {...feed} />
-    <ContentBlocker isActive={application.mobileMenuShowing} />
   </div>
 ;
 
