@@ -215,79 +215,6 @@ export const series = [
 }
 },
 {
-"_id": "5595e0c150adab030036b6f1",
-"__v": 12,
-"episodes": [
-"5595e0c150adab030036b6f2",
-"559e6fb9cd1e080300825382",
-"55a7fa146cbc010300f8247a",
-"55b134b822bf4b0300b073d9",
-"55ba6edd14eb2603001f358a",
-"55c3a9ad82b01e030087e356",
-"55cce3db604411030092dc4e",
-"55d622ccd76f8b0300a3d70c",
-"55df58e0fb358703002dacf4",
-"55e89318a1afda0300924fbd",
-"55f1cdf4328a6a0300b9d508",
-"55fb0822dfe9970300429f15"
-],
-"regex": [
-"Okusama (g|w)a seito(u?\\s?)kaicho(u?)(!?)"
-],
-"content": {
-"title": "Okusama ga Seitokaichou!",
-"img": "http://cdn.myanimelist.net/images/anime/5/74165.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/5/74165.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "The story begins with Izumi Hayato running to be student body president. But when a beautiful girl swings in promising the liberalization of love while flinging condoms into the audience, he ends up losing to her and becoming the vice president. At the student council meeting, the newly-elected president invites herself over to Izumi's house, where she promptly announces she is to become Izumi's wife thanks to an agreement—facilitated by alcohol—made between their parents when they were only 3.",
-"links": {
-"official": "http://www.dreamcreation.co.jp/okusama/",
-"twitter": "https://twitter.com/anime_okusama",
-"mal": "http://myanimelist.net/anime/28819/Okusama_ga_Seitokaichou!"
-},
-"pvs": []
-}
-},
-{
-"_id": "5596bc854efdbe0300bfd819",
-"__v": 13,
-"episodes": [
-"5596bc854efdbe0300bfd81a",
-"559fe7119550bb03005dea04",
-"55a92130224ce9030083f16b",
-"55b25b5c320e500300718615",
-"55bb962f14eb2603001f359d",
-"55c4d095fc08cc030096d2b4",
-"55ce0b465fc62b0300abe55f",
-"55d74591d76f8b0300a3d71e",
-"55e080486d06890300a34dcd",
-"55e9baf531693a030057474c",
-"55f2f56f5663cd0300807f0b",
-"55fc2f87e2de1c03009d0ebf",
-"56057bc570ca35030067d9a4"
-],
-"regex": [
-"Miss Monochrome(:?) (The Animation|S)(\\s?)2"
-],
-"content": {
-"title": "Miss Monochrome: The Animation 2",
-"img": "http://cdn.myanimelist.net/images/anime/4/74006.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/4/74006.jpg",
-"status": "Airing",
-"episodes": 13,
-"season": "Summer 2015",
-"description": "Yui Ho... I mean, Monochrome's S2.",
-"links": {
-"official": "http://www.starchild.co.jp/artist/miss_monochrome/",
-"twitter": "https://twitter.com/miss_monochro",
-"mal": "http://myanimelist.net/anime/30384/Miss_Monochrome:_The_Animation_2"
-},
-"pvs": []
-}
-},
-{
 "_id": "5596c0894efdbe0300bfd820",
 "__v": 19,
 "episodes": [
@@ -440,42 +367,6 @@ export const series = [
 }
 },
 {
-"_id": "5596ce904efdbe0300bfd825",
-"__v": 12,
-"episodes": [
-"5596ce914efdbe0300bfd826",
-"559ffbe69550bb03005dea10",
-"55a9367c224ce9030083f177",
-"55b270a8320e500300718622",
-"55bbab7430be2a03002846f5",
-"55c4e5e1fc08cc030096d2be",
-"55ce20925fc62b0300abe568",
-"55d75addd76f8b0300a3d72e",
-"55e095126d06890300a34dd6",
-"55eb1a24c9fe830300a591ff",
-"55f463561ccade0300b7e4cc",
-"55fd9190a05e5b0300b1e82e"
-],
-"regex": [
-"GATE((:| -)? Jieitai Kanochi nite(,?) kaku tatakaeri| \\(TV\\))?"
-],
-"content": {
-"title": "GATE",
-"img": "http://cdn.myanimelist.net/images/anime/2/74882.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/2/74882.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "In August of 20XX, a portal to a parallel world, known as the \"Gate,\" suddenly appeared in Ginza, Tokyo. Monsters and troops poured out of the portal, turning the shopping district into a bloody inferno.\nThe Japan Ground-Self Defence Force immediately took action and pushed the fantasy creatures back to the \"Gate.\" To facilitate negotiations and prepare for future fights, the JGSDF dispatched the Third Reconnaissance Team to the \"Special Region\" at the other side of the Gate.\nYouji Itami, a JSDF officer as well as a 33-year-old otaku, was appointed as the leader of the Team. Amid attacks from enemy troops the team visited a variety of places and learnt a lot about the local culture and geography.\nThanks to their efforts in humanitarian relief, although with some difficulties they were gradually able to reach out to the locals. They even had a cute elf, a sorceress and a demigoddess in their circle of new friends. On the other hand, the major powers outside the Gate such as the United States, China, and Russia were extremely interested in the abundant resources available in the Special Region. They began to exert diplomatic pressure over Japan.\nA suddenly appearing portal to an unknown world—to the major powers it may be no more than a mere asset for toppling the international order. But to our protagonists it is an invaluable opportunity to broaden knowledge, friendship, and ultimately their perspective towards the world.",
-"links": {
-"official": "http://www.gate-anime.com/",
-"twitter": "https://twitter.com/gate_anime",
-"mal": "http://myanimelist.net/anime/28907/Gate:_Jieitai_Kanochi_nite_Kaku_Tatakaeri"
-},
-"pvs": []
-}
-},
-{
 "_id": "5596cf7f4efdbe0300bfd828",
 "__v": 13,
 "episodes": [
@@ -587,42 +478,6 @@ export const series = [
 }
 },
 {
-"_id": "5597f91a6b9f760300104177",
-"__v": 13,
-"episodes": [
-"55987b5ed6cfae0300bcd6c4",
-"55a15b77b4c27a03006e88ad",
-"55aa95ea6687120300891b47",
-"55b3d2cde7d9d303008df590",
-"55bd0ab01d833d0300e4c09f",
-"55c6468f39f2010300032dc2",
-"55cf7fc44761210300a53a0a",
-"55d8bbfee9c4e00300c0b34d",
-"55e1f62eabeb84030090ab6e",
-"55eb306bc9fe830300a5920d",
-"55f469fb1ccade0300b7e4da",
-"55fdac88a05e5b0300b1e83b"
-],
-"regex": [
-"(A Boring World Where the Concept of Dirty Jokes Doesn('?)t Exist|Shimoneta to Iu Gainen (g|w)a Sonzai Shinai Taikutsu na Sekai|shimoseka|shimoneta)"
-],
-"content": {
-"title": "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai",
-"img": "http://cdn.myanimelist.net/images/anime/3/74449.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/3/74449.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "16 years after the \"Law for Public Order and Morals in Healthy Child-Raising\" banned coarse language in the country, Tanukichi Okuma enrolls in the country's leading elite public morals school and is soon invited into the Anti-Societal Organization (SOX) by its founder, Ayame Kajou. As a member blackmailed into joining by Ayame, Tanukichi ends up taking part in obscene acts of terrorism against the talented student council president Anna (for whom Tanukichi has a crush on).",
-"links": {
-"official": "http://www.shimoseka.com/",
-"twitter": "https://twitter.com/shimoseka",
-"mal": "http://myanimelist.net/anime/29786"
-},
-"pvs": []
-}
-},
-{
 "_id": "5597fa496b9f760300104178",
 "__v": 12,
 "episodes": [
@@ -654,122 +509,6 @@ export const series = [
 "official": "http://rokka-anime.jp/",
 "twitter": "https://twitter.com/rokka_anime",
 "mal": "http://myanimelist.net/anime/28497"
-},
-"pvs": []
-}
-},
-{
-"_id": "5596cc624efdbe0300bfd824",
-"__v": 19,
-"episodes": [
-"5597fc9e6b9f760300104179",
-"559fee2e9550bb03005dea0c",
-"55a91378224ce9030083f163",
-"55b24da5320e500300718611",
-"55bb87fa14eb2603001f3599",
-"55c4c25cfc08cc030096d2ae",
-"55cdfd0d5fc62b0300abe55a",
-"55d737dad76f8b0300a3d719",
-"55e0720e6d06890300a34dc8",
-"55e9acc531693a0300574747",
-"55f2e737328a6a0300b9d515",
-"55fc214de2de1c03009d0eba",
-"56055c1470ca35030067d99b",
-"560e96bdf7f19f03009d8cca",
-"5617d124f90dd503002943ec",
-"56210b8c5fa7580300e3881d",
-"562a45e2aad42f0300b0a728",
-"563380c798529a0300ca76fe",
-"563cc981169f4c030067c989"
-],
-"regex": [
-"Ushio (to|and) Tora( \\(TV\\))?"
-],
-"content": {
-"title": "Ushio to Tora",
-"img": "http://cdn.myanimelist.net/images/anime/7/73692.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/7/73692.jpg",
-"status": "Airing",
-"episodes": 19,
-"season": "Summer 2015",
-"description": "Ushio thinks that his father's talk of an ancient ancestor impaling a demon on a temple altar stone with the legendary Beast Spear is nuts, but when he finds the monster in his own basement, Ushio has to take another look at the family legend! To save his friends and family from the invading spirits, Ushio is forced to release Tora from his captivity. But will the creature prove to be worse than the curse?",
-"links": {
-"official": "http://ushitora.tv/",
-"twitter": "https://twitter.com/Ushitora_TV",
-"mal": "http://myanimelist.net/anime/29854/Ushio_to_Tora_(TV)"
-},
-"pvs": []
-}
-},
-{
-"_id": "5597fcb26b9f76030010417b",
-"__v": 13,
-"episodes": [
-"55987bd57c7dab0300a99bb8",
-"55a15b77b4c27a03006e88ab",
-"55aaa2b16687120300891b4d",
-"55b3cbbae7d9d303008df58a",
-"55bd09c01d833d0300e4c09d",
-"55c64da239f2010300032dc7",
-"55cf89394761210300a53a12",
-"55d8b55b3b040803005ddfc3",
-"55e1ecafabeb84030090ab63",
-"55f464511ccade0300b7e4d4",
-"55fde99fa05e5b0300b1e84b",
-"56072af734f01f0300bcb104"
-],
-"regex": [
-"durarara(!+)?((\\s?)x2)(\\s?)(Ten|s2)"
-],
-"content": {
-"title": "Durarara!! x2 Ten",
-"img": "http://cdn.myanimelist.net/images/anime/12/74270.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/12/74270.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Second cours of the second Durarararararararararara!! season.",
-"links": {
-"official": "http://www.durarara.com/",
-"twitter": "https://twitter.com/drrr_anime/",
-"mal": "http://myanimelist.net/anime/27831"
-},
-"pvs": []
-}
-},
-{
-"_id": "5597fe416b9f76030010417c",
-"__v": 13,
-"episodes": [
-"559830286b9f76030010418c",
-"559830286b9f760300104190",
-"55a169c5b4c27a03006e88b7",
-"55aaa4196687120300891b50",
-"55b3dea5e7d9d303008df596",
-"55bd18e01d833d0300e4c0a9",
-"55c6682a39f2010300032dcd",
-"55cfa33f4761210300a53a1d",
-"55e217c85c5d430300561a70",
-"55ebabfbc9fe830300a5921c",
-"55f47f3e1ccade0300b7e4de",
-"55fdb76fa05e5b0300b1e83f",
-"5606f3fbbed6f40300481536"
-],
-"regex": [
-"Gatchaman Crowds( S2|(: | - | )?Insight| (2nd|Second)( Season)?)"
-],
-"content": {
-"title": "Gatchaman Crowds Insight",
-"img": "http://cdn.myanimelist.net/images/anime/7/74426.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/7/74426.jpg",
-"status": "Airing",
-"episodes": 13,
-"season": "Summer 2015",
-"description": "Continuation of the Gatchaman Crowds series...",
-"links": {
-"official": "http://www.ntv.co.jp/GC_insight/",
-"twitter": "https://twitter.com/GATCHAMANCrowds",
-"mal": "http://myanimelist.net/anime/21039"
 },
 "pvs": []
 }
@@ -812,80 +551,6 @@ export const series = [
 }
 },
 {
-"_id": "559ad2b4091bb90300ca3a11",
-"__v": 12,
-"episodes": [
-"559ad2b5091bb90300ca3a12",
-"55a3e246ddd2cf030015a123",
-"55ad1c7d55b1160300b8aa3e",
-"55b6585bcd70a30300045aa0",
-"55bf9171e3f2cd030029c7e1",
-"55c8cc2e9171db0300a071f8",
-"55d206c8fac8250300002b9b",
-"55db46ee19d10703001494e6",
-"55e47b75a47be40300ba1ccb",
-"55edb6a5ef04600300b335b7",
-"55f6f0bc1ed8bc0300815163",
-"56002d6a0c6f2603007f3120"
-],
-"regex": [
-"(Akagami no Shirayuki(\\s|-)?Hime|snow white with the red hair)"
-],
-"content": {
-"title": "Akagami no Shirayuki Hime",
-"img": "http://cdn.myanimelist.net/images/anime/7/74169.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/7/74169.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Shirayuki was a young girl born with unique apple-red hair. She meets a famous but foolish Prince Raji, who falls in love with her at first sight and orders her to become his concubine. With nowhere else to go, Shirayuki cuts her hair and escapes to a neighboring country. While traversing through the forests, she meets a young boy, Zen, who helps her after she boldly cures his wounds but then gets poisoned by an apple given to Shirayuki. Meanwhile, Prince Raji sends out henchmen to search for her. What will happen to Shirayuki? What is Zen's true character? A refreshing fantasy story between an optimistic heroine and a prince who constantly stays on her watch.",
-"links": {
-"official": "http://clarines-kingdom.com/",
-"twitter": "https://twitter.com/akagami_anime",
-"mal": "http://myanimelist.net/anime/30123"
-},
-"pvs": [
-"https://www.youtube.com/watch?v=JNo5n_XmA2I"
-]
-}
-},
-{
-"_id": "559ad675091bb90300ca3a1d",
-"__v": 12,
-"episodes": [
-"559ad675091bb90300ca3a1e",
-"55a40c5c6c0de603000bb12e",
-"55ad470c55b1160300b8aa4c",
-"55b68113cd70a30300045aae",
-"55bfbb9453b541030041f5ae",
-"55c8f6c79171db0300a07200",
-"55d230e447ff05030007be54",
-"55db6b5c78215a03006414e0",
-"55e4e66303bfc40300c4c637",
-"55ede04eef04600300b335c6",
-"55f71adc1ed8bc030081516f",
-"560055a9e305f10300e4ec0e"
-],
-"regex": [
-"Non Non Biyori(\\s-|:)? (s2|Repeat)"
-],
-"content": {
-"title": "Non Non Biyori Repeat",
-"img": "http://cdn.myanimelist.net/images/anime/9/74877.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/9/74877.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Second season of Non Non Biyori. Nyanpassu~~.",
-"links": {
-"official": "http://www.nonnontv.com/",
-"twitter": "https://twitter.com/nonnontv",
-"mal": "http://myanimelist.net/anime/23623"
-},
-"pvs": []
-}
-},
-{
 "_id": "559ad816091bb90300ca3a23",
 "__v": 12,
 "episodes": [
@@ -919,80 +584,6 @@ export const series = [
 "mal": "http://myanimelist.net/anime/28979"
 },
 "pvs": []
-}
-},
-{
-"_id": "559ad885091bb90300ca3a24",
-"__v": 12,
-"episodes": [
-"559c237a0266fe0300dcac67",
-"55a5596af68cba03008b7fb5",
-"55ae93a2bafbb2030099433d",
-"55b7ce4aace21c0300db9b2a",
-"55c108c9d9339a0300967997",
-"55ca42ef6f4c170300039b11",
-"55d385280cd02a0300f4e6e9",
-"55dcb83d25fca00300e74cb5",
-"55e5f26603bfc40300c4c64c",
-"55ef2db16e7cc8030061876a",
-"55f8676037da3503000d60da",
-"5601a3684df05a03002e40fa"
-],
-"regex": [
-"Bikini Warriors"
-],
-"content": {
-"title": "Bikini Warriors",
-"img": "http://cdn.myanimelist.net/images/anime/6/74206.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/6/74206.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Set in an RPG world with swords and magic, warriors must form a party to defeat the demon lord. But, these warriors are all wearing Bikini armor.",
-"links": {
-"official": "http://bikini-warriors.com/anime/",
-"twitter": "https://twitter.com/bikiniwarriors",
-"mal": "http://myanimelist.net/anime/30782"
-},
-"pvs": []
-}
-},
-{
-"_id": "559ada1d091bb90300ca3a25",
-"__v": 12,
-"episodes": [
-"559c07240266fe0300dcac5b",
-"55a53aa9f68cba03008b7faf",
-"55ae755abafbb20300994336",
-"55b7af7face21c0300db9b26",
-"55c0ea8253b541030041f5c2",
-"55ca24a56f4c170300039b0b",
-"55ca86306f4c170300039b1c",
-"55dc99f325fca00300e74caf",
-"55e5d41303bfc40300c4c646",
-"55ef0ee56e7cc80300618765",
-"55f8491737da3503000d60d3",
-"560183b74df05a03002e40f4"
-],
-"regex": [
-"(Monster Musume( no Iru Nichijou)?|Everyday Life with Monster Girls)"
-],
-"content": {
-"title": "Monster Musume no Iru Nichijou",
-"img": "http://cdn.myanimelist.net/images/anime/3/74129.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/3/74129.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Monsters—they're real, and they want to date us! Three years ago, the world learned that harpies, centaurs, catgirls, and all manners of fabulous creatures are not merely fiction; they are flesh and blood—not to mention scale, feather, horn, and fang. Thanks to the \"Cultural Exchange Between Species Act,\" these once-mythical creatures have assimilated into society, or at least, they're trying.\nWhen a hapless human named Kurusu Kimihito is inducted as a \"volunteer\" into the government exchange program, his world is turned upside down. A snake-like lamia named Miia comes to live with him, and it is Kurusu's job to take care of her and make sure she integrates into his everyday life. Unfortunately for Kurusu, Miia is undeniably sexy, and the law against interspecies breeding is very strict. Even worse, when a ravishing centaur girl and a flirtatious harpy move in, what's a full-blooded young man with raging hormones to do?!",
-"links": {
-"official": "http://monmusu.tv/",
-"twitter": "https://twitter.com/monmusu_tv",
-"mal": "http://myanimelist.net/anime/30307"
-},
-"pvs": [
-"https://www.youtube.com/watch?v=G-IfYF_oesk"
-]
 }
 },
 {
@@ -1032,43 +623,6 @@ export const series = [
 "pvs": [
 "https://www.youtube.com/watch?v=3jE9moHQePI"
 ]
-}
-},
-{
-"_id": "559adbef091bb90300ca3a27",
-"__v": 13,
-"episodes": [
-"559c38c60266fe0300dcac6d",
-"55a572eff68cba03008b7fba",
-"55aeada0bafbb20300994342",
-"55b7e7e3ace21c0300db9b2f",
-"55c12257d9339a030096799d",
-"55ca5d776f4c170300039b16",
-"55d398c628be5d03004ced93",
-"55dcd24d25fca00300e74cbc",
-"55e60ec403bfc40300c4c652",
-"55ef46c86e7cc80300618770",
-"55f8816637da3503000d60df",
-"5601bc074df05a03002e4101",
-"560af6ab2e865903002b5a19"
-],
-"regex": [
-"Sore ga Seiy(u+)(!?)"
-],
-"content": {
-"title": "Sore ga Seiyuu!",
-"img": "http://cdn.myanimelist.net/images/anime/11/73552.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/11/73552.jpg",
-"status": "Airing",
-"episodes": 13,
-"season": "Summer 2015",
-"description": "The series centers on Futaba Ichinose, Ichigo Moesaki, and Rin Kohana, three rookie voice actresses. The manga features small but humorous observations of the voice actor industry.",
-"links": {
-"official": "http://soregaseiyu.com/",
-"twitter": "https://twitter.com/soresei_anime",
-"mal": "http://myanimelist.net/anime/29163"
-},
-"pvs": []
 }
 },
 {
@@ -1131,42 +685,6 @@ export const series = [
 "official": "http://suzakinishi.tv/",
 "twitter": "https://twitter.com/suzakinishi",
 "mal": "http://myanimelist.net/anime/30826"
-},
-"pvs": []
-}
-},
-{
-"_id": "559ec882cd1e08030082539e",
-"__v": 12,
-"episodes": [
-"559ec883cd1e08030082539f",
-"55a7bab06cbc010300f82463",
-"55b0f55522bf4b0300b073ca",
-"55ba2fe951c325030080c30c",
-"55c36a4182b01e030087e344",
-"55cca4dd604411030092dc3c",
-"55d5df2569fab503004a1745",
-"55df196efb358703002dace5",
-"55e8542da1afda0300924faa",
-"55f18e85c82f7903001ea1cb",
-"55fac924dfe9970300429f07",
-"5604aed170ca35030067d995"
-],
-"regex": [
-"Ga(k+)ou Gurashi(!?)"
-],
-"content": {
-"title": "Gakkou Gurashi!",
-"img": "http://cdn.myanimelist.net/images/anime/4/72232.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/4/72232.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "Takeya Yuki is in love with the school. For her, it's a wonderful place, where she enjoys her school activities, especially the activities of her club: School Life Club. The club has Rii-chan as the president, Kurumi-chan as another member, and the teacher, Megu-nee, always there for them. Yes, she is in love with her school... in her mind. Because, for her, the reality of the school and their club's activities is way too hard to be perceived...",
-"links": {
-"official": "http://gakkougurashi.com/",
-"twitter": "https://twitter.com/gakkou_gurashi",
-"mal": "http://myanimelist.net/anime/24765"
 },
 "pvs": []
 }
@@ -1306,42 +824,6 @@ export const series = [
 }
 },
 {
-"_id": "5596c2114efdbe0300bfd821",
-"__v": 12,
-"episodes": [
-"559af741091bb90300ca3a32",
-"55a318d6ddd2cf030015a117",
-"55ad62f255b1160300b8aa53",
-"55b5c7eccd70a30300045a9c",
-"55bfd95b53b541030041f5b5",
-"55c912ae9171db0300a07205",
-"55d24d54b5c957030006459c",
-"55d6973ed76f8b0300a3d714",
-"55e4c1ee03bfc40300c4c631",
-"55f7374f1ed8bc0300815173",
-"55f73c0a1ed8bc0300815177",
-"56007190e305f10300e4ec15"
-],
-"regex": [
-"(Castle Town|Jo(u)?kamachi no) Dandelion"
-],
-"content": {
-"title": "Joukamachi no Dandelion",
-"img": "http://cdn.myanimelist.net/images/anime/8/74494.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/8/74494.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "The Sakurada family is a pretty ordinary family of eleven people living in a solitary house. Except that their father is the king, and each of the children has special powers. Also, to ensure their safety and to help citizens decide the next king, the house is observed by more than 200 security cameras.",
-"links": {
-"official": "http://www.tbs.co.jp/anime/dande/",
-"twitter": "https://twitter.com/dande_anime",
-"mal": "http://myanimelist.net/anime/28387/Joukamachi_no_Dandelion"
-},
-"pvs": []
-}
-},
-{
 "_id": "559ec7d5cd1e080300825398",
 "__v": 12,
 "episodes": [
@@ -1415,41 +897,6 @@ export const series = [
 }
 },
 {
-"_id": "559ad4fe091bb90300ca3a1c",
-"__v": 11,
-"episodes": [
-"559cbf1729c9590300fd7e75",
-"55a409086c0de603000bb129",
-"55ad351155b1160300b8aa42",
-"55b66f87cd70a30300045aa5",
-"55bfaa1353b541030041f5a5",
-"55d21f6c47ff05030007be45",
-"55db60f619d10703001494ec",
-"55e49481a47be40300ba1cd1",
-"55edceccef04600300b335bb",
-"55f7095a1ed8bc0300815167",
-"560043b00c6f2603007f3125"
-],
-"regex": [
-"Million Doll"
-],
-"content": {
-"title": "Million Doll",
-"img": "http://cdn.myanimelist.net/images/anime/9/74195.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/9/74195.jpg",
-"status": "Airing",
-"episodes": 11,
-"season": "Summer 2015",
-"description": "Million Doll revolves around Suuko, an idol-loving hikikomori (shut-in) who has one ability: To make any idol popular through the power of blogging. She puts her sights on the Fukuoka idol Itorio and tries to make her sell more, but she is impeded by the charismatic idol Ryuu-san and the underground idol Mariko.",
-"links": {
-"official": "http://milliondoll.com/",
-"twitter": "https://twitter.com/million_doll",
-"mal": "http://myanimelist.net/anime/29941"
-},
-"pvs": []
-}
-},
-{
 "_id": "559ad477091bb90300ca3a17",
 "__v": 13,
 "episodes": [
@@ -1482,42 +929,6 @@ export const series = [
 "official": "http://jitsuwata.tv",
 "twitter": "https://twitter.com/jitsuwata_anime",
 "mal": "http://myanimelist.net/anime/29785"
-},
-"pvs": []
-}
-},
-{
-"_id": "559cf77429c9590300fd7e7b",
-"__v": 12,
-"episodes": [
-"559d79606cf77c0300e488f0",
-"55a6afd825f22603001a587b",
-"55afea01edfca403009ccb97",
-"55be7024e3f2cd030029c7d0",
-"55c25ee3617cda03002d7c86",
-"55cb996ea7e3760300399c1c",
-"55d4d41869fab503004a173e",
-"55de0e77f5519c0300cba155",
-"55e748b2b7485e0300e2dc89",
-"55f0838bc82f7903001ea1bb",
-"55f9be1cc3b93c03006fdc70",
-"5602f853b02b6f030023bc46"
-],
-"regex": [
-"Himo(u?)to(!?) Umaru(-?)chan"
-],
-"content": {
-"title": "Himouto! Umaru-chan",
-"img": "http://cdn.myanimelist.net/images/anime/6/73853.jpg",
-"min": "http://cdn.myanimelist.net/images/anime/6/73853.jpg",
-"status": "Airing",
-"episodes": 12,
-"season": "Summer 2015",
-"description": "The sibling gag comedy manga centers around Umaru, Taihei's little sister who boasts beautiful looks as well as prowess in both school and sports. However, at home she becomes a \"himouto\" - a slob of a girl who's only interested in games and eating.",
-"links": {
-"official": "http://umaru-ani.me/",
-"twitter": "https://twitter.com/umaru_anime",
-"mal": "httxp://myanimelist.net/anime/28825"
 },
 "pvs": []
 }

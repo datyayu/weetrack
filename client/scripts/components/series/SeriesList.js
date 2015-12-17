@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import SeriesCard from './SeriesCard';
+import SeriesCard from '../SeriesCard/SeriesCard';
 
 
 const SeriesList = ({ series }) =>
