@@ -206,8 +206,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var HeaderTitle = function HeaderTitle() {
   return _react2.default.createElement(
-    "h1",
-    { className: "HeaderTitle" },
+    "a",
+    { href: "#/", className: "HeaderTitle" },
     _react2.default.createElement(
       "span",
       { className: "HeaderTitle--wee" },
@@ -471,7 +471,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SeriesCard = require('./SeriesCard');
+var _SeriesCard = require('../SeriesCard/SeriesCard');
 
 var _SeriesCard2 = _interopRequireDefault(_SeriesCard);
 
@@ -505,7 +505,7 @@ SeriesList.propTypes = {
 
 exports.default = SeriesList;
 
-},{"./SeriesCard":9,"react":173}],13:[function(require,module,exports){
+},{"../SeriesCard/SeriesCard":9,"react":173}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

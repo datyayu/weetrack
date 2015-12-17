@@ -1,10 +1,19 @@
 .HeaderTitle
+  display block
   margin 0
   font-size 1.5em
   padding .3em 0
   border-bottom 1px solid WHITE
   text-align center
   font-weight lighter
+  text-decoration none
+
+
+  &:hover
+    color PRIMARY_COLOR
+    background PRIMARY_COLOR
+  &:hover > &--site
+    color SECONDARY_COLOR
 
   &--wee
     color WHITE_TEXT
@@ -21,6 +30,13 @@
 @media screen and (min-width: TABLET_QUERY)
   .HeaderTitle
     font-size 2em
+
+    &:hover
+      background none
+    &:hover > &--site
+      color SECONDARY_COLOR
+    &:hover > &--wee
+      color PRIMARY_COLOR
 
     &--wee
       color DARK_TEXT

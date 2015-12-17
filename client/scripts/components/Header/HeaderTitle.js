@@ -2,10 +2,10 @@ import React from 'react';
 
 
 const HeaderTitle = () =>
-  <h1 className="HeaderTitle">
+  <a  href="#/" className="HeaderTitle">
     <span className="HeaderTitle--wee">W</span>
     <span className="HeaderTitle--site">t</span>
-  </h1>
+  </a>
 ;
 
 
