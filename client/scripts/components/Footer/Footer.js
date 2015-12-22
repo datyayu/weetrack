@@ -11,7 +11,7 @@ const defaultLinks = [
 const Footer = ({ links = defaultLinks }) =>
   <div className="Footer">
     {
-      links.map(link => <FooterLink {...link} />)
+      links.map((link, idx) => <FooterLink key={idx} {...link} />)
     }
   </div>
 ;

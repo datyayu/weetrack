@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const releases = [
   {
     _id: '567018d9cf8c871b0095ce3f',
@@ -175,6 +176,305 @@ export const releases = [
       fullhd: [],
     },
   },
+];
+
+export const seriesReleases = [
+  {
+"_id": "5598e370c106cc0300300e2d",
+"updatedAt": 1444867353,
+"number": 1,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1436083056,
+"__v": 5,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=708349",
+"group": "HorribleSubs",
+"_id": "559967d7c106cc0300300e35"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=708165",
+"group": "Anime-World",
+"_id": "5598e370c106cc0300300e2e"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=708350",
+"group": "HorribleSubs",
+"_id": "559967d7c106cc0300300e34"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=708383",
+"group": "BakedFish",
+"_id": "559981dec106cc0300300e37"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=744741",
+"group": "Gangstamation",
+"_id": "561eed1958733503008ea03d"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=708351",
+"group": "HorribleSubs",
+"_id": "559968c7c106cc0300300e36"
+}
+]
+}
+},
+{
+"_id": "559e792ecd1e080300825384",
+"updatedAt": 1445136748,
+"number": 2,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1436449070,
+"__v": 6,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=709825",
+"group": "HorribleSubs",
+"_id": "559ec54fcd1e080300825394"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=709705",
+"group": "DeadFish",
+"_id": "559e792ecd1e080300825385"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=709826",
+"group": "HorribleSubs",
+"_id": "559ec54fcd1e080300825393"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=709860",
+"group": "BakedFish",
+"_id": "559ee1a2cd1e0803008253a8"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=709864",
+"group": "RightShiftBy2",
+"_id": "559ee65ccd1e0803008253aa"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=746053",
+"group": "Gangstamation",
+"_id": "5623096c3e326503002be180"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=709827",
+"group": "HorribleSubs",
+"_id": "559ec54fcd1e080300825392"
+}
+]
+}
+},
+{
+"_id": "55a6a5eb25f22603001a5877",
+"updatedAt": 1445712170,
+"number": 3,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1436984811,
+"__v": 7,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=712143",
+"group": "HorribleSubs",
+"_id": "55a6a5eb25f22603001a587a"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=712399",
+"group": "DBSuper",
+"_id": "55a78a6d6cbc010300f82460"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=712146",
+"group": "HorribleSubs",
+"_id": "55a6a5eb25f22603001a5879"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=712228",
+"group": "BakedFish",
+"_id": "55a6e1fb25f22603001a5887"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=712400",
+"group": "DBSuper",
+"_id": "55a78a6d6cbc010300f8245f"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=717964",
+"group": "DeadFish",
+"_id": "55bb223c14eb2603001f3597"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=748473",
+"group": "Gangstamation",
+"_id": "562bd12a4c742f0300225d9d"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=712147",
+"group": "HorribleSubs",
+"_id": "55a6a5eb25f22603001a5878"
+}
+]
+}
+},
+{
+"_id": "55afe546edfca403009ccb95",
+"updatedAt": 1446348217,
+"number": 4,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1437590854,
+"__v": 6,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=714858",
+"group": "HorribleSubs",
+"_id": "55afe546edfca403009ccb96"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=714919",
+"group": "HorribleSubs",
+"_id": "55b0167aedfca403009ccba1"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=714933",
+"group": "BakedFish",
+"_id": "55b03442edfca403009ccba2"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=716200",
+"group": "Zekken",
+"_id": "55b47240f75a2f0300046dae"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=720729",
+"group": "DeadFish",
+"_id": "55c5af8939f2010300032db3"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=751442",
+"group": "Gangstamation",
+"_id": "563585b9e27ddd03005ea793"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=714874",
+"group": "HorribleSubs",
+"_id": "55aff11eedfca403009ccb9b"
+}
+]
+}
+},
+{
+"_id": "55be43ab1d833d0300e4c0c2",
+"updatedAt": 1447009616,
+"number": 5,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1438532523,
+"__v": 5,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=718979",
+"group": "HorribleSubs",
+"_id": "55be43ab1d833d0300e4c0c4"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=718980",
+"group": "HorribleSubs",
+"_id": "55be43ab1d833d0300e4c0c3"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=718993",
+"group": "BakedFish",
+"_id": "55be4c301d833d0300e4c0c6"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=731373",
+"group": "DeadFish",
+"_id": "55ee591361444a03002b04e9"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=754414",
+"group": "Gangstamation",
+"_id": "563f9d50abe70a0300fd3b2f"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=718981",
+"group": "HorribleSubs",
+"_id": "55be45131d833d0300e4c0c5"
+}
+]
+}
+},
+{
+"_id": "55c765bed5a99f0300a4102a",
+"updatedAt": 1447663852,
+"number": 6,
+"series": "5595dd4550adab030036b6e9",
+"createdAt": 1439131070,
+"__v": 5,
+"releases": {
+"lq": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=721244",
+"group": "HorribleSubs",
+"_id": "55c765bed5a99f0300a4102c"
+}
+],
+"hd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=721245",
+"group": "HorribleSubs",
+"_id": "55c765bed5a99f0300a4102d"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=721315",
+"group": "BakedFish",
+"_id": "55c782989a9fe0030065d950"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=730296",
+"group": "Zekken",
+"_id": "55ea9f66c9fe830300a591f9"
+},
+{
+"url": "http://www.nyaa.se/?page=download&tid=757065",
+"group": "Gangstamation",
+"_id": "564998ec2cff1f1b0090b292"
+}
+],
+"fullhd": [
+{
+"url": "http://www.nyaa.se/?page=download&tid=721246",
+"group": "HorribleSubs",
+"_id": "55c765bed5a99f0300a4102b"
+}
+]
+}
+},
 ];
 
 export const series = [

@@ -19,9 +19,10 @@ const ReleaseInfo = ({ episode, seriesTitle, seriesId, createdAt, showTitle = tr
 ;
 
 ReleaseInfo.propTypes = {
+  showTitle: PropTypes.bool,
+  seriesTitle: PropTypes.string,
+  seriesId: PropTypes.string,
   episode: PropTypes.number.isRequired,
-  seriesTitle: PropTypes.string.isRequired,
-  seriesId: PropTypes.string.isRequired,
   createdAt: PropTypes.number.isRequired,
 };
 
