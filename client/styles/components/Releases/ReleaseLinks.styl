@@ -8,10 +8,12 @@
   font-weight normal
   color GRAY_TEXT
   text-align left
+  algin-self flex-start
   max-width 2em
 
 .ReleaseLinks__links
   display flex
+  flex-wrap wrap
   flex-direction column
   list-style none
   margin 0
@@ -19,7 +21,7 @@
 
 @media screen and (min-width TABLET_QUERY)
   .ReleaseLinks
-    align-items center
+    align-items flex-start
     justify-content flex-start
 
   .ReleaseLinks__links

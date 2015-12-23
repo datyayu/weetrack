@@ -1,0 +1,25 @@
+.SeriesInfoCard
+  background WHITE
+  box-shadow 0px 4px 10px 0px BLACK
+  display flex
+  flex-direction column
+  align-items center
+  padding 1em
+  margin-top .5em
+
+.SeriesInfoCard__image
+  max-width 150px
+
+@media screen and (min-width: TABLET_QUERY)
+  .SeriesInfoCard
+    flex-direction row
+
+@media screen and (min-width: DESKTOP_QUERY)
+  .SeriesInfoCard
+    flex-direction column
+    min-width 300px
+    margin-top 0
+
+  .SeriesInfoCard__image
+    min-width 260px
+    max-width 260px

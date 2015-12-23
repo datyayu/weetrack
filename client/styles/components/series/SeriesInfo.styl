@@ -1,0 +1,38 @@
+.SeriesInfo
+  text-align center
+  margin 1em 0
+  font-size 1.3em
+
+.SeriesInfo__info
+  margin .1em 0
+
+.SeriesInfo__siteLinks
+  margin .1em 0
+
+.SeriesInfo__link
+  color PRIMARY_COLOR
+  text-decoration none
+
+  &:hover, active
+    color SECONDARY_COLOR
+
+
+@media screen and (min-width: TABLET_QUERY)
+  .SeriesInfo
+    flex 1
+    font-size 1.5em
+
+  .SeriesInfo__info,
+  .SeriesInfo__siteLinks
+    margin .3em 0
+
+
+@media screen and (min-width: DESKTOP_QUERY)
+  .SeriesInfo
+    font-size 1.3em
+    margin .5em 0
+
+  .SeriesInfo__info,
+  .SeriesInfo__siteLinks
+    margin 0
+    margin-top .2em

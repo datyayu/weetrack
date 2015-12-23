@@ -4,7 +4,7 @@ import SeriesInfo from './SeriesInfo';
 
 const SeriesInfoCard = (props) =>
   <div className="SeriesInfoCard">
-    <img src={props.img} alt={props.title} />
+    <img className="SeriesInfoCard__image" src={props.img} alt={props.title} />
     <SeriesInfo {...props} />
   </div>
 ;

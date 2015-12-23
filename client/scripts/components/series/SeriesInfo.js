@@ -1,25 +1,23 @@
 import React, { PropTypes } from 'react';
 
 
-const SeriesInfo = ({ title, episodes, season, status, links }) =>
+const SeriesInfo = ({ episodes, season, status, links }) =>
   <div className="SeriesInfo">
-    <h3 className="SeriesInfo__title"> {title} </h3>
     <p className="SeriesInfo__info"> {status} </p>
     <p className="SeriesInfo__info"> {episodes} Episodes </p>
-    <a className="SeriesInfo__link"> {season} </a>
+    <a className="SeriesInfo__link" href={`#/season/${season.replace(' ', '-')}`}> {season} </a>
 
     <div className="SeriesInfo__siteLinks">
-      <a className="SeriesInfo__link" href={links.official}> Official Site </a>
+      <a className="SeriesInfo__link" href={links.official} target="_blank"> Official Site </a>
       ~
-      <a className="SeriesInfo__link" href={links.twitter}> Twitter </a>
+      <a className="SeriesInfo__link" href={links.twitter} target="_blank"> Twitter </a>
       ~
-      <a className="SeriesInfo__link" href={links.mal}> MAL </a>
+      <a className="SeriesInfo__link" href={links.mal} target="_blank"> MAL </a>
     </div>
   </div>
 ;
 
 SeriesInfo.propTypes = {
-  title: PropTypes.string.isRequired,
   episodes: PropTypes.number.isRequired,
   season: PropTypes.string.isRequired,
 

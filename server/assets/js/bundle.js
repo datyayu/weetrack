@@ -709,7 +709,6 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SeriesInfo = function SeriesInfo(_ref) {
-  var title = _ref.title;
   var episodes = _ref.episodes;
   var season = _ref.season;
   var status = _ref.status;
@@ -717,13 +716,6 @@ var SeriesInfo = function SeriesInfo(_ref) {
   return _react2.default.createElement(
     "div",
     { className: "SeriesInfo" },
-    _react2.default.createElement(
-      "h3",
-      { className: "SeriesInfo__title" },
-      " ",
-      title,
-      " "
-    ),
     _react2.default.createElement(
       "p",
       { className: "SeriesInfo__info" },
@@ -740,7 +732,7 @@ var SeriesInfo = function SeriesInfo(_ref) {
     ),
     _react2.default.createElement(
       "a",
-      { className: "SeriesInfo__link" },
+      { className: "SeriesInfo__link", href: "#/season/" + season.replace(' ', '-') },
       " ",
       season,
       " "
@@ -750,19 +742,19 @@ var SeriesInfo = function SeriesInfo(_ref) {
       { className: "SeriesInfo__siteLinks" },
       _react2.default.createElement(
         "a",
-        { className: "SeriesInfo__link", href: links.official },
+        { className: "SeriesInfo__link", href: links.official, target: "_blank" },
         " Official Site "
       ),
       "~",
       _react2.default.createElement(
         "a",
-        { className: "SeriesInfo__link", href: links.twitter },
+        { className: "SeriesInfo__link", href: links.twitter, target: "_blank" },
         " Twitter "
       ),
       "~",
       _react2.default.createElement(
         "a",
-        { className: "SeriesInfo__link", href: links.mal },
+        { className: "SeriesInfo__link", href: links.mal, target: "_blank" },
         " MAL "
       )
     )
@@ -770,7 +762,6 @@ var SeriesInfo = function SeriesInfo(_ref) {
 };
 
 SeriesInfo.propTypes = {
-  title: _react.PropTypes.string.isRequired,
   episodes: _react.PropTypes.number.isRequired,
   season: _react.PropTypes.string.isRequired,
 
@@ -806,7 +797,7 @@ var SeriesInfoCard = function SeriesInfoCard(props) {
   return _react2.default.createElement(
     'div',
     { className: 'SeriesInfoCard' },
-    _react2.default.createElement('img', { src: props.img, alt: props.title }),
+    _react2.default.createElement('img', { className: 'SeriesInfoCard__image', src: props.img, alt: props.title }),
     _react2.default.createElement(_SeriesInfo2.default, props)
   );
 };
