@@ -1,11 +1,8 @@
 import React from 'react';
-// import Feed from './containers/Feed';
-import Series from './containers/Series';
-// import Season from './containers/Season';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import ContentBlocker from './components/Content/ContentBlocker';
-import {releases, series, seriesReleases} from './mockState';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import ContentBlocker from '../components/Content/ContentBlocker';
+import {releases, series, seriesReleases} from '../mockState';
 
 const mockState = {
   application: {
@@ -40,10 +37,10 @@ const mockState = {
 };
 
 
-const App = () =>
+const App = ({ children }) =>
   <div className="App">
     <Header {...mockState.application} />
-    <Series {...mockState} />
+    {children}
     <Footer />
     <ContentBlocker isActive={mockState.application.mobileMenuShowing} />
   </div>

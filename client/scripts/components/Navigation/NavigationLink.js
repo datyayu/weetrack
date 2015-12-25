@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 
 const NavigationLink = ({ text, url, isActive = false }) =>
   <li className="NavigationLink">
-    <a className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}
-       href={`#${url}`}>
+    <Link to={url} className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}>
       {text}
-    </a>
+    </Link>
   </li>
 ;
 
