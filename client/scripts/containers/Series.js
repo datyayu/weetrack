@@ -1,53 +1,57 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import * as seriesActions from '../actions/seriesActions';
+
 import ContentTitle from '../components/Content/ContentTitle';
 import SeriesIndividual from '../components/Series/SeriesIndividual';
 
 
-const Series = ({ application, series }) =>
-  <div className="Content">
-    <ContentTitle text={series.title} isMenuShowing={application.mobileMenuShowing} />
-    <SeriesIndividual {...series} />
-  </div>
-;
+class Series extends Component {
+  componentWillMount() {
+    const paths = this.props.routing.path.split('/');
+    const seriesID = paths[paths.length - 1]; // Get the last part of the URL.
 
-const releasePropsShape = PropTypes.shape({
-  url: PropTypes.string.isRequired,
-  group: PropTypes.string.isRequired,
-});
+    this.props.actions.fetchSeries(seriesID);
+  }
+
+  render() {
+    const {application, series} = this.props;
+    console.log(series.series);
+
+    return (
+      <div className="Content">
+        <ContentTitle text="Latest Releases" isMenuShowing={application.mobileMenuShowing} />
+        { series.series ? <SeriesIndividual {...series.series} /> : null }
+      </div>
+    );
+  }
+}
 
 Series.propTypes = {
+  actions: PropTypes.shape({
+    fetchSeries: PropTypes.func,
+  }),
+
   application: PropTypes.shape({
     mobileMenuShowing: PropTypes.bool,
   }),
 
-  series: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    episodes: PropTypes.number.isRequired,
-    season: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-
-    status: PropTypes.oneOf([
-      'Not Yet Started',
-      'Airing',
-      'Finished',
-    ]).isRequired,
-
-    links: PropTypes.shape({
-      official: PropTypes.string,
-      twitter: PropTypes.string,
-      mal: PropTypes.string,
-    }).isRequired,
-
-    releases: PropTypes.arrayOf(
-      PropTypes.shape({
-        lq: PropTypes.arrayOf(releasePropsShape),
-        hd: PropTypes.arrayOf(releasePropsShape),
-        fullhd: PropTypes.arrayOf(releasePropsShape),
-      })
-    ).isRequired,
-  }),
+  series: PropTypes.object,
 };
 
 
-export default Series;
+const mapStateToProps = (state) => {
+  return {
+    application: state.application,
+    series: state.series,
+    routing: state.routing,
+  };
+};
+
+const mapActionsToProps = (dispatch) => {
+  return { actions: bindActionCreators(seriesActions, dispatch) };
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(Series);

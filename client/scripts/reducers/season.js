@@ -15,7 +15,6 @@ const initialState = {
 
 
 const seasonReducer = (state = initialState, action) => {
-  console.log(action)
   switch (action.type) {
   case FETCH_SEASON:
     return {

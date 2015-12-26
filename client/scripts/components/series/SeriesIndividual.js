@@ -3,10 +3,10 @@ import SeriesInfoCard from './SeriesInfoCard';
 import SeriesReleases from '../Releases/SeriesReleases';
 
 
-const SeriesIndividual = ( props ) =>
+const SeriesIndividual = ({ content, episodes }) =>
   <div className="SeriesIndividual">
-    <SeriesInfoCard {...props} />
-    <SeriesReleases releases={props.releases} />
+    <SeriesInfoCard {...content} />
+    <SeriesReleases releases={episodes} />
   </div>
 ;
 
@@ -16,25 +16,27 @@ const releasePropsShape = PropTypes.shape({
 });
 
 SeriesIndividual.propTypes = {
-  title: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  episodes: PropTypes.number.isRequired,
-  season: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    episodes: PropTypes.number.isRequired,
+    season: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
 
-  status: PropTypes.oneOf([
-    'Not Yet Started',
-    'Airing',
-    'Finished',
-  ]).isRequired,
+    status: PropTypes.oneOf([
+      'Not Yet Started',
+      'Airing',
+      'Finished',
+    ]).isRequired,
 
-  links: PropTypes.shape({
-    official: PropTypes.string,
-    twitter: PropTypes.string,
-    mal: PropTypes.string,
-  }).isRequired,
+    links: PropTypes.shape({
+      official: PropTypes.string,
+      twitter: PropTypes.string,
+      mal: PropTypes.string,
+    }).isRequired,
+  }),
 
-  releases: PropTypes.arrayOf(
+  episodes: PropTypes.arrayOf(
     PropTypes.shape({
       lq: PropTypes.arrayOf(releasePropsShape),
       hd: PropTypes.arrayOf(releasePropsShape),

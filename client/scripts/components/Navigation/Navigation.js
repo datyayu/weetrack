@@ -2,8 +2,9 @@ import React, { PropTypes } from 'react';
 import NavigationLink from './NavigationLink';
 
 const items = [
-  {text: 'Daily Feed', url: '/feed'},
-  {text: 'Winter 2016', url: '/season/winter-2016'},
+  {text: 'Daily Feed', url: '/'},
+  // {text: 'Winter 2016', url: '/season/winter-2016'},
+  {text: 'Summer 2015', url: '/season/summer-2015'},
   {text: 'Seasons', url: '/seasons'},
 ];
 
