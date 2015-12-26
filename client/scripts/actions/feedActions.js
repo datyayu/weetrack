@@ -24,7 +24,7 @@ function failedFetch(error) {
 
 export function fetchFeed() {
   return dispatch => {
-    dispatch(feedFetching);
+    dispatch(feedFetching());
 
     fetch('http://weetrack.herokuapp.com/api/feed')
       .then(response => response.json())

@@ -3,6 +3,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ContentBlocker from '../components/Content/ContentBlocker';
 import {releases, series, seriesReleases} from '../mockState';
+import DevTools from '../containers/DevTools';
 
 const mockState = {
   application: {
@@ -43,6 +44,7 @@ const App = ({ children }) =>
     {children}
     <Footer />
     <ContentBlocker isActive={mockState.application.mobileMenuShowing} />
+    <DevTools />
   </div>
 ;
 

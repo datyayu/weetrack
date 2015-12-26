@@ -26,7 +26,10 @@ class Feed extends Component {
 }
 
 Feed.propTypes = {
-  actions: PropTypes.object.isRequired,
+  actions: PropTypes.shape({
+    fetchFeed: PropTypes.func.isRequired,
+  }),
+
 
   application: PropTypes.shape({
     mobileMenuShowing: PropTypes.bool,

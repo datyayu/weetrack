@@ -9,18 +9,21 @@ const initialState = {
   isFetching: true,
   successfulFetch: false,
   failedFetch: false,
-  releases: [],
+  name: '',
+  series: [],
 };
 
 
 const seasonReducer = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
   case FETCH_SEASON:
     return {
       isFetching: true,
       successfulFetch: false,
       failedFetch: false,
-      releases: [],
+      name: action.seasonName,
+      series: [],
     };
 
   case SUCCESSFUL_SEASON_FETCH:
@@ -28,7 +31,8 @@ const seasonReducer = (state = initialState, action) => {
       isFetching: false,
       successfulFetch: true,
       failedFetch: false,
-      releases: action.releases,
+      name: state.name,
+      series: action.series,
     };
 
   case FAILED_SEASON_FETCH:
@@ -36,7 +40,8 @@ const seasonReducer = (state = initialState, action) => {
       isFetching: false,
       successfulFetch: false,
       failedFetch: true,
-      releases: [],
+      name: state.name,
+      series: [],
     };
 
   default:
