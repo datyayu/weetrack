@@ -9,7 +9,7 @@ import {saveRelease} from './episodeParser';
 const feed = 'http://www.nyaa.se/?page=rss';
 
 // Regex to torrent filtering.
-const regexFile = './app/regex.txt';
+const regexFile = './server/regex.txt';
 
 // Create a new watcher
 const watcher = new Watcher(feed, 10);

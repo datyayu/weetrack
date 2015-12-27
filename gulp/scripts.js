@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
+const gzip = require('gulp-gzip');
 const sourcemaps = require('gulp-sourcemaps');
 
 // Browserify stuff
@@ -41,7 +42,8 @@ function productionBundle(bundler) {
     .pipe(source('bundle.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest(config.scripts.dest));
+    .pipe(gzip())
+    .pipe(gulp.dest(config.dest));
 }
 
 /* Compile with browserify and babel */

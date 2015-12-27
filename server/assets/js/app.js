@@ -1619,12 +1619,14 @@ var Series = (function (_Component) {
       var application = _props.application;
       var series = _props.series;
 
-      console.log(series.series);
+      console.log(series);
 
       return _react2.default.createElement(
         'div',
         { className: 'Content' },
-        _react2.default.createElement(_ContentTitle2.default, { text: 'Latest Releases', isMenuShowing: application.mobileMenuShowing }),
+        _react2.default.createElement(_ContentTitle2.default, {
+          text: series.series && series.series.content ? series.series.content.title : 'Loading...',
+          isMenuShowing: application.mobileMenuShowing }),
         series.series ? _react2.default.createElement(_SeriesIndividual2.default, series.series) : null
       );
     }

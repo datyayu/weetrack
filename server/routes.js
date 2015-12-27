@@ -17,6 +17,14 @@ router.use((req, res, next) => {
   next();
 });
 
+// GZIP
+router.use('/assets/js/*.gz.js', (req, res, next) => {
+  console.log('requested');
+  res.set('Content-Type', 'aplication/x-javascript');
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 // Static files.
 router.use('/assets', staticDir(assets));
 router.use('/libs', staticDir(libs));

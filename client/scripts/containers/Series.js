@@ -18,11 +18,13 @@ class Series extends Component {
 
   render() {
     const {application, series} = this.props;
-    console.log(series.series);
+    console.log(series);
 
     return (
       <div className="Content">
-        <ContentTitle text="Latest Releases" isMenuShowing={application.mobileMenuShowing} />
+        <ContentTitle
+          text={series.series && series.series.content ? series.series.content.title : 'Loading...'}
+          isMenuShowing={application.mobileMenuShowing} />
         { series.series ? <SeriesIndividual {...series.series} /> : null }
       </div>
     );
