@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import {unix} from 'moment';
+import { Link } from 'react-router';
 
 
 const ReleaseInfo = ({ episode, seriesTitle, seriesId, createdAt, showTitle = true }) =>
@@ -7,9 +8,9 @@ const ReleaseInfo = ({ episode, seriesTitle, seriesId, createdAt, showTitle = tr
     {
       showTitle ?
         <h3 className="ReleaseInfo__title">
-          <a className="ReleaseInfo__titleLink" href={`#/series/${seriesId}`}>
+          <Link to={`/series/${seriesId}`} className="ReleaseInfo__titleLink">
              {seriesTitle}
-          </a>
+          </Link>
         </h3>
         : null
     }

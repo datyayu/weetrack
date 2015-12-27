@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 
 const SeriesCardBack = ({ id, title, status, episodes, description }) =>
-  <a className="SeriesCardBack SeriesCard__side" href={`#/series/${id}`}>
+  <Link to={`/series/${id}`} className="SeriesCardBack SeriesCard__side">
     <p className="SeriesCardBack__description"> {description} </p>
 
     <div className="SeriesCardBack__info">
@@ -11,7 +12,7 @@ const SeriesCardBack = ({ id, title, status, episodes, description }) =>
     </div>
 
     <h3 className="SeriesCardBack__title"> {title} </h3>
-  </a>
+  </Link>
 ;
 
 SeriesCardBack.propTypes = {

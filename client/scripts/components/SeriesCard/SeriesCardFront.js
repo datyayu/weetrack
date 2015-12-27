@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 
 const SeriesCardFront = ({ title, img, id }) =>
-  <a className="SeriesCardFront SeriesCard__side" href={`#/series/${id}`}>
+  <Link to={`/series/${id}`} className="SeriesCardFront SeriesCard__side">
     <img className="SeriesCardFront__image" src={img} />
     <h3 className="SeriesCardFront__title"> {title} </h3>
-  </a>
+  </Link>
 ;
 
 SeriesCardFront.propTypes = {

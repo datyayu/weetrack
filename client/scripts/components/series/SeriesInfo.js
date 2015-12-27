@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 
 const SeriesInfo = ({ episodes, season, status, links }) =>
   <div className="SeriesInfo">
     <p className="SeriesInfo__info"> {status} </p>
     <p className="SeriesInfo__info"> {episodes} Episodes </p>
-    <a className="SeriesInfo__link" href={`#/season/${season.replace(' ', '-')}`}> {season} </a>
+    <Link to={`/season/${season.replace(' ', '-')}`} className="SeriesInfo__link">
+      {season}
+    </Link>
 
     <div className="SeriesInfo__siteLinks">
       <a className="SeriesInfo__link" href={links.official} target="_blank"> Official Site </a>

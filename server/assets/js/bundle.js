@@ -266,7 +266,7 @@ var _FooterLink2 = _interopRequireDefault(_FooterLink);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultLinks = [{ name: 'Home', url: '#/' }, { name: 'About', url: 'http://test.raji.moe/', newTab: true }, { name: 'Github', url: 'http://weetrack', newTab: true }];
+var defaultLinks = [{ name: 'Home', url: '#/' }, { name: 'About', url: 'http://test.raji.moe/', newTab: true }, { name: 'Github', url: 'https://github.com/datyayu/weetrack', newTab: true }];
 
 var Footer = function Footer(_ref) {
   var _ref$links = _ref.links;
@@ -363,38 +363,40 @@ Header.propTypes = {
 exports.default = Header;
 
 },{"../Navigation/Navigation":11,"./HeaderTitle":10,"react":467}],10:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var HeaderTitle = function HeaderTitle() {
   return _react2.default.createElement(
-    "a",
-    { href: "#/", className: "HeaderTitle" },
+    _reactRouter.Link,
+    { to: '/', className: 'HeaderTitle' },
     _react2.default.createElement(
-      "span",
-      { className: "HeaderTitle--wee" },
-      "W"
+      'span',
+      { className: 'HeaderTitle--wee' },
+      'W'
     ),
     _react2.default.createElement(
-      "span",
-      { className: "HeaderTitle--site" },
-      "t"
+      'span',
+      { className: 'HeaderTitle--site' },
+      't'
     )
   );
 };
 
 exports.default = HeaderTitle;
 
-},{"react":467}],11:[function(require,module,exports){
+},{"react":467,"react-router":334}],11:[function(require,module,exports){
 'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -596,6 +598,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _moment = require('moment');
 
+var _reactRouter = require('react-router');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ReleaseInfo = function ReleaseInfo(_ref) {
@@ -612,8 +616,8 @@ var ReleaseInfo = function ReleaseInfo(_ref) {
       'h3',
       { className: 'ReleaseInfo__title' },
       _react2.default.createElement(
-        'a',
-        { className: 'ReleaseInfo__titleLink', href: '#/series/' + seriesId },
+        _reactRouter.Link,
+        { to: '/series/' + seriesId, className: 'ReleaseInfo__titleLink' },
         seriesTitle
       )
     ) : null,
@@ -644,7 +648,7 @@ ReleaseInfo.propTypes = {
 
 exports.default = ReleaseInfo;
 
-},{"moment":276,"react":467}],16:[function(require,module,exports){
+},{"moment":276,"react":467,"react-router":334}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -952,15 +956,17 @@ SeriesIndividual.propTypes = {
 exports.default = SeriesIndividual;
 
 },{"../Releases/SeriesReleases":19,"./SeriesInfoCard":24,"react":467}],23:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -970,48 +976,46 @@ var SeriesInfo = function SeriesInfo(_ref) {
   var status = _ref.status;
   var links = _ref.links;
   return _react2.default.createElement(
-    "div",
-    { className: "SeriesInfo" },
+    'div',
+    { className: 'SeriesInfo' },
     _react2.default.createElement(
-      "p",
-      { className: "SeriesInfo__info" },
-      " ",
+      'p',
+      { className: 'SeriesInfo__info' },
+      ' ',
       status,
-      " "
+      ' '
     ),
     _react2.default.createElement(
-      "p",
-      { className: "SeriesInfo__info" },
-      " ",
+      'p',
+      { className: 'SeriesInfo__info' },
+      ' ',
       episodes,
-      " Episodes "
+      ' Episodes '
     ),
     _react2.default.createElement(
-      "a",
-      { className: "SeriesInfo__link", href: "#/season/" + season.replace(' ', '-') },
-      " ",
-      season,
-      " "
+      _reactRouter.Link,
+      { to: '/season/' + season.replace(' ', '-'), className: 'SeriesInfo__link' },
+      season
     ),
     _react2.default.createElement(
-      "div",
-      { className: "SeriesInfo__siteLinks" },
+      'div',
+      { className: 'SeriesInfo__siteLinks' },
       _react2.default.createElement(
-        "a",
-        { className: "SeriesInfo__link", href: links.official, target: "_blank" },
-        " Official Site "
+        'a',
+        { className: 'SeriesInfo__link', href: links.official, target: '_blank' },
+        ' Official Site '
       ),
-      "~",
+      '~',
       _react2.default.createElement(
-        "a",
-        { className: "SeriesInfo__link", href: links.twitter, target: "_blank" },
-        " Twitter "
+        'a',
+        { className: 'SeriesInfo__link', href: links.twitter, target: '_blank' },
+        ' Twitter '
       ),
-      "~",
+      '~',
       _react2.default.createElement(
-        "a",
-        { className: "SeriesInfo__link", href: links.mal, target: "_blank" },
-        " MAL "
+        'a',
+        { className: 'SeriesInfo__link', href: links.mal, target: '_blank' },
+        ' MAL '
       )
     )
   );
@@ -1032,7 +1036,7 @@ SeriesInfo.propTypes = {
 
 exports.default = SeriesInfo;
 
-},{"react":467}],24:[function(require,module,exports){
+},{"react":467,"react-router":334}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1176,15 +1180,17 @@ SeriesCard.propTypes = {
 exports.default = SeriesCard;
 
 },{"./SeriesCardBack":27,"./SeriesCardFront":28,"react":467}],27:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1195,40 +1201,40 @@ var SeriesCardBack = function SeriesCardBack(_ref) {
   var episodes = _ref.episodes;
   var description = _ref.description;
   return _react2.default.createElement(
-    "a",
-    { className: "SeriesCardBack SeriesCard__side", href: "#/series/" + id },
+    _reactRouter.Link,
+    { to: '/series/' + id, className: 'SeriesCardBack SeriesCard__side' },
     _react2.default.createElement(
-      "p",
-      { className: "SeriesCardBack__description" },
-      " ",
+      'p',
+      { className: 'SeriesCardBack__description' },
+      ' ',
       description,
-      " "
+      ' '
     ),
     _react2.default.createElement(
-      "div",
-      { className: "SeriesCardBack__info" },
+      'div',
+      { className: 'SeriesCardBack__info' },
       _react2.default.createElement(
-        "span",
-        { className: "SeriesCardBack__infoBlock" },
-        " ",
+        'span',
+        { className: 'SeriesCardBack__infoBlock' },
+        ' ',
         episodes,
-        _react2.default.createElement("br", null),
-        "Episodes "
+        _react2.default.createElement('br', null),
+        'Episodes '
       ),
       _react2.default.createElement(
-        "span",
-        { className: "SeriesCardBack__infoBlock" },
-        " ",
+        'span',
+        { className: 'SeriesCardBack__infoBlock' },
+        ' ',
         status,
-        " "
+        ' '
       )
     ),
     _react2.default.createElement(
-      "h3",
-      { className: "SeriesCardBack__title" },
-      " ",
+      'h3',
+      { className: 'SeriesCardBack__title' },
+      ' ',
       title,
-      " "
+      ' '
     )
   );
 };
@@ -1243,16 +1249,18 @@ SeriesCardBack.propTypes = {
 
 exports.default = SeriesCardBack;
 
-},{"react":467}],28:[function(require,module,exports){
-"use strict";
+},{"react":467,"react-router":334}],28:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1261,15 +1269,15 @@ var SeriesCardFront = function SeriesCardFront(_ref) {
   var img = _ref.img;
   var id = _ref.id;
   return _react2.default.createElement(
-    "a",
-    { className: "SeriesCardFront SeriesCard__side", href: "#/series/" + id },
-    _react2.default.createElement("img", { className: "SeriesCardFront__image", src: img }),
+    _reactRouter.Link,
+    { to: '/series/' + id, className: 'SeriesCardFront SeriesCard__side' },
+    _react2.default.createElement('img', { className: 'SeriesCardFront__image', src: img }),
     _react2.default.createElement(
-      "h3",
-      { className: "SeriesCardFront__title" },
-      " ",
+      'h3',
+      { className: 'SeriesCardFront__title' },
+      ' ',
       title,
-      " "
+      ' '
     )
   );
 };
@@ -1282,7 +1290,7 @@ SeriesCardFront.propTypes = {
 
 exports.default = SeriesCardFront;
 
-},{"react":467}],29:[function(require,module,exports){
+},{"react":467,"react-router":334}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
