@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as seasonActions from '../actions/seasonActions';
 
 import ContentTitle from '../components/Content/ContentTitle';
-import SeriesList from '../components/series/SeriesList';
+import SeriesList from '../components/Series/SeriesList';
 
 
 class Season extends Component {
@@ -52,7 +52,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapActionsToProps = (dispatch) => {
-  console.log(seasonActions);
   return { actions: bindActionCreators(seasonActions, dispatch) };
 };
 

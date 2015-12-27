@@ -44,9 +44,9 @@ const App = ({ children }) =>
     {children}
     <Footer />
     <ContentBlocker isActive={mockState.application.mobileMenuShowing} />
-    <DevTools />
   </div>
 ;
+// <DevTools />
 
 
 export default App;

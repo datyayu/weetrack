@@ -12,6 +12,7 @@ import App from './containers/App';
 import Feed from './containers/Feed';
 import Season from './containers/Season';
 import Series from './containers/Series';
+import Seasons from './containers/Seasons';
 
 // Custom history.
 const history = createHashHistory();
@@ -25,6 +26,7 @@ const WeetrackRouter = (
     <Router history={history}>
       <Route path="/" component={App} >
         <IndexRoute component={Feed} />
+        <Route path="/seasons" component={Seasons} />
         <Route path="/season/:id" component={Season} />
         <Route path="/series/:id" component={Series} />
       </Route>
