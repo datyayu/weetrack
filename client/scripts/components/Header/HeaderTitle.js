@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 
 const HeaderTitle = (props, { actions }) =>
-  <Link to="/" className="HeaderTitle" onClick={actions.toggleMenu}>
+  <Link to="/" className="HeaderTitle" onClick={actions.hideMenu}>
     <span className="HeaderTitle--wee">W</span>
     <span className="HeaderTitle--site">t</span>
   </Link>
@@ -11,7 +11,7 @@ const HeaderTitle = (props, { actions }) =>
 
 HeaderTitle.contextTypes = {
   actions: PropTypes.shape({
-    toggleMenu: PropTypes.func,
+    hideMenu: PropTypes.func,
   }),
 };
 

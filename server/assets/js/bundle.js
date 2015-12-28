@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.toggleMenu = toggleMenu;
+exports.hideMenu = hideMenu;
 
 var _actionTypes = require('../constants/actionTypes');
 
@@ -12,10 +13,19 @@ function toggleMobileMenu() {
   return { type: _actionTypes.TOGGLE_MENU };
 }
 
+function hideMobileMenu() {
+  return { type: _actionTypes.HIDE_MENU };
+}
+
 function toggleMenu() {
-  console.log('hello');
   return function (dispatch) {
     return dispatch(toggleMobileMenu());
+  };
+}
+
+function hideMenu() {
+  return function (dispatch) {
+    return dispatch(hideMobileMenu());
   };
 }
 
@@ -196,12 +206,12 @@ var ContentBlocker = function ContentBlocker(_ref, _ref2) {
   var _ref$isActive = _ref.isActive;
   var isActive = _ref$isActive === undefined ? false : _ref$isActive;
   var actions = _ref2.actions;
-  return isActive ? _react2.default.createElement("div", { className: "ContentBlocker", onClick: handleClick(actions.toggleMenu) }) : _react2.default.createElement("div", null);
+  return isActive ? _react2.default.createElement("div", { className: "ContentBlocker", onClick: handleClick(actions.hideMenu) }) : _react2.default.createElement("div", null);
 };
 
 ContentBlocker.contextTypes = {
   actions: _react.PropTypes.shape({
-    toggleMenu: _react.PropTypes.func
+    hideMenu: _react.PropTypes.func
   })
 };
 
@@ -426,7 +436,7 @@ var HeaderTitle = function HeaderTitle(props, _ref) {
   var actions = _ref.actions;
   return _react2.default.createElement(
     _reactRouter.Link,
-    { to: '/', className: 'HeaderTitle', onClick: actions.toggleMenu },
+    { to: '/', className: 'HeaderTitle', onClick: actions.hideMenu },
     _react2.default.createElement(
       'span',
       { className: 'HeaderTitle--wee' },
@@ -442,7 +452,7 @@ var HeaderTitle = function HeaderTitle(props, _ref) {
 
 HeaderTitle.contextTypes = {
   actions: _react.PropTypes.shape({
-    toggleMenu: _react.PropTypes.func
+    hideMenu: _react.PropTypes.func
   })
 };
 
@@ -511,7 +521,7 @@ var NavigationLink = function NavigationLink(_ref, _ref2) {
   var actions = _ref2.actions;
   return _react2.default.createElement(
     'li',
-    { className: 'NavigationLink', onClick: actions.toggleMenu },
+    { className: 'NavigationLink', onClick: actions.hideMenu },
     _react2.default.createElement(
       _reactRouter.Link,
       { to: url, className: 'NavigationLink__link ' + (isActive ? 'is-active' : '') },
@@ -528,7 +538,7 @@ NavigationLink.propTypes = {
 
 NavigationLink.contextTypes = {
   actions: _react.PropTypes.shape({
-    toggleMenu: _react.PropTypes.func
+    hideMenu: _react.PropTypes.func
   })
 };
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 
 const NavigationLink = ({ text, url, isActive = false }, { actions }) =>
-  <li className="NavigationLink" onClick={actions.toggleMenu}>
+  <li className="NavigationLink" onClick={actions.hideMenu}>
     <Link to={url} className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}>
       {text}
     </Link>
@@ -18,7 +18,7 @@ NavigationLink.propTypes = {
 
 NavigationLink.contextTypes = {
   actions: PropTypes.shape({
-    toggleMenu: PropTypes.func,
+    hideMenu: PropTypes.func,
   }),
 };
 

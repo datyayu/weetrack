@@ -10,13 +10,13 @@ const handleClick = (callback) => {
 
 const ContentBlocker = ({ isActive = false }, { actions }) =>
   isActive ?
-    <div className="ContentBlocker" onClick={handleClick(actions.toggleMenu)}></div>
+    <div className="ContentBlocker" onClick={handleClick(actions.hideMenu)}></div>
     : <div></div>
 ;
 
 ContentBlocker.contextTypes = {
   actions: PropTypes.shape({
-    toggleMenu: PropTypes.func,
+    hideMenu: PropTypes.func,
   }),
 };
 
