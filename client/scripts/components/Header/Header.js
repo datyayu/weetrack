@@ -3,16 +3,17 @@ import HeaderTitle from './HeaderTitle';
 import Navigation from '../Navigation/Navigation';
 
 
-const Header = ({ currentUrl, mobileMenuShowing = false }) =>
+const Header = ({ path, mobileMenuShowing = false }) =>
   <div className={`Header ${mobileMenuShowing ? 'is-active' : ''}`}>
     <HeaderTitle isMenuShowing={mobileMenuShowing} />
-    <Navigation currentUrl={currentUrl} />
+    <Navigation currentUrl={path} />
   </div>
 ;
 
+
 Header.propTypes = {
-  currentUrl: PropTypes.string.isRequired,
   mobileMenuShowing: PropTypes.bool,
+  routing: PropTypes.object,
 };
 
 export default Header;

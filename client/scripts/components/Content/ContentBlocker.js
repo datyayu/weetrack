@@ -1,13 +1,24 @@
 import React, {PropTypes} from 'react';
 
 
-const ContentBlocker = ({ isActive = false }) =>
+const handleClick = (callback) => {
+  return (event) => {
+    event.stopPropagation();
+    callback();
+  };
+};
+
+const ContentBlocker = ({ isActive = false }, { actions }) =>
   isActive ?
-    <div className="ContentBlocker"
-         onClick={event => event.stopPropagation()}>
-    </div>
+    <div className="ContentBlocker" onClick={handleClick(actions.toggleMenu)}></div>
     : <div></div>
 ;
+
+ContentBlocker.contextTypes = {
+  actions: PropTypes.shape({
+    toggleMenu: PropTypes.func,
+  }),
+};
 
 ContentBlocker.propTypes = {
   isActive: PropTypes.bool,
