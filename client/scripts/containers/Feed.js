@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as feedActions from '../actions/feedActions';
 
 import ContentTitle from '../components/Content/ContentTitle';
+import LoadingIcon from '../components/Content/LoadingIcon';
 import FeedReleases from '../components/Releases/FeedReleases';
 
 
@@ -19,7 +20,9 @@ class Feed extends Component {
     return (
       <div className="Content">
         <ContentTitle text="Latest Releases" isMenuShowing={application.mobileMenuShowing} />
-        <FeedReleases {...feed} />
+        {
+          feed.isFetching ? <LoadingIcon /> : <FeedReleases {...feed} />
+        }
       </div>
     );
   }

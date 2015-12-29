@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import * as seriesActions from '../actions/seriesActions';
 
+import LoadingIcon from '../components/Content/LoadingIcon';
 import ContentTitle from '../components/Content/ContentTitle';
 import SeriesIndividual from '../components/Series/SeriesIndividual';
 
@@ -18,14 +19,15 @@ class Series extends Component {
 
   render() {
     const {application, series} = this.props;
-    console.log(series);
 
     return (
       <div className="Content">
         <ContentTitle
           text={series.series && series.series.content ? series.series.content.title : 'Loading...'}
           isMenuShowing={application.mobileMenuShowing} />
-        { series.series ? <SeriesIndividual {...series.series} /> : null }
+          {
+            series.isFetching ? <LoadingIcon /> : <SeriesIndividual {...series.series} />
+          }
       </div>
     );
   }
@@ -35,6 +37,8 @@ Series.propTypes = {
   actions: PropTypes.shape({
     fetchSeries: PropTypes.func,
   }),
+
+  routing: PropTypes.object,
 
   application: PropTypes.shape({
     mobileMenuShowing: PropTypes.bool,
