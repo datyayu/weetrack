@@ -5,6 +5,7 @@ import ReleaseLink from './ReleaseLink';
 const ReleaseLinks = ({ quality, releases = [] }) =>
   <div className="ReleaseLinks">
     <h4 className="ReleaseLinks__title"> {quality} </h4>
+
     <ul className="ReleaseLinks__links">
       {releases.map(release => <ReleaseLink key={release._id} {...release} />)}
     </ul>

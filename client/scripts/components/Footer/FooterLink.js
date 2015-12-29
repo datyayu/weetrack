@@ -2,7 +2,9 @@ import React, { PropTypes } from 'react';
 
 
 const FooterLink = ({ name, url, newTab }) =>
-  <a className="FooterLink" href={url} target={newTab ? '_blank' : ''}>
+  <a className="FooterLink"
+     href={url}
+     target={newTab ? '_blank' : ''}>
     {name}
   </a>
 ;

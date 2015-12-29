@@ -9,6 +9,7 @@ import LoadingIcon from '../components/Content/LoadingIcon';
 import FeedReleases from '../components/Releases/FeedReleases';
 
 
+/* Feed/Index Page wrapper component */
 class Feed extends Component {
   componentWillMount() {
     this.props.actions.fetchFeed();
@@ -29,18 +30,11 @@ class Feed extends Component {
 }
 
 Feed.propTypes = {
-  actions: PropTypes.shape({
-    fetchFeed: PropTypes.func.isRequired,
-  }),
+  actions: PropTypes.shape({ fetchFeed: PropTypes.func.isRequired }),
 
+  application: PropTypes.shape({ mobileMenuShowing: PropTypes.bool }),
 
-  application: PropTypes.shape({
-    mobileMenuShowing: PropTypes.bool,
-  }),
-
-  feed: PropTypes.shape({
-    releases: PropTypes.arrayOf(PropTypes.object),
-  }),
+  feed: PropTypes.shape({ releases: PropTypes.arrayOf(PropTypes.object) }),
 };
 
 

@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-
 import ContentTitle from '../components/Content/ContentTitle';
 import SeasonsList from '../components/Seasons/seasonsList';
 
@@ -13,7 +12,7 @@ const seasons = [
   'summer-2015',
 ];
 
-
+/* Season List wrapper component */
 const Seasons = ({ application }) =>
   <div className="Content">
     <ContentTitle text="Seasons" isMenuShowing={application.mobileMenuShowing} />
@@ -22,9 +21,7 @@ const Seasons = ({ application }) =>
 ;
 
 Seasons.propTypes = {
-  application: PropTypes.shape({
-    mobileMenuShowing: PropTypes.bool,
-  }),
+  application: PropTypes.shape({ mobileMenuShowing: PropTypes.bool }),
 };
 
 

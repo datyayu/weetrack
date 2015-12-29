@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 
 const handleClick = (callback) => {
@@ -15,9 +15,7 @@ const ContentBlocker = ({ isActive = false }, { actions }) =>
 ;
 
 ContentBlocker.contextTypes = {
-  actions: PropTypes.shape({
-    hideMenu: PropTypes.func,
-  }),
+  actions: PropTypes.shape({ hideMenu: PropTypes.func }),
 };
 
 ContentBlocker.propTypes = {

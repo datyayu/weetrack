@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import reducers from './reducers';
-import DevTools from './containers/DevTools';
 
 
-const finalCreateStore = compose(
-  // Middleware.
-  applyMiddleware(thunkMiddleware),
-  // DevTools.
-  DevTools.instrument()
-)(createStore);
+const finalCreateStore = applyMiddleware(thunkMiddleware)(createStore);
+
+/* FOR DEVELOPMENT ONLY */
+// import { compose } from 'redux';
+// import DevTools from './containers/DevTools';
+// const finalCreateStore = compose(applyMiddleware(thunkMiddleware), DevTools.instrument());
+
 
 const store = finalCreateStore(reducers, {});
 

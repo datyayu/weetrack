@@ -1,5 +1,5 @@
 import React from 'react';
-import { createHashHistory } from 'history';
+import { createHistory } from 'history';
 import { Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncReduxAndRouter } from 'redux-simple-router';
@@ -15,7 +15,7 @@ import Series from './containers/Series';
 import Seasons from './containers/Seasons';
 
 // Custom history.
-const history = createHashHistory();
+const history = createHistory();
 
 // Sync Router state to the redux store.
 syncReduxAndRouter(history, store);

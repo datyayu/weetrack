@@ -10,9 +10,7 @@ const HeaderTitle = (props, { actions }) =>
 ;
 
 HeaderTitle.contextTypes = {
-  actions: PropTypes.shape({
-    hideMenu: PropTypes.func,
-  }),
+  actions: PropTypes.shape({ hideMenu: PropTypes.func }),
 };
 
 

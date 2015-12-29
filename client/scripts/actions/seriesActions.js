@@ -1,11 +1,13 @@
 import fetch from 'isomorphic-fetch';
-import { FETCH_SERIES, SUCCESSFUL_SERIES_FETCH, FAILED_SERIES_FETCH } from '../constants/actionTypes';
+import {
+  FETCH_SERIES,
+  SUCCESSFUL_SERIES_FETCH,
+  FAILED_SERIES_FETCH,
+} from '../constants/actionTypes';
 
-function seriesFetch(seasonName) {
-  return {
-    type: FETCH_SERIES,
-    seasonName: seasonName,
-  };
+
+function seriesFetch() {
+  return { type: FETCH_SERIES };
 }
 
 function successfulFetch(series) {

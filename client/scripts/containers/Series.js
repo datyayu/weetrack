@@ -9,10 +9,12 @@ import ContentTitle from '../components/Content/ContentTitle';
 import SeriesIndividual from '../components/Series/SeriesIndividual';
 
 
+/* Individual Series wrapper component */
 class Series extends Component {
   componentWillMount() {
+    // Get the series to request from the url
     const paths = this.props.routing.path.split('/');
-    const seriesID = paths[paths.length - 1]; // Get the last part of the URL.
+    const seriesID = paths[paths.length - 1];
 
     this.props.actions.fetchSeries(seriesID);
   }
@@ -22,9 +24,8 @@ class Series extends Component {
 
     return (
       <div className="Content">
-        <ContentTitle
-          text={series.series && series.series.content ? series.series.content.title : 'Loading...'}
-          isMenuShowing={application.mobileMenuShowing} />
+        <ContentTitle text={series.series ? series.series.content.title : 'Loading...'}
+                      isMenuShowing={application.mobileMenuShowing} />
           {
             series.isFetching ? <LoadingIcon /> : <SeriesIndividual {...series.series} />
           }
@@ -34,15 +35,11 @@ class Series extends Component {
 }
 
 Series.propTypes = {
-  actions: PropTypes.shape({
-    fetchSeries: PropTypes.func,
-  }),
+  actions: PropTypes.shape({ fetchSeries: PropTypes.func }),
 
   routing: PropTypes.object,
 
-  application: PropTypes.shape({
-    mobileMenuShowing: PropTypes.bool,
-  }),
+  application: PropTypes.shape({ mobileMenuShowing: PropTypes.bool }),
 
   series: PropTypes.object,
 };

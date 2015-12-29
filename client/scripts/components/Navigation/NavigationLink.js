@@ -4,7 +4,8 @@ import { Link } from 'react-router';
 
 const NavigationLink = ({ text, url, isActive = false }, { actions }) =>
   <li className="NavigationLink" onClick={actions.hideMenu}>
-    <Link to={url} className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}>
+    <Link to={url}
+          className={`NavigationLink__link ${isActive ? 'is-active' : ''}`}>
       {text}
     </Link>
   </li>
@@ -17,9 +18,7 @@ NavigationLink.propTypes = {
 };
 
 NavigationLink.contextTypes = {
-  actions: PropTypes.shape({
-    hideMenu: PropTypes.func,
-  }),
+  actions: PropTypes.shape({ hideMenu: PropTypes.func }),
 };
 
 

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import {unix} from 'moment';
+import { unix } from 'moment';
 import { Link } from 'react-router';
 
 

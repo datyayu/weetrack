@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { FETCH_FEED, SUCCESSFUL_FEED_FETCH, FAILED_FEED_FETCH } from '../constants/actionTypes';
 
+
 function feedFetching() {
   return {
     type: FETCH_FEED,

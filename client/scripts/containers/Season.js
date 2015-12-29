@@ -9,10 +9,13 @@ import ContentTitle from '../components/Content/ContentTitle';
 import SeriesList from '../components/Series/SeriesList';
 
 
+/* Season' SeriesList wrapper component */
 class Season extends Component {
   componentWillMount() {
+    // Get the season to request from the url.
     const paths = this.props.routing.path.split('/');
-    const seasonId = paths[paths.length - 1]; // Get the last part of the URL.
+    const seasonId = paths[paths.length - 1];
+
     this.props.actions.fetchSeason(seasonId);
   }
 
@@ -31,15 +34,11 @@ class Season extends Component {
 }
 
 Season.propTypes = {
-  actions: PropTypes.shape({
-    fetchSeason: PropTypes.func,
-  }),
+  actions: PropTypes.shape({ fetchSeason: PropTypes.func }),
 
   routing: PropTypes.object,
 
-  application: PropTypes.shape({
-    mobileMenuShowing: PropTypes.bool,
-  }),
+  application: PropTypes.shape({ mobileMenuShowing: PropTypes.bool }),
 
   season: PropTypes.shape({
     name: PropTypes.string,

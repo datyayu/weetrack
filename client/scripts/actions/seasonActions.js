@@ -1,5 +1,10 @@
 import fetch from 'isomorphic-fetch';
-import { FETCH_SEASON, SUCCESSFUL_SEASON_FETCH, FAILED_SEASON_FETCH } from '../constants/actionTypes';
+import {
+  FETCH_SEASON,
+  SUCCESSFUL_SEASON_FETCH,
+  FAILED_SEASON_FETCH,
+} from '../constants/actionTypes';
+
 
 function seasonFetch(seasonName) {
   return {

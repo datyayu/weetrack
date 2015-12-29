@@ -10,10 +10,10 @@ const Header = ({ path, mobileMenuShowing = false }) =>
   </div>
 ;
 
-
 Header.propTypes = {
   mobileMenuShowing: PropTypes.bool,
   routing: PropTypes.object,
 };
+
 
 export default Header;

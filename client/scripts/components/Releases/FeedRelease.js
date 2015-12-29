@@ -6,7 +6,9 @@ import ReleaseLinks from './ReleaseLinks';
 const FeedRelease = ({ number, createdAt, series, releases }) =>
   <li className="FeedRelease">
     <div className="FeedRelease__leftSide">
-      <img className="FeedRelease__image" src={series.content.min} alt={series.content.title} />
+      <img className="FeedRelease__image"
+           src={series.content.min}
+           alt={series.content.title} />
     </div>
 
     <div className="FeedRelease__rightSide">

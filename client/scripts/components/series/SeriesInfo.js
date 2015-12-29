@@ -6,6 +6,7 @@ const SeriesInfo = ({ episodes, season, status, links }) =>
   <div className="SeriesInfo">
     <p className="SeriesInfo__info"> {status} </p>
     <p className="SeriesInfo__info"> {episodes} Episodes </p>
+
     <Link to={`/season/${season.replace(' ', '-')}`} className="SeriesInfo__link">
       {season}
     </Link>

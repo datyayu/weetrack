@@ -9,8 +9,11 @@ import Footer from '../components/Footer/Footer';
 import ContentBlocker from '../components/Content/ContentBlocker';
 
 
+/* Main application wrapper */
 class App extends Component {
   getChildContext() {
+    // Pass actions to child components via context.
+    // So we don't have to pass them via props.
     return { actions: this.props.actions };
   }
 
@@ -22,28 +25,23 @@ class App extends Component {
         <Header {...application} {...routing} />
         {children}
         <Footer />
+
         <ContentBlocker isActive={application.mobileMenuShowing} />
       </div>
     );
   }
 }
 
-App.childContextTypes = {
-  actions: PropTypes.object,
-};
+App.childContextTypes = { actions: PropTypes.object };
 
 App.propTypes = {
-  actions: PropTypes.object.isRequired,
-
   children: PropTypes.object,
 
-  application: PropTypes.shape({
-    mobileMenuShowing: PropTypes.bool.isRequired,
-  }).isRequired,
+  actions: PropTypes.object.isRequired,
 
-  routing: PropTypes.shape({
-    path: PropTypes.string,
-  }),
+  routing: PropTypes.shape({ path: PropTypes.string }),
+
+  application: PropTypes.shape({ mobileMenuShowing: PropTypes.bool.isRequired }).isRequired,
 };
 
 
@@ -60,4 +58,6 @@ const mapActionsToProps = (dispatch) => {
   };
 };
 
+
+/* Connect to redux store */
 export default connect(mapStateToProps, mapActionsToProps)(App);
