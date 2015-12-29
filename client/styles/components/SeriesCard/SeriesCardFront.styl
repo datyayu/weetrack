@@ -1,7 +1,6 @@
 .SeriesCardFront
   background PRIMARY_COLOR
   color WHITE_TEXT
-  text-decoration none
   text-align center
 
 .SeriesCardFront__image
@@ -9,11 +8,9 @@
   height 86%
 
 .SeriesCardFront__title
+  ellipsis-wrap()
+  margin 0 auto
   font-size 1em
   font-weight normal
   padding-top .6em
   max-width 90%
-  margin 0 auto
-  overflow hidden
-  text-overflow ellipsis
-  white-space nowrap

@@ -1,0 +1,38 @@
+/* Layout */
+fill-block()
+  height 100%
+  width 100%
+
+flex-column()
+  display flex
+  flex-direction column
+  align-items center
+
+
+/* Efects */
+shadow-borders(size = 4px, spread = 10px, color = BLACK)
+  box-shadow 0px size spread 0px color
+
+ellipsis-wrap()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+
+/* Animations */
+smooth-transition(time = 300ms)
+  transition all time ease-in-out
+
+
+/* MEDIA QUERIES */
+at-tablet()
+  @media screen and (min-width TABLET_QUERY)
+    {block}
+
+at-desktop()
+  @media screen and (min-width DESKTOP_QUERY)
+    {block}
+
+at-hd-desktop()
+  @media screen and (min-width DESKTOP_HD_QUERY)
+    {block}

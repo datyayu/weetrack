@@ -1,15 +1,18 @@
 .ContentBlocker
+  smooth-transition()
   background rgba(black, .7)
+  cursor pointer
   position fixed
   top 0
   left 0
   width 100vw
-  // This keeps the blocker on full screen when
-  // scrolling on mobile
+
+  // Next part keeps the blocker on full screen when scrolling on mobile.
   height 120vh
   overflow hidden
   z-index 1
 
-@media screen and (min-width TABLET_QUERY)
+
++at-tablet()
   .ContentBlocker
     display none

@@ -1,6 +1,8 @@
 .Header
+  smooth-transition()
   background SECONDARY_COLOR
-  box-shadow 2px 0px 4px 0px black
+  box-shadow 1px 0px 10px 0px black
+
   // This keeps the blocker on full screen when
   // scrolling on mobile
   height 120vh
@@ -17,22 +19,18 @@
   &.is-active
     left 0
 
-@media screen and (min-width: TABLET_QUERY)
+
++at-tablet()
   .Header
+    background WHITE
+    display flex
+    justify-content space-around
+    padding .5em 0
+    width 100%
+    border-bottom 1px solid
+
     // Reset
     position static
     box-shadow none
     max-width none
     height auto
-
-    background WHITE
-    display flex
-    justify-content space-around
-    padding 0 5%
-    width 100%
-    border-bottom 1px solid BLACK
-
-
-@media screen and (min-width: TABLET_QUERY)
-  .Header
-    padding .5em 0

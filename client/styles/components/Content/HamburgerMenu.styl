@@ -1,7 +1,17 @@
 .HamburgerMenu
+  cursor pointer
   position absolute
   top .5em
   left .3em
+
+
+.HamburgerMenu__line
+  smooth-transition()
+  display block
+  background WHITE
+  margin .3em
+  height .3em
+  width 2em
 
 .HamburgerMenu.is-active
   left initial
@@ -22,14 +32,9 @@
     left -.3em
     width 1.4em
 
-.HamburgerMenu__line
-  display block
-  background white
-  margin .3em
-  height .3em
-  width 2em
 
 
-@media screen and (min-width TABLET_QUERY)
+
++at-tablet()
   .HamburgerMenu
     display none

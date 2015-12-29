@@ -1,12 +1,11 @@
 .HeaderTitle
+  smooth-transition(100ms)
   display block
-  margin 0
   font-size 1.5em
   padding .3em 0
   border-bottom 1px solid WHITE
   text-align center
   font-weight lighter
-  text-decoration none
 
 
   &:hover
@@ -16,8 +15,10 @@
     color SECONDARY_COLOR
 
   &--wee
+    smooth-transition(100ms)
     color WHITE_TEXT
   &--site
+    smooth-transition(100ms)
     color PRIMARY_COLOR
     font-family consolas
 
@@ -27,7 +28,7 @@
     content 'rack'
 
 
-@media screen and (min-width: TABLET_QUERY)
++at-tablet()
   .HeaderTitle
     font-size 2em
 
@@ -47,7 +48,7 @@
       content ''
 
 
-@media screen and (min-width: DESKTOP_QUERY)
++at-desktop()
   .HeaderTitle
     &--wee::after
       content 'ee'

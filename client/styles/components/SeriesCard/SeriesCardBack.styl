@@ -2,14 +2,15 @@
   background WHITE
   color DARK_TEXT
   border 1px solid SECONDARY_COLOR
-  text-decoration none
   text-align center
   transform rotateY(180deg)
+
+  &:hover
+    color DARK_TEXT
 
 .SeriesCardBack__description
   display block
   display -webkit-box
-  margin 0
   padding 1em
   max-width 100%
   min-height 15.65em
@@ -32,11 +33,9 @@
   align-items center
 
 .SeriesCardBack__title
+  ellipsis-wrap()
   font-size 1em
   font-weight normal
   padding-top .4em
   max-width 90%
   margin 0 auto
-  overflow hidden
-  text-overflow ellipsis
-  white-space nowrap

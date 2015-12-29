@@ -12,9 +12,9 @@ node_modules
 bower_components
 
 # Generated files
-app/assets/*
-app/regex.txt
-app/errorFile.txt
+server/assets/*
+server/regex.txt
+server/errorFile.txt
 
 # System stuff
 .DS_Store
