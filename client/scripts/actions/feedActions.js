@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { FEED_ENDPOINT } from '../constants/endpoints';
 import { FETCH_FEED, SUCCESSFUL_FEED_FETCH, FAILED_FEED_FETCH } from '../constants/actionTypes';
 
 
@@ -26,8 +27,8 @@ function failedFetch(error) {
 export function fetchFeed() {
   return dispatch => {
     dispatch(feedFetching());
-
-    fetch('http://weetrack.herokuapp.com/api/feed')
+    
+    fetch(FEED_ENDPOINT)
       .then(response => response.json())
       .then(releases => dispatch(successfulFetch(releases)))
       .catch(error => dispatch(failedFetch(error)));

@@ -6,7 +6,6 @@ import api from './api';
 // Module variables
 const router = Router();
 const assets = join(__dirname, 'assets');
-const libs = join(__dirname, '..', 'bower_components');
 const indexFile = join(__dirname, 'assets', 'html', 'index.html');
 
 // CORS
@@ -27,7 +26,6 @@ router.use('/assets/js/*.gz.js', (req, res, next) => {
 
 // Static files.
 router.use('/assets', staticDir(assets));
-router.use('/libs', staticDir(libs));
 
 // API Routes.
 router.use('/api', api);

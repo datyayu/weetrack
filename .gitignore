@@ -12,7 +12,7 @@ node_modules
 bower_components
 
 # Generated files
-server/assets/*
+# server/assets/*
 server/regex.txt
 server/errorFile.txt
 

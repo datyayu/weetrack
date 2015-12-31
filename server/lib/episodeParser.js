@@ -104,10 +104,6 @@ export function saveRelease(episode, matchedPattern, next) {
             newEpisode.createdAt = moment().unix();
             newEpisode.series = parsedEpisode.series;
             newEpisode.number = parsedEpisode.number;
-
-            // Add the id to series.
-            series.episodes.push(newEpisode._id);
-            series.content.episodes = series.episodes.length;
           }
 
           // Add new release to the episode
@@ -120,8 +116,12 @@ export function saveRelease(episode, matchedPattern, next) {
         });
     },
     function saveEpisode(result, callback) {
-      result.episode.save((error) => {
+      result.episode.save((error, savedEpisode) => {
         if (error) { return callback(error); }
+
+        // Add the id to series.
+        result.series.episodes.push(savedEpisode._id);
+        result.series.content.episodes = result.series.episodes.length;
 
         callback(null, result.series);
       });

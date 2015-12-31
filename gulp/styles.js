@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const connect = require('gulp-connect');
+const gzip = require('gulp-gzip');
 const sourcemaps = require('gulp-sourcemaps');
 const stylus = require('gulp-stylus');
 const nib = require('nib');
@@ -23,6 +24,18 @@ gulp.task('styles', () => {
       compress: true,
     }))
     .pipe(sourcemaps.write())
+    .pipe(gulp.dest(config.dest))
+    .pipe(connect.reload());
+});
+
+gulp.task('styles-prod', () => {
+  gulp.src(config.entry)
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(stylus({
+      use: nib(),
+      compress: true,
+    }))
+    .pipe(gzip())
     .pipe(gulp.dest(config.dest))
     .pipe(connect.reload());
 });

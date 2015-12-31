@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { SEASON_ENDPOINT } from '../constants/endpoints';
 import {
   FETCH_SEASON,
   SUCCESSFUL_SEASON_FETCH,
@@ -33,7 +34,7 @@ export function fetchSeason(season) {
     const seasonName = season.charAt(0).toUpperCase() + season.slice(1).replace('-', ' ');
     dispatch(seasonFetch(seasonName));
 
-    fetch(`http://weetrack.herokuapp.com/api/seasons/${season}`)
+    fetch(`${SEASON_ENDPOINT}/${season}`)
       .then(response => response.json())
       .then(series => dispatch(successfulFetch(series)))
       .catch(error => dispatch(failedFetch(error)));

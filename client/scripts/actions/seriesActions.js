@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import { SERIES_ENDPOINT } from '../constants/endpoints';
 import {
   FETCH_SERIES,
   SUCCESSFUL_SERIES_FETCH,
@@ -29,7 +30,7 @@ export function fetchSeries(id) {
   return dispatch => {
     dispatch(seriesFetch());
 
-    fetch(`http://weetrack.herokuapp.com/api/series/${id}`)
+    fetch(`${SERIES_ENDPOINT}/${id}`)
       .then(response => response.json())
       .then(series => dispatch(successfulFetch(series)))
       .catch(error => dispatch(failedFetch(error)));
