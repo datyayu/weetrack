@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const connect = require('gulp-connect');
 const uglify = require('gulp-uglify');
 const gzip = require('gulp-gzip');
+const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 
 // Browserify stuff
@@ -43,22 +44,24 @@ function productionBundle(bundler) {
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gzip())
+    .pipe(rename('app.js'))
     .pipe(gulp.dest(config.dest));
 }
 
 /* Compile with browserify and babel */
 function compile(isProductionBundle) {
   const browserifyBundler = browserify(config.entry, { debug: !isProductionBundle });
-  const babelBundler = browserifyBundler.transform(babel);
-  const bundler = watchify(babelBundler);
+  const bundler = browserifyBundler.transform(babel);
 
   if (isProductionBundle) {
     return productionBundle(bundler);
   }
 
-  bundler.on('update', () => developmentBundle(bundler));
+  const devBundler = watchify(bundler);
 
-  return developmentBundle(bundler);
+  devBundler.on('update', () => developmentBundle(devBundler));
+
+  return developmentBundle(devBundler);
 }
 
 

@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const connect = require('gulp-connect');
 const gzip = require('gulp-gzip');
+const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const stylus = require('gulp-stylus');
 const nib = require('nib');
@@ -15,7 +16,7 @@ const onError = configFile.onError;
 /* TASKS */
 
 // Compile stylus to css
-gulp.task('styles', () => {
+gulp.task('styles-dev', () => {
   gulp.src(config.entry)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sourcemaps.init())
@@ -28,7 +29,7 @@ gulp.task('styles', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('styles-prod', () => {
+gulp.task('styles', () => {
   gulp.src(config.entry)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(stylus({
@@ -36,12 +37,12 @@ gulp.task('styles-prod', () => {
       compress: true,
     }))
     .pipe(gzip())
-    .pipe(gulp.dest(config.dest))
-    .pipe(connect.reload());
+    .pipe(rename('styles.css'))
+    .pipe(gulp.dest(config.dest));
 });
 
 
 /* WATCH TASKS */
 
 // Watch for changes on .styl files.
-gulp.task('watch::styles', ['styles'], () => gulp.watch(config.src, ['styles']));
+gulp.task('watch::styles', ['styles-dev'], () => gulp.watch(config.src, ['styles-dev']));
