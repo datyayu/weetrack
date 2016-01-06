@@ -106,6 +106,7 @@ export function saveRelease(episode, matchedPattern, next) {
             newEpisode.series = parsedEpisode.series;
             newEpisode.number = parsedEpisode.number;
             series.episodes.push(newEpisode._id);
+            series.content.episodes = series.content.episodes + 1;
           }
 
           // Add new release to the episode
