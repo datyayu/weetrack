@@ -1,2 +1,10 @@
 THIS_LINE_FIXES_PROBLEMS
 Go(!)? Princess Precure
+(Prince of Stride(:|\s-)?((\s)?Alternative)?)|(POSA)
+(haruchika)|(haruta (&|and) chika)
+((Musaigen no )|(Myriad colors ))?Phantom world
+(Shoujo(-|\s)?tachi wa Ko(u?)ya (w?)o Mezasu)|(Girls beyond the youth KOYA)|(The girls who aim for the wildlands)|(shokomeza)
+(Prince of Stride(:|\s-)?((\s)?Alternative)?)|(POSA)
+(haruchika)|(haruta (&|and) chika)
+((Musaigen no )|(Myriad colors ))?Phantom world
+(Shoujo(-|\s)?tachi wa Ko(u?)ya (w?)o Mezasu)|(Girls beyond the youth KOYA)|(The girls who aim for the wildlands)|(shokomeza)

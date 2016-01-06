@@ -59,13 +59,14 @@ export function saveRelease(episode, matchedPattern, next) {
 
       // Verify it was parsed without errors.
       if (parsedEpisode === null) {
-        callback('Error at parsing. Release not saved');
-      } else {
-        callback(null, parsedEpisode);
+        return callback('Error at parsing. Release not saved');
       }
+
+      callback(null, parsedEpisode);
     },
     function findSeries(parsedEpisode, callback) {
-      Series.findOne({ 'content.title': new RegExp(matchedPattern, 'gi') })
+      Series
+        .findOne({ 'content.title': new RegExp(matchedPattern, 'gi') })
         .exec((error, series) => {
           if (error) { return callback(error); }
 
@@ -104,6 +105,7 @@ export function saveRelease(episode, matchedPattern, next) {
             newEpisode.createdAt = moment().unix();
             newEpisode.series = parsedEpisode.series;
             newEpisode.number = parsedEpisode.number;
+            series.episodes.push(newEpisode._id);
           }
 
           // Add new release to the episode
@@ -116,12 +118,8 @@ export function saveRelease(episode, matchedPattern, next) {
         });
     },
     function saveEpisode(result, callback) {
-      result.episode.save((error, savedEpisode) => {
+      result.episode.save((error) => {
         if (error) { return callback(error); }
-
-        // Add the id to series.
-        result.series.episodes.push(savedEpisode._id);
-        result.series.content.episodes = result.series.episodes.length;
 
         callback(null, result.series);
       });
@@ -133,11 +131,13 @@ export function saveRelease(episode, matchedPattern, next) {
         callback(null, 'Saved successfully');
       });
     },
-  ], (error, result) => {
-    if (error) { console.log(error); }
-    if (result) { console.log(result); }
+  ],
+    (error, result) => {
+      if (error) { console.log(error); }
+      if (result) { console.log(result); }
 
-    // call callback when finished
-    if (next) { next(); }
-  });
+      // call callback when finished
+      if (next) { next(); }
+    }
+  );
 }
