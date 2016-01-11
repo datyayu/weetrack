@@ -78,6 +78,8 @@ function start() {
 
   checkOldReleases();
 
+  watcher.start();
+
   // Update on new episode.
   watcher.on('new entries', (releases) => {
     async.eachSeries(releases, checkRelease, (error) => {
