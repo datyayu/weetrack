@@ -1,5 +1,6 @@
 .ReleaseInfo
   margin-bottom 1em
+  flex  1
   width 100%
 
 .ReleaseInfo__title
@@ -8,7 +9,7 @@
   padding-bottom .2em
   font-size 1.8em
   font-weight normal
-  width 90%
+  width 50%
 
 .ReleaseInfo__titleLink
   color DARK_TEXT
@@ -18,3 +19,12 @@
 
 .ReleaseInfo__time
   color LIGHT_GRAY
+
+
++at-tablet()
+  .ReleaseInfo__title
+    width 80%
+
++at-desktop()
+  .ReleaseInfo__title
+    width 90%
