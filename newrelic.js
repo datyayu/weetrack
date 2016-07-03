@@ -8,7 +8,7 @@ export default {
   /**
    * Array of application names.
    */
-  app_name: ['WeeTrack'],
+  app_name: 'WeeTrack',
   /**
    * Your New Relic license key.
    */
