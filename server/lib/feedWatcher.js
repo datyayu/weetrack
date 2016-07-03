@@ -26,7 +26,6 @@ function checkRelease(release, callback) {
   if (release.categories[0] === 'Anime - English-translated') {
     for (const pattern of patterns) {
       const patternRegex = new RegExp(pattern, 'i');
-      console.log('Searching with :', patternRegex);
 
       if (release.title.match(patternRegex)) {
         console.log(`\nNew release founded matching regex "${pattern}"`);
