@@ -23,9 +23,10 @@ function checkRelease(release, callback) {
   // Get filter patterns from pattern file.
   const patterns = readFileSync(regexFile, 'utf8').split('\n');
 
-  if (release.categories[0] === 'English-translated Anime') {
+  if (release.categories[0] === 'Anime - English-translated') {
     for (const pattern of patterns) {
       const patternRegex = new RegExp(pattern, 'i');
+      console.log('Searching with :', patternRegex);
 
       if (release.title.match(patternRegex)) {
         console.log(`\nNew release founded matching regex "${pattern}"`);

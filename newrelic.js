@@ -5,14 +5,6 @@
  * description of configuration variables and their potential values.
  */
 export default {
-  /**
-   * Array of application names.
-   */
-  app_name: 'WeeTrack',
-  /**
-   * Your New Relic license key.
-   */
-  license_key: 'b25158637e649bbfcb3cc61b625968369bc81cbc',
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
