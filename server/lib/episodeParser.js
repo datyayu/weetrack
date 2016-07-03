@@ -3,7 +3,7 @@ import {valuesIn, includes} from 'lodash';
 import moment from 'moment';
 import Episode from '../api/episodes/episodes.model';
 import Series from '../api/series/series.model';
-
+import tweet from './twitterPost';
 
 // Parse release rss obj to a simpler Episode-like object
 function parseRelease(release) {
@@ -107,6 +107,9 @@ export function saveRelease(episode, matchedPattern, next) {
             newEpisode.number = parsedEpisode.number;
             series.episodes.push(newEpisode._id);
             series.content.episodes = series.content.episodes + 1;
+
+            // Tweet about the new episode.
+            tweet(`${series.content.title} - Episode ${newEpisode.number} was just relesed! http://track.datyayu.xyz/series/${series._id}`);
           }
 
           // Add new release to the episode

@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 
 // Dependencie modules.
 import watcher from './lib/feedWatcher';
+import tweet from './lib/twitterPost';
 import routes from './routes';
 
 // Local variables.
@@ -32,4 +33,6 @@ app.listen(port, () => {
   console.log('\n\t\tWeeTrack');
   console.log('Nyaa-based Anime Release Tracker by @datyayu');
   console.log(`\tListening on port ${ port }\n`);
+
+  tweet('Server was restarted because REASONS. Everything shold be OK now :D');
 });
