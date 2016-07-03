@@ -1,12 +1,7 @@
 {
   "name": "WeeTrack",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "An anime tracker & auto-scheduler",
-  "main": "app/server.coffee",
-  "scripts": {
-    "start": "./node_modules/babel-cli/bin/babel-node.js ./run_server.js",
-    "postinstall": "gulp build"
-  },
   "keywords": [
     "Anime",
     "tracker",
@@ -18,7 +13,15 @@
     "html5"
   ],
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
+
+  "main": "app/server.coffee",
+  "scripts": {
+    "build": "NODE_ENV=production gulp build",
+    "start": "./node_modules/babel-cli/bin/babel-node.js ./run_server.js",
+    "postinstall": "gulp build"
+  },
+
   "dependencies": {
     "async": "^0.9.0",
     "babel": "^6.0.15",
