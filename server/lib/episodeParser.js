@@ -109,7 +109,7 @@ export function saveRelease(episode, matchedPattern, next) {
             series.content.episodes = series.content.episodes + 1;
 
             // Tweet about the new episode.
-            tweet(`${series.content.title} - Episode ${newEpisode.number} was just relesed! http://track.datyayu.xyz/series/${series._id}`);
+            tweet(`${series.content.title} - Episode ${newEpisode.number} was just released! http://track.datyayu.xyz/series/${series._id}`);
           }
 
           // Add new release to the episode
