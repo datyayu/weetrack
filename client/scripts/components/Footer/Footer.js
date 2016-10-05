@@ -3,7 +3,6 @@ import FooterLink from './FooterLink';
 
 const defaultLinks = [
   { name: 'Home', url: '/' },
-  { name: 'About', url: 'http://test.raji.moe/', newTab: true },
   { name: 'Github', url: 'https://github.com/datyayu/weetrack', newTab: true },
 ];
 
