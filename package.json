@@ -8,13 +8,13 @@
     "node",
     "dls",
     "rss",
-    "weedev",
-    "angular",
+    "weeb",
+    "react",
     "html5"
   ],
   "author": "Arturo Coronel <aoitsu3@gmail.com>",
   "license": "MIT",
-  "main": "app/server.coffee",
+  "main": "./run_server.js",
   "scripts": {
     "build": "NODE_ENV=production gulp build",
     "start": "./node_modules/babel-cli/bin/babel-node.js ./run_server.js",
