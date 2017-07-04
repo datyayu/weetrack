@@ -6,7 +6,7 @@ import Series from '../api/series/series.model';
 import {saveRelease} from './episodeParser';
 
 // Torrent feed.
-const feed = 'http://www.nyaa.se/?page=rss';
+const feed = 'http://www.nyaa.si/?page=rss';
 
 // Regex to torrent filtering.
 const regexFile = './server/regex.txt';
@@ -23,7 +23,7 @@ function checkRelease(release, callback) {
   // Get filter patterns from pattern file.
   const patterns = readFileSync(regexFile, 'utf8').split('\n');
 
-  if (release.categories[0] === 'Anime - English-translated') {
+  if (release['nyaa:category']['#'] === 'Anime - English-translated') {
     for (const pattern of patterns) {
       const patternRegex = new RegExp(pattern, 'i');
 
