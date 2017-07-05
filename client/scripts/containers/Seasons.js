@@ -7,6 +7,7 @@ import SeasonsList from '../components/Seasons/seasonsList';
 
 // TODO: Create an endpoint server-side to request this stuff.
 const seasons = [
+  'summer-2017',
   'fall-2016',
   'summer-2016',
   'winter-2016',

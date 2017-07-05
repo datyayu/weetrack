@@ -3,7 +3,7 @@ import NavigationLink from './NavigationLink';
 
 const items = [
   {text: 'Daily Feed', url: '/'},
-  {text: 'Fall 2016', url: '/season/fall-2016'},
+  {text: 'Summer 2017', url: '/season/summer-2017'},
   {text: 'Seasons', url: '/seasons'},
 ];
 
