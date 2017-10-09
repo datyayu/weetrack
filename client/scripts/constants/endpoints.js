@@ -1,6 +1,6 @@
 /* Image endpoints */
-export const IMAGE_BUCKET = 'http://weetrack.s3.amazonaws.com';
-export const LOADING_IMAGE = 'http://weetrack.s3.amazonaws.com/loading-icon.gif';
+export const IMAGE_BUCKET = 'https://weetrack.s3.amazonaws.com';
+export const LOADING_IMAGE = 'https://weetrack.s3.amazonaws.com/loading-icon.gif';
 
 
 /* API endpoints */
